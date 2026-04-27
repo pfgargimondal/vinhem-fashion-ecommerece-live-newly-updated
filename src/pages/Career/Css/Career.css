@@ -165,6 +165,12 @@
   .dfbhdf h2{
     font-size: 1.4rem;
   }
+
+  .fbhjjdfjk554 .container-fluid.px-5,
+  .sdfbjhfsdf .container-fluid.px-5{
+    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+  }
 }
 
 

@@ -596,6 +596,10 @@
         width: 100% !important;
     }
 
+    .jlksdeflksdfk > div{
+        justify-content: space-between;
+    }
+
     .select-form-drpdwn {
         width: 36%;
     }
@@ -1192,7 +1196,11 @@
 
     .dfghjdfgdfgf {
         margin-top: 3rem;
-    }      
+    }     
+    
+    .weqwthyuytredfgw.cbgdrfsfewerrr {
+        padding-left: 41px;
+    }
 }
 
 
@@ -1249,6 +1257,17 @@
 
 
 
+@media only screen and (max-width: 500px){
+    .weqwthyuytredfgw.cbgdrfsfewerrr {
+        padding-left: 33px;
+    }
+}
+
+
+
+
+
+
 @media only screen and (max-width: 495px){
     .dowejkrnwerwer{
         justify-content: space-between;
@@ -1273,6 +1292,18 @@
         font-size: 16px !important;
     }
 }
+
+
+
+
+
+
+@media only screen and (max-width: 470px){
+    .weqwthyuytredfgw.cbgdrfsfewerrr {
+        padding-left: 28px;
+    }
+}
+
 
 
 
@@ -1337,6 +1368,10 @@
     .zoom-gallery-modal .small-image-tabs .nav-item img,
     .zoom-gallery-modal .small-image-tabs .nav-item video {
         max-height: 85px;
+    }
+
+    .weqwthyuytredfgw.cbgdrfsfewerrr {
+        padding-left: 23px;
     }
 }
 
@@ -1406,6 +1441,10 @@
     .zoom-gallery-modal .small-image-tabs .nav-item img,
     .zoom-gallery-modal .small-image-tabs .nav-item video {
         max-height: 75px;
+    }
+
+    .weqwthyuytredfgw.cbgdrfsfewerrr {
+        padding-left: 20px;
     }
 }
 
@@ -1486,6 +1525,10 @@
     .vfeghrfgfferrer h6 {
         font-size: 3.4vw !important;
     }
+
+    .weqwthyuytredfgw.cbgdrfsfewerrr {
+        padding-left: 18px;
+    }
 }
 
 
@@ -1495,6 +1538,16 @@
 @media only screen and (max-width: 366px){
     .saoijhdekjwirwer .dowekrwerwer label.p-3{
         padding: 0.3rem !important;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 360px) {
+    .weqwthyuytredfgw.cbgdrfsfewerrr {
+        padding-left: 16px;
     }
 }
 

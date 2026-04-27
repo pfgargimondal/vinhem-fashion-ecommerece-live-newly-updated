@@ -2,7 +2,6 @@ footer {
   border-top: 1px solid var(--pink-main-color);
   position: relative;
   z-index: 9999;
-  padding-bottom: 5rem;
 }
 
 .dgsdfhdrgh{
@@ -139,4 +138,13 @@ footer .footer-bottom .fb-payment-options li img {
 .sfefaeewrweqqq li img,
 .kajhdijojeijrrr li img{
   max-height: 1.2rem !important;
+}
+
+
+
+
+@media only screen and (max-width: 991px){
+  footer{
+    padding-bottom: 5rem;
+  }
 }

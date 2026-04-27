@@ -59,8 +59,8 @@ export const ProductDetail = () => {
   const [showLaterModal, setShowLaterModal] = useState(false);
   // const [activeKey, setActiveKey] = useState("first");
   const [activeKey, setActiveKey] = useState("img-1");
-  const [pd, setPd] = useState(window.innerWidth >= 992);
-  const [sr, setSr] = useState(window.innerWidth >= 992);
+  const [pd, setPd] = useState(() => window.innerWidth >= 992);
+  const [sr, setSr] = useState(() => window.innerWidth >= 992);
    // eslint-disable-next-line
   // const [chatProfileDetailsShow, setChatProfileDetailsShow] = useState(false);
   const [videoMute, setVideoMute] = useState(true);
@@ -76,9 +76,10 @@ export const ProductDetail = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const isDesktop = window.innerWidth >= 992;
-      setPd(isDesktop);
-      setSr(isDesktop);
+      if (window.innerWidth >= 992) {
+        setPd(true);
+        setSr(true);
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -2546,7 +2547,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                         <div className="podmkwejrwer d-flex justify-content-between align-items-center">
                           <h4 className="mb-0">Product Descriptions</h4>
 
-                          <i onClick={() => setPd(prev => !prev)} class={`bi ${pd ? "bi-chevron-up" : "bi-chevron-down"}`}></i>
+                          <i onClick={() => setPd(!pd)} className={`bi ${pd ? "bi-chevron-up" : "bi-chevron-down"}`}></i>
                         </div>
 
                         <hr />

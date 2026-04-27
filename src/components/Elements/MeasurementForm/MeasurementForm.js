@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useMemo } from "react";
+
 export const MeasurementForm = ({
   productDetails,
   showSizeModal,
@@ -489,11 +491,10 @@ export const MeasurementForm = ({
   };
 
 
-  const handleChangeSaree = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
+  const handleChangeSaree = (name, value) => {
+    setFormData(prev => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: value
     }));
   };
 
@@ -518,6 +519,61 @@ export const MeasurementForm = ({
 
     // console.log(JSON.stringify(formData));
     // alert("Measurement data saved. Please confirm on product page.");
+  };
+
+
+  const SearchableSelect = ({
+    name,
+    value,
+    options = [],
+    onChange,
+    placeholder = "--Select Here--"
+  }) => {
+    const [search, setSearch] = useState("");
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const filteredOptions = useMemo(() => {
+      return options.filter(opt =>
+        opt.toLowerCase().includes(search.toLowerCase())
+      );
+    }, [search, options]);
+
+    return (
+      <div className="searchable-dropdown position-relative">
+        <input
+          type="text"
+          className="form-control"
+          placeholder={placeholder}
+          value={value || search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setShowDropdown(true);
+          }}
+          onFocus={() => setShowDropdown(true)}
+        />
+
+        {showDropdown && (
+          <ul className="dropdown-list xdvdbdrsaegsf">
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map((item, i) => (
+                <li
+                  key={i}
+                  onClick={() => {
+                    onChange(name, item);
+                    setSearch(item);
+                    setShowDropdown(false);
+                  }}
+                >
+                  {item}
+                </li>
+              ))
+            ) : (
+              <li className="no-result">No result found</li>
+            )}
+          </ul>
+        )}
+      </div>
+    );
   };
 
   return (
@@ -624,34 +680,6 @@ export const MeasurementForm = ({
 
                   <div className="dihwemoirjwerwer mb-5">
                     <h5 className="text-center mb-3">Select Measurement Fit</h5>
-
-                    <div className="searchable-dropdown fdghrgsdawed">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search..."
-                        value={search}
-                        onChange={(e) => {
-                          setSearch(e.target.value);
-                          setShowDropdown(true);
-                        }}
-                        onFocus={() => setShowDropdown(true)}
-                      />
-
-                      {showDropdown && (
-                        <ul className="dropdown-list xdvdbdrsaegsf">
-                          {filteredOptions.length > 0 ? (
-                            filteredOptions.map((item, index) => (
-                              <li key={index} onClick={() => handleSelect(item)}>
-                                {item}
-                              </li>
-                            ))
-                          ) : (
-                            <li className="no-result">No result found</li>
-                          )}
-                        </ul>
-                      )}
-                    </div>
 
                     <div className="dowehrinwejikhriwer">
                       <div className="row align-items-center">
@@ -1128,33 +1156,29 @@ export const MeasurementForm = ({
                         </>
                       )}
 
-                      {productDetails?.data?.custom_feild_selectOption ===
-                        "saree" && (
+                      {productDetails?.data?.custom_feild_selectOption === "saree" && (
                         <>
-                          {/* Lehenga Measurement */}
                           <div className="asdasdaswwee mt-2">
                             <div className="row" key={`saree-${unit}`}>
                               {sareeFields.map((field, index) => {
-                                // Petticoat Waist Option (with checkbox)
-                                if (
-                                  field.key === "saree_petticoat_waist_option"
-                                ) {
+
+                                // ✅ Petticoat Checkbox + Field
+                                if (field.key === "saree_petticoat_waist_option") {
                                   return (
                                     <React.Fragment key={index}>
+                                      
                                       {/* Checkbox */}
                                       <div className="col-12 mb-3">
                                         <label className="form-label d-flex align-items-center justify-content-center">
                                           <input
                                             type="checkbox"
                                             className="me-2"
-                                            name="include_petticoat_saree"
                                             checked={showPetticoat}
                                             onChange={() => {
                                               setShowPetticoat(!showPetticoat);
-                                              setFormData((prev) => ({
+                                              setFormData(prev => ({
                                                 ...prev,
-                                                include_petticoat:
-                                                  !showPetticoat,
+                                                include_petticoat: !showPetticoat
                                               }));
                                             }}
                                           />
@@ -1162,7 +1186,7 @@ export const MeasurementForm = ({
                                         </label>
                                       </div>
 
-                                      {/* Petticoat Waist field (only if checked) */}
+                                      {/* Petticoat Waist */}
                                       {showPetticoat && (
                                         <div className="col-lg-6 mb-3">
                                           <label className="form-label d-flex align-items-center justify-content-between">
@@ -1170,48 +1194,34 @@ export const MeasurementForm = ({
                                             <span
                                               className="enqury-guide"
                                               onClick={() =>
-                                                handleGuideClick(
-                                                  field.guide,
-                                                  field.image
-                                                )
+                                                handleGuideClick(field.guide, field.image)
                                               }
                                             >
                                               <i className="fa-solid fa-info"></i>
                                             </span>
                                           </label>
-                                          <select
-                                            className="form-select"
+
+                                          <SearchableSelect
                                             name={field.key}
+                                            value={formData[field.key]}
+                                            options={getOptions(field.key)}
                                             onChange={handleChangeSaree}
-                                            value={formData[field.key] || ""}
-                                          >
-                                            <option value="" selected>
-                                              --Select Here--
-                                            </option>
-                                            {getOptions(field.key).map(
-                                              (val, i) => (
-                                                <option key={i} value={val}>
-                                                  {val}
-                                                </option>
-                                              )
-                                            )}
-                                          </select>
+                                          />
                                         </div>
                                       )}
                                     </React.Fragment>
                                   );
                                 }
 
-                                // Petticoat Length — hide if Petticoat is not selected
+                                // ❌ Hide Petticoat Length if unchecked
                                 if (
-                                  field.key ===
-                                    "saree_petticoat_length_option" &&
+                                  field.key === "saree_petticoat_length_option" &&
                                   !showPetticoat
                                 ) {
                                   return null;
                                 }
 
-                                // Render all other Saree fields
+                                // ✅ Normal Fields
                                 return (
                                   <div className="col-lg-6 mb-3" key={index}>
                                     <label className="form-label d-flex align-items-center justify-content-between">
@@ -1219,45 +1229,37 @@ export const MeasurementForm = ({
                                       <span
                                         className="enqury-guide"
                                         onClick={() =>
-                                          handleGuideClick(
-                                            field.guide,
-                                            field.image
-                                          )
+                                          handleGuideClick(field.guide, field.image)
                                         }
                                       >
                                         <i className="fa-solid fa-info"></i>
                                       </span>
                                     </label>
-                                    <select
-                                      className="form-select"
+
+                                    <SearchableSelect
                                       name={field.key}
+                                      value={formData[field.key]}
+                                      options={getOptions(field.key)}
                                       onChange={handleChangeSaree}
-                                      value={formData[field.key] || ""}
-                                    >
-                                      <option selected value="">
-                                        --Select Here--
-                                      </option>
-                                      {getOptions(field.key).map((val, i) => (
-                                        <option key={i} value={val}>
-                                          {val}
-                                        </option>
-                                      ))}
-                                    </select>
+                                    />
                                   </div>
                                 );
                               })}
 
-                              {/* Saree Custom Options */}
+                              {/* ✅ Custom Checkboxes */}
                               <div className="col-6 mb-3">
                                 <label className="form-label d-flex align-items-center">
                                   <input
                                     type="checkbox"
                                     className="me-2"
                                     name="saree_fall_edging"
-                                    checked={
-                                      formData.saree_fall_edging || false
+                                    checked={formData.saree_fall_edging || false}
+                                    onChange={(e) =>
+                                      setFormData(prev => ({
+                                        ...prev,
+                                        saree_fall_edging: e.target.checked
+                                      }))
                                     }
-                                    onChange={handleChangeSaree}
                                   />
                                   Fall & Edging Work
                                 </label>
@@ -1269,17 +1271,20 @@ export const MeasurementForm = ({
                                     type="checkbox"
                                     className="me-2"
                                     name="saree_matching_tassles"
-                                    checked={
-                                      formData.saree_matching_tassles || false
+                                    checked={formData.saree_matching_tassles || false}
+                                    onChange={(e) =>
+                                      setFormData(prev => ({
+                                        ...prev,
+                                        saree_matching_tassles: e.target.checked
+                                      }))
                                     }
-                                    onChange={handleChangeSaree}
                                   />
                                   Matching Tassles
                                 </label>
                               </div>
                             </div>
 
-                            {/* Additional Customization */}
+                            {/* ✅ Additional Customization */}
                             <div className="col-lg-12 mb-3">
                               <label className="form-label">
                                 Additional customization requests here.
@@ -1287,13 +1292,15 @@ export const MeasurementForm = ({
                               <textarea
                                 name="additional_customize_saree"
                                 className="form-control"
-                                placeholder="Please specify any additional customization requests here."
                                 style={{ height: "150px" }}
-                                value={
-                                  formData.additional_customize_saree || ""
+                                value={formData.additional_customize_saree || ""}
+                                onChange={(e) =>
+                                  setFormData(prev => ({
+                                    ...prev,
+                                    additional_customize_saree: e.target.value
+                                  }))
                                 }
-                                onChange={handleChangeSaree}
-                              ></textarea>
+                              />
                             </div>
                           </div>
                         </>

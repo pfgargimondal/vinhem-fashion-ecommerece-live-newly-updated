@@ -482,6 +482,7 @@ export const MeasurementForm = ({
     }));
   };
 
+  // eslint-disable-next-line
   const handleChangeLahenga = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -931,235 +932,133 @@ export const MeasurementForm = ({
                         </div>
                       </div>
 
-                      {productDetails?.data?.custom_feild_selectOption ===
-                        "lehenga" && (
+                      {productDetails?.data?.custom_feild_selectOption === "lehenga" && (
                         <>
-                          {/* ------------------ Choli Measurement ------------------ */}
+                          {/* Choli Measurement */}
                           <div className="asdasdaswwee mt-2">
                             <h5 className="text-center text-white py-2 mb-3">
                               Choli Measurement
                             </h5>
-                            <div className="ihkjnjdewrwer">
-                              <div className="row">
-                                {fields.map((field, index) => {
-                                  const keyWithUnit =
-                                    productDetails?.data
-                                      ?.mesurament_form_data?.[
-                                      `${field.key}_inch`
-                                    ] ||
-                                    productDetails?.data
-                                      ?.mesurament_form_data?.[
-                                      `${field.key}_cm`
-                                    ]
-                                      ? unit === "inch"
-                                        ? `${field.key}_inch`
-                                        : `${field.key}_cm`
-                                      : field.key;
 
-                                  const options =
-                                    productDetails?.data?.mesurament_form_data?.[
-                                      keyWithUnit
-                                    ]?.split(",") || [];
+                            <div className="row">
+                              {fields.map((field, index) => {
+                                const keyWithUnit =
+                                  productDetails?.data?.mesurament_form_data?.[`${field.key}_inch`] ||
+                                  productDetails?.data?.mesurament_form_data?.[`${field.key}_cm`]
+                                    ? unit === "inch"
+                                      ? `${field.key}_inch`
+                                      : `${field.key}_cm`
+                                    : field.key;
 
-                                  return (
-                                    <div className="col-lg-6 mb-3" key={index}>
-                                      <label className="form-label">
-                                        {field.label}
-                                        <span
-                                          className="enqury-guide"
-                                          onClick={() =>
-                                            handleGuideClick(
-                                              field.guide,
-                                              field.image
-                                            )
-                                          }
-                                        >
-                                          <i className="fa-solid fa-info"></i>
-                                        </span>
-                                      </label>
+                                const options =
+                                  productDetails?.data?.mesurament_form_data?.[keyWithUnit]?.split(",") || [];
 
-                                      {/* ✅ Added name attribute */}
+                                return (
+                                  <div className="col-lg-6 mb-3" key={index}>
+                                    <label className="form-label d-flex justify-content-between">
+                                      {field.label}
+                                      <span onClick={() => handleGuideClick(field.guide, field.image)}>
+                                        <i className="fa-solid fa-info"></i>
+                                      </span>
+                                    </label>
 
-                                      <select
-                                        className="form-select"
-                                        name={field.key}
-                                        onChange={handleChangeLahenga}
-                                        value={formData[field.key] || ""}
-                                      >
-                                        <option value={""} selected>
-                                          --Select Here--
-                                        </option>
-                                        {options.map((val, i) => (
-                                          <option key={i} value={val.trim()}>
-                                            {val.trim()}
-                                          </option>
-                                        ))}
-                                      </select>
-                                    </div>
-                                  );
-                                })}
-                              </div>
+                                    <SearchableSelect
+                                      name={field.key}
+                                      value={formData[field.key]}
+                                      options={options.map(v => v.trim())}
+                                      onChange={handleChange}
+                                    />
+                                  </div>
+                                );
+                              })}
                             </div>
                           </div>
 
-                          {/* ------------------ Lehenga Measurement ------------------ */}
+                          {/* Lehenga Measurement */}
                           <div className="asdasdaswwee mt-2">
                             <h5 className="text-center text-white py-2 mb-3">
                               Lehenga Measurement
                             </h5>
 
-                            <div className="row" key={`lehenga-${unit}`}>
+                            <div className="row">
                               {lehengaFields.map((field, index) => {
-                                // Petticoat Waist toggle
-                                if (
-                                  field.key === "lehenga_petticoat_waist_option"
-                                ) {
+
+                                if (field.key === "lehenga_petticoat_waist_option") {
                                   return (
                                     <React.Fragment key={index}>
-                                      {/* ✅ Checkbox with name */}
-                                      <div className="col-12 mb-3">
-                                        <label className="form-label d-flex align-items-center justify-content-center">
-                                          <input
-                                            type="checkbox"
-                                            className="me-2"
-                                            name="with_petticoat_lahenga"
-                                            checked={showPetticoat}
-                                            onChange={() =>
-                                              setShowPetticoat(!showPetticoat)
-                                            }
-                                          />
-                                          With Petticoat (Inskirt)
-                                        </label>
+                                      <div className="col-12 mb-3 text-center">
+                                        <input
+                                          type="checkbox"
+                                          checked={showPetticoat}
+                                          onChange={() => setShowPetticoat(!showPetticoat)}
+                                        />
+                                        With Petticoat
                                       </div>
 
-                                      {/* ✅ Petticoat Waist (only visible if checked) */}
                                       {showPetticoat && (
                                         <div className="col-lg-6 mb-3">
-                                          <label className="form-label d-flex align-items-center justify-content-between">
-                                            {field.label}
-                                            <span
-                                              className="enqury-guide"
-                                              onClick={() =>
-                                                handleGuideClick(
-                                                  field.guide,
-                                                  field.image
-                                                )
-                                              }
-                                            >
-                                              <i className="fa-solid fa-info"></i>
-                                            </span>
-                                          </label>
-                                          <select
-                                            className="form-select"
+                                          <label>{field.label}</label>
+
+                                          <SearchableSelect
                                             name={field.key}
-                                            onChange={handleChangeLahenga}
-                                            value={formData[field.key] || ""}
-                                          >
-                                            <option value={""} selected>
-                                              --Select Here--
-                                            </option>
-                                            {getOptions(field.key).map(
-                                              (val, i) => (
-                                                <option key={i} value={val}>
-                                                  {val}
-                                                </option>
-                                              )
-                                            )}
-                                          </select>
+                                            value={formData[field.key]}
+                                            options={getOptions(field.key)}
+                                            onChange={handleChange}
+                                          />
                                         </div>
                                       )}
                                     </React.Fragment>
                                   );
                                 }
 
-                                // Hide Petticoat Length if unchecked
                                 if (
-                                  field.key ===
-                                    "lehenga_petticoat_length_option" &&
+                                  field.key === "lehenga_petticoat_length_option" &&
                                   !showPetticoat
-                                ) {
-                                  return null;
-                                }
+                                ) return null;
 
-                                // ✅ Render all other fields with name
                                 return (
                                   <div className="col-lg-6 mb-3" key={index}>
-                                    <label className="form-label d-flex align-items-center justify-content-between">
-                                      {field.label}
-                                      <span
-                                        className="enqury-guide"
-                                        onClick={() =>
-                                          handleGuideClick(
-                                            field.guide,
-                                            field.image
-                                          )
-                                        }
-                                      >
-                                        <i className="fa-solid fa-info"></i>
-                                      </span>
-                                    </label>
-                                    <select
-                                      className="form-select"
+                                    <label>{field.label}</label>
+
+                                    <SearchableSelect
                                       name={field.key}
-                                      onChange={handleChangeLahenga}
-                                      value={formData[field.key] || ""}
-                                    >
-                                      <option value={""} selected>
-                                        --Select Here--
-                                      </option>
-                                      {getOptions(field.key).map((val, i) => (
-                                        <option key={i} value={val}>
-                                          {val}
-                                        </option>
-                                      ))}
-                                    </select>
+                                      value={formData[field.key]}
+                                      options={getOptions(field.key)}
+                                      onChange={handleChange}
+                                    />
                                   </div>
                                 );
                               })}
 
-                              {/* ✅ Extra options with names */}
+                              {/* Extra Options */}
                               <div className="col-6 mb-3">
-                                <label className="form-label d-flex align-items-center">
-                                  <input
-                                    type="checkbox"
-                                    className="me-2"
-                                    name="fall_edging_work_lahenga"
-                                    checked={!!formData.fall_edging_work_lahenga}
-                                    onChange={handleChangeLahenga}
-                                  />
-                                  Fall & Edging Work
-                                </label>
+                                <input
+                                  type="checkbox"
+                                  name="fall_edging_work_lahenga"
+                                  checked={!!formData.fall_edging_work_lahenga}
+                                  onChange={handleChange}
+                                />
+                                Fall & Edging
                               </div>
 
                               <div className="col-6 mb-3">
-                                <label className="form-label d-flex align-items-center">
-                                  <input
-                                    type="checkbox"
-                                    className="me-2"
-                                    name="matching_tassles_lahenga"
-                                    checked={!!formData.matching_tassles_lahenga}
-                                    onChange={handleChangeLahenga}
-                                  />
-                                  Matching Tassles
-                                </label>
+                                <input
+                                  type="checkbox"
+                                  name="matching_tassles_lahenga"
+                                  checked={!!formData.matching_tassles_lahenga}
+                                  onChange={handleChange}
+                                />
+                                Matching Tassles
                               </div>
                             </div>
                           </div>
 
-                          {/* ------------------ Additional Customization ------------------ */}
-                          <div className="col-lg-12 mb-3">
-                            <label className="form-label">
-                              Additional customization requests here.
-                            </label>
-                            <textarea
-                              name="additional_customization_lahenga"
-                              className="form-control"
-                              placeholder="Please specify any additional customization requests here."
-                              onChange={handleChangeLahenga}
-                              value={formData.additional_customization_lahenga || ""}
-                              style={{ height: "150px" }}
-                            ></textarea>
-                          </div>
+                          {/* Additional */}
+                          <textarea
+                            name="additional_customization_lahenga"
+                            value={formData.additional_customization_lahenga || ""}
+                            onChange={handleChange}
+                          />
                         </>
                       )}
 

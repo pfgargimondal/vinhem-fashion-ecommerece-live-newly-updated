@@ -490,7 +490,7 @@ export const MeasurementForm = ({
     }));
   };
 
-
+   // eslint-disable-next-line
   const handleChangeSaree = (name, value) => {
     setFormData(prev => ({
       ...prev,
@@ -522,59 +522,66 @@ export const MeasurementForm = ({
   };
 
 
-  const SearchableSelect = ({
-    name,
-    value,
-    options = [],
-    onChange,
-    placeholder = "--Select Here--"
-  }) => {
-    const [search, setSearch] = useState("");
-    const [showDropdown, setShowDropdown] = useState(false);
+ const SearchableSelect = ({
+  name,
+  value,
+  options = [],
+  onChange,
+  placeholder = "--Select Here--"
+}) => {
+  const [search, setSearch] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
 
-    const filteredOptions = useMemo(() => {
-      return options.filter(opt =>
-        opt.toLowerCase().includes(search.toLowerCase())
-      );
-    }, [search, options]);
-
-    return (
-      <div className="searchable-dropdown position-relative">
-        <input
-          type="text"
-          className="form-control"
-          placeholder={placeholder}
-          value={value || search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setShowDropdown(true);
-          }}
-          onFocus={() => setShowDropdown(true)}
-        />
-
-        {showDropdown && (
-          <ul className="dropdown-list xdvdbdrsaegsf">
-            {filteredOptions.length > 0 ? (
-              filteredOptions.map((item, i) => (
-                <li
-                  key={i}
-                  onClick={() => {
-                    onChange(name, item);
-                    setSearch(item);
-                    setShowDropdown(false);
-                  }}
-                >
-                  {item}
-                </li>
-              ))
-            ) : (
-              <li className="no-result">No result found</li>
-            )}
-          </ul>
-        )}
-      </div>
+  const filteredOptions = useMemo(() => {
+    return options.filter(opt =>
+      opt.toLowerCase().includes(search.toLowerCase())
     );
-  };
+  }, [search, options]);
+
+  return (
+    <div className="searchable-dropdown position-relative">
+      <input
+        type="text"
+        className="form-control"
+        placeholder={placeholder}
+        value={value || search}
+        onChange={(e) => {
+          setSearch(e.target.value);
+          setShowDropdown(true);
+        }}
+        onFocus={() => setShowDropdown(true)}
+      />
+
+      {showDropdown && (
+        <ul className="dropdown-list xdvdbdrsaegsf">
+          {filteredOptions.length > 0 ? (
+            filteredOptions.map((item, i) => (
+              <li
+                key={i}
+                onClick={() => {
+                  onChange({
+                    target: {
+                      name,
+                      value: item,
+                      type: "select-one"
+                    }
+                  });
+
+                  setSearch(item);
+                  setShowDropdown(false);
+                }}
+              >
+                {item}
+              </li>
+            ))
+          ) : (
+            <li className="no-result">No result found</li>
+          )}
+        </ul>
+      )}
+    </div>
+  );
+};
 
   return (
     <div>
@@ -1205,7 +1212,8 @@ export const MeasurementForm = ({
                                             name={field.key}
                                             value={formData[field.key]}
                                             options={getOptions(field.key)}
-                                            onChange={handleChangeSaree}
+                                            // onChange={handleChangeSaree}
+                                            onChange={handleChange}
                                           />
                                         </div>
                                       )}
@@ -1240,7 +1248,8 @@ export const MeasurementForm = ({
                                       name={field.key}
                                       value={formData[field.key]}
                                       options={getOptions(field.key)}
-                                      onChange={handleChangeSaree}
+                                      // onChange={handleChangeSaree}
+                                      onChange={handleChange}
                                     />
                                   </div>
                                 );

@@ -2019,6 +2019,12 @@ h4.oijiwuihfih-eiuheir{
   padding-left: 0 !important;
   border: 1px solid var(--text-gray-color);
   margin-top: 5px;
+  position: absolute;
+  background-color: #fff;
+  z-index: 999;
+  width: 100%;
+  height: 10vw;
+  overflow-y: auto;
 }
 
 .xdvdbdrsaegsf li{
@@ -2041,4 +2047,12 @@ h4.oijiwuihfih-eiuheir{
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.searchable-dropdown input.form-control{
+  border-radius: var(--bs-border-radius) !important;
+}
+
+.searchable-dropdown input:focus{
+  border-color: var(--pink-main-color);
 }

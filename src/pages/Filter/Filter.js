@@ -562,9 +562,9 @@ export const Filter = () => {
   };
 
   const isSpecialPage = 
-    category === "all-products" ||
-    category === "new-in" ||
-    category === "ready-to-ship";
+    category === "all-products";
+    // category === "new-in" ||
+    // category === "ready-to-ship";
 
   if (loading || wishlistLoading) {
     return <Loader />;

@@ -1922,7 +1922,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                
                                 {(productDetails?.data?.stitching_option?.toLowerCase() === "ready to wear")&&
                                 productDetails?.data?.custom_fit?.toLowerCase() === "yes" && (
-                                    <div className="saoijhdekjwirwer col-lg-4 col-md-6 col-sm-6 col-6">
+                                    <div className="saoijhdekjwirwer sfddgsfgdrgdgs col-lg-4 col-md-6 col-sm-6 col-6">
                                       <div className="dowekrwerwer ms-3">
                                         <input
                                           type="checkbox"

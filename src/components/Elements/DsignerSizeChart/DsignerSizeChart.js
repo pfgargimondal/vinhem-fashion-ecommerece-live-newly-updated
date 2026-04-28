@@ -92,10 +92,15 @@ export const DesignerSizeChart = ({ productDetails }) => {
               <div className="opmkojwojoiwere d-flex justify-content-between">
                 <div className="dkewhknewhirwer">
                   {/* <h5>Size Chart for {productDetails?.data?.product_category}</h5> */}
-
-                  <h6 className="mb-0">
-                    BODY MEASUREMENTS [ 3-4 INCHES LOOSENING REQUIRED]
-                  </h6>
+                    {productDetails?.data?.product_category?.toLowerCase() === "men" ? (
+                      <h6 className="mb-0">
+                        BODY MEASUREMENTS [ 3-4 INCHES LOOSENING REQUIRED]
+                      </h6>
+                    ) : productDetails?.data?.product_category?.toLowerCase() === "women" ? (
+                      <h6 className="mb-0">
+                        BODY MEASUREMENTS [ 1-2 INCHES LOOSENING REQUIRED]
+                      </h6>
+                    ) : null}
                 </div>
 
                 <div className="oidahijeoijer d-flex align-items-center">

@@ -2967,7 +2967,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
           )}
 
           <i
-            class="fa-solid fa-xmark"
+            class="fa-solid fa-xmark mb-1"
             onClick={() => setShowSizeGuide(false)}
           ></i>
         </div>
@@ -2983,20 +2983,36 @@ for (let i = 0; i < filteredSpecs.length; i++) {
 
               <div className="col-lg-10">
                 <div className="dlowenjkrnwkeh">
-                  <ul>
-                    <li className="mb-3">
-                      If your bare chest size measurement is 40 inches, you
-                      should select size 40 only from the product page. The "Top
-                      Chest" attribute in the size chart refers to the garment's
-                      chest size. It is inclusive of the required 3 to 4 inches
-                      loosening, to ensure the right fit.
-                    </li>
+                  {productDetails?.data?.product_category?.toLowerCase() === "men" ? (
+                    <ul>
+                      <li className="mb-3">
+                        If your bare chest size measurement is 40 inches, you
+                        should select size 40 only from the product page. The "Top
+                        Chest" attribute in the size chart refers to the garment's
+                        chest size. It is inclusive of the required 3 to 4 inches
+                        loosening, to ensure the right fit.
+                      </li>
 
-                    <li>
-                      If your bare chest measurement falls between 2 sizes i.e.
-                      37 inches, you should select size 38.
-                    </li>
-                  </ul>
+                      <li>
+                        If your bare chest measurement falls between 2 sizes i.e.
+                        37 inches, you should select size 38.
+                      </li>
+                    </ul>
+                    ) : productDetails?.data?.product_category?.toLowerCase() === "women" ? (
+                      <ul>
+                        <li className="mb-3">
+                          If your actual bust measurement is 34 inches, you should choose size 34 from the product page.
+                           The “Top Bust” mentioned in the size chart indicates the garment’s bust measurement, 
+                           which already includes an additional 1–2 inches of ease for a comfortable fit.
+                        </li>
+
+                        <li>
+                          If your bust measurement falls between two sizes, for example 37 inches, 
+                          it is recommended to select the next size up, i.e. size 38, for a better fit.
+                        </li>
+                      </ul>
+                    ) : null}
+
                 </div>
               </div>
             </div>

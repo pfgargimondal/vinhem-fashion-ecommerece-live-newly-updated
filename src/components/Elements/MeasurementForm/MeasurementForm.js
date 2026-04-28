@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMemo } from "react";
+import { useEffect, useRef, useMemo } from "react";
 
 export const MeasurementForm = ({
   productDetails,
@@ -11,7 +11,7 @@ export const MeasurementForm = ({
   const [activeGuide, setActiveGuide] = useState(null);
   const [feildNameGuide, setFeildNameGuide] = useState(null);
   const [showTabs, setShowTabs] = useState(false);
-
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const [selectedSize, setSelectedSize] = useState("");
 
   const options = [
@@ -523,66 +523,86 @@ export const MeasurementForm = ({
   };
 
 
- const SearchableSelect = ({
-  name,
-  value,
-  options = [],
-  onChange,
-  placeholder = "--Select Here--"
-}) => {
-  const [search, setSearch] = useState("");
-  const [showDropdown, setShowDropdown] = useState(false);
+  const SearchableSelect = ({
+    name,
+    value,
+    options = [],
+    onChange,
+    placeholder = "--Select Here--",
+    activeDropdown,
+    setActiveDropdown
+  }) => {
+    const [search, setSearch] = useState("");
+    const ref = useRef();
 
-  const filteredOptions = useMemo(() => {
-    return options.filter(opt =>
-      opt.toLowerCase().includes(search.toLowerCase())
+    const isOpen = activeDropdown === name;
+
+    const filteredOptions = useMemo(() => {
+      return options.filter(opt =>
+        opt.toLowerCase().includes(search.toLowerCase())
+      );
+    }, [search, options]);
+
+    // ✅ Close on outside click
+    useEffect(() => {
+      const handleClickOutside = (e) => {
+        // ✅ check if click is inside ANY dropdown
+        if (e.target.closest(".searchable-dropdown")) {
+          return;
+        }
+
+        // ❌ only close if clicked fully outside
+        setActiveDropdown(null);
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [setActiveDropdown]);
+
+    return (
+      <div ref={ref} className="searchable-dropdown position-relative">
+        <input
+          type="text"
+          className={`form-control ${isOpen ? "active-input" : ""}`}
+          placeholder={placeholder}
+          value={value || search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setActiveDropdown(name); // ✅ open current
+          }}
+          onFocus={() => setActiveDropdown(name)} // ✅ open current
+        />
+
+        {isOpen && (
+          <ul className="dropdown-list xdvdbdrsaegsf">
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map((item, i) => (
+                <li
+                  key={i}
+                  onClick={() => {
+                    onChange({
+                      target: {
+                        name,
+                        value: item,
+                        type: "select-one"
+                      }
+                    });
+
+                    setSearch(item);
+                    setActiveDropdown(null); // ✅ close after select
+                  }}
+                >
+                  {item}
+                </li>
+              ))
+            ) : (
+              <li className="no-result">No result found</li>
+            )}
+          </ul>
+        )}
+      </div>
     );
-  }, [search, options]);
-
-  return (
-    <div className="searchable-dropdown position-relative">
-      <input
-        type="text"
-        className="form-control"
-        placeholder={placeholder}
-        value={value || search}
-        onChange={(e) => {
-          setSearch(e.target.value);
-          setShowDropdown(true);
-        }}
-        onFocus={() => setShowDropdown(true)}
-      />
-
-      {showDropdown && (
-        <ul className="dropdown-list xdvdbdrsaegsf">
-          {filteredOptions.length > 0 ? (
-            filteredOptions.map((item, i) => (
-              <li
-                key={i}
-                onClick={() => {
-                  onChange({
-                    target: {
-                      name,
-                      value: item,
-                      type: "select-one"
-                    }
-                  });
-
-                  setSearch(item);
-                  setShowDropdown(false);
-                }}
-              >
-                {item}
-              </li>
-            ))
-          ) : (
-            <li className="no-result">No result found</li>
-          )}
-        </ul>
-      )}
-    </div>
-  );
-};
+  };
 
   return (
     <div>
@@ -1002,6 +1022,8 @@ export const MeasurementForm = ({
                                             options={getOptions(field.key)}
                                             // onChange={handleChangeLahenga}
                                             onChange={handleChange}
+                                            activeDropdown={activeDropdown}
+                                           setActiveDropdown={setActiveDropdown}
                                         />
                                       </div>
                                     );
@@ -1080,6 +1102,8 @@ export const MeasurementForm = ({
                                                 options={getOptions(field.key)}
                                                 // onChange={handleChangeLahenga}
                                                 onChange={handleChange}
+                                                activeDropdown={activeDropdown}
+                                                setActiveDropdown={setActiveDropdown}
                                             />
                                           </div>
                                         )}
@@ -1134,6 +1158,8 @@ export const MeasurementForm = ({
                                           options={getOptions(field.key)}
                                           // onChange={handleChangeLahenga}
                                           onChange={handleChange}
+                                          activeDropdown={activeDropdown}
+                                          setActiveDropdown={setActiveDropdown}
                                       />
                                     </div>
                                   );
@@ -1239,6 +1265,8 @@ export const MeasurementForm = ({
                                             options={getOptions(field.key)}
                                             // onChange={handleChangeSaree}
                                             onChange={handleChange}
+                                            activeDropdown={activeDropdown}
+                                            setActiveDropdown={setActiveDropdown}
                                           />
                                         </div>
                                       )}
@@ -1273,6 +1301,8 @@ export const MeasurementForm = ({
                                       options={getOptions(field.key)}
                                       // onChange={handleChangeSaree}
                                       onChange={handleChange}
+                                      activeDropdown={activeDropdown}
+                                      setActiveDropdown={setActiveDropdown}
                                     />
                                   </div>
                                 );
@@ -1407,6 +1437,8 @@ export const MeasurementForm = ({
                                         options={getOptions(field.key)}
                                         // onChange={handleChangeSaree}
                                         onChange={handleChange}
+                                        activeDropdown={activeDropdown}
+                                        setActiveDropdown={setActiveDropdown}
                                       />
                                     </div>
                                   );
@@ -1480,6 +1512,8 @@ export const MeasurementForm = ({
                                         options={getOptions(field.key)}
                                         // onChange={handleChangeSaree}
                                         onChange={handleChange}
+                                        activeDropdown={activeDropdown}
+                                        setActiveDropdown={setActiveDropdown}
                                       />
                                     </div>
                                   );
@@ -1555,6 +1589,8 @@ export const MeasurementForm = ({
                                         options={getOptionsGeneric(field.key)}
                                         // onChange={handleChangeSaree}
                                         onChange={handleChange}
+                                        activeDropdown={activeDropdown}
+                                       setActiveDropdown={setActiveDropdown}
                                       />
                                     </div>
                                   );

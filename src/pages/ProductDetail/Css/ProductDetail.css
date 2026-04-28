@@ -2053,6 +2053,7 @@ h4.oijiwuihfih-eiuheir{
   border-radius: var(--bs-border-radius) !important;
 }
 
-.searchable-dropdown input:focus{
+.searchable-dropdown input:focus,
+.searchable-dropdown input.active-input {
   border-color: var(--pink-main-color);
 }

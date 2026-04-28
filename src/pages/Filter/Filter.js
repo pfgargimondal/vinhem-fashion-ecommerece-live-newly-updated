@@ -522,6 +522,7 @@ export const Filter = () => {
   }, [location.pathname, category, subcategory]);
 
 
+
   const handleResSortByToggle = () => {
     const html = document.querySelector("html");
 

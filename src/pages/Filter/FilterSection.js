@@ -56,7 +56,7 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
     }));
   };
 
-  // console.log(allFilterMappingdata, "hi");
+  console.log(allFilterMappingdata, "hi");
 
 
   const toTitleCase = (str = "") =>
@@ -538,7 +538,12 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
             </div>
           {/* // )} */}
 
-          {allFilterMappingdata?.filter(item => item.filter_option !== 'filter_category_name').map((FilterMappingdata) => {
+          {/* {allFilterMappingdata?.filter(item => item.filter_option !== 'filter_category_name').map((FilterMappingdata) => { */}
+          {allFilterMappingdata?.filter(item => 
+                item.filter_option !== 'filter_category_name' &&
+                item.filter_values &&
+                item.filter_values.trim() !== ""
+              ).map((FilterMappingdata) => {
             const totalValues = FilterMappingdata.filter_values.split(",").length;
             const isExpanded = expandedFilters[FilterMappingdata.filter_option] || false;
             const valuesToShow = isExpanded ? totalValues : 6;

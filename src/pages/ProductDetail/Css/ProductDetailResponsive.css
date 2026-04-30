@@ -166,8 +166,8 @@
         top: 20%;
     }
 
-    .sfddgsfgdrgdgs{
-        width: 232px !important;
+    .sfddgsfgdrgdgs .dowekrwerwer label{
+        width: 208px;
     }
 }
 
@@ -1069,6 +1069,14 @@
     .dfgjhdfgdf .swiper{
         border-radius: 27px;
         overflow: hidden;
+    }
+
+    .sfddgsfgdrgdgs{
+        padding-inline: 0 !important;
+    }
+
+    .sfddgsfgdrgdgs .dowekrwerwer label{
+        width: 100%;
     }
 }
 

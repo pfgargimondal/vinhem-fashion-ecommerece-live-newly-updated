@@ -58,7 +58,7 @@ export const FooterBlog = ({ blogCategories, allblogCategories }) => {
     return (
         <div id="footer-blog">
             <div className="dweoriwenirjweoijrwer">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-3">
                             <div className="doiwqjejir_inner py-4 h-100">
@@ -94,8 +94,9 @@ export const FooterBlog = ({ blogCategories, allblogCategories }) => {
                                         key={recentblogsItem.slug}
                                         to={recentblogsItem.slug}
                                         target="_blank"
+                                        className="d-flex"
                                     >
-                                        {recentblogsItem.title}
+                                        <i class="fa-solid dbdfsegdgsf me-1 mt-2 fa-circle"></i> {recentblogsItem.title}
                                     </Link>
                                 ))}
                             </div>
@@ -109,8 +110,9 @@ export const FooterBlog = ({ blogCategories, allblogCategories }) => {
                                         key={popularblogsItem.slug}
                                         to={popularblogsItem.slug}
                                         target="_blank"
+                                        className="d-flex"
                                     >
-                                        {popularblogsItem.title}
+                                        <i class="fa-solid dbdfsegdgsf me-1 mt-2 fa-circle"></i> {popularblogsItem.title}
                                     </Link>
                                 ))}
 
@@ -126,8 +128,9 @@ export const FooterBlog = ({ blogCategories, allblogCategories }) => {
                                         key={item?.blog_category}
                                         to={`${item?.category_url}`}
                                         target="_blank"
+                                        className="d-flex"
                                     >
-                                        {item?.blog_category}
+                                        <i class="fa-solid dbdfsegdgsf me-1 mt-2 fa-circle"></i> {item?.blog_category}
                                     </Link>
                                 ))}
                                 {/* <Link to="">Lorem ipsum dolor sit amet</Link> */}

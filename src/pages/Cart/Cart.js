@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import "./Css/Cart.css";
@@ -359,6 +359,12 @@ export const Cart = () => {
   const [sameAsShipping, setSameAsShipping] = useState(true);
   const [isMobileInvalid, setIsMobileInvalid] = useState(false);
   const [errors, setErrors] = useState({});
+
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const countryOptions = useMemo(() => {
+    return shippingCountry.map((item) => item.country_name);
+  }, [shippingCountry]);
+
 
   // -------------------------------
   // 1️⃣ SHIPPING DATA STATE
@@ -1058,6 +1064,90 @@ export const Cart = () => {
   if (loading || wishlistLoading) {
     return <Loader/>;
   }
+
+
+  const SearchableSelect = ({
+    name,
+    value,
+    options = [],
+    onChange,
+    placeholder = "--Select Here--",
+    activeDropdown,
+    setActiveDropdown
+  }) => {
+  const [search, setSearch] = useState("");
+  const ref = useRef();
+
+  const isOpen = activeDropdown === name;
+
+  // ✅ Filter options
+  const filteredOptions = useMemo(() => {
+    return options
+      .filter((opt) =>
+        opt.toLowerCase().includes(search.toLowerCase())
+      )
+      .slice(0, 100); // limit for performance
+  }, [search, options]);
+
+  // ✅ Close on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (e.target.closest(".searchable-dropdown")) return;
+      setActiveDropdown(null);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, [setActiveDropdown]);
+
+  return (
+    <div ref={ref} className="searchable-dropdown position-relative">
+      <input
+        type="text"
+        className={`form-control ${isOpen ? "active-input" : ""}`}
+        placeholder={placeholder}
+        value={isOpen ? search : value || ""}
+        onChange={(e) => {
+          setSearch(e.target.value);
+          setActiveDropdown(name);
+        }}
+        onFocus={() => {
+          setSearch(value || "");
+          setActiveDropdown(name);
+        }}
+      />
+
+      {isOpen && (
+        <ul className="dropdown-list">
+          {filteredOptions.length > 0 ? (
+            filteredOptions.map((item, i) => (
+              <li
+                key={i}
+                onClick={() => {
+                  onChange({
+                    target: {
+                      name,
+                      value: item,
+                      type: "select-one"
+                    }
+                  });
+
+                  setSearch("");
+                  setActiveDropdown(null);
+                }}
+              >
+                {item}
+              </li>
+            ))
+          ) : (
+            <li className="no-result">No result found</li>
+          )}
+        </ul>
+      )}
+    </div>
+  );
+};
 
   return (
     <div>
@@ -2921,6 +3011,7 @@ export const Cart = () => {
                 type="text"
                 className="form-control"
                 placeholder="Enter Coupon Code"
+                // value={selectedCoupon}
                 value={selectedCoupon}
                 disabled={couponApplied}
                 onChange={(e) => {
@@ -3147,10 +3238,10 @@ export const Cart = () => {
                   onChange={handleInputChange}
                 />
                 {errors.shipping_last_name && <small className="text-danger">{errors.shipping_last_name}</small>}
-              </div>
+              </div> 
 
               <div className="col-lg-12 mb-2">
-                <select 
+                {/* <select 
                   name="shipping_country" 
                   className="form-select h-100"
                   value={shippingData.shipping_country}
@@ -3162,7 +3253,16 @@ export const Cart = () => {
                       {item.country_name}
                     </option>
                   ))}
-                </select>
+                </select> */}
+                <SearchableSelect
+                  name="shipping_country"
+                  value={shippingData.shipping_country}
+                  options={countryOptions}
+                  onChange={handleInputChange}
+                  placeholder="Select Country"
+                  activeDropdown={activeDropdown}
+                  setActiveDropdown={setActiveDropdown}
+                />
               </div>
 
               <div className="col-lg-12 mb-2">
@@ -3387,7 +3487,7 @@ export const Cart = () => {
               </div>
 
               <div className="col-lg-12 mb-2">
-                <select 
+                {/* <select 
                   name="billing_country" 
                   className="form-select h-100"
                   value={billingData.billing_country}
@@ -3399,7 +3499,16 @@ export const Cart = () => {
                       {item?.country_name}
                     </option>
                   ))}
-                </select>
+                </select> */}
+                <SearchableSelect
+                  name="billing_country"
+                  value={billingData.billing_country}
+                  options={countryOptions}
+                  onChange={handleInputChangeBilling}
+                  placeholder="Select Country"
+                  activeDropdown={activeDropdown}
+                  setActiveDropdown={setActiveDropdown}
+                />
               </div>
 
               <div className="col-lg-12 mb-2">

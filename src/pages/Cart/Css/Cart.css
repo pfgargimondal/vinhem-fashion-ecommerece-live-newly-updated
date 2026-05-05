@@ -859,3 +859,29 @@ h6.sadcadaededee,
 .doriwer img.me-2{
   margin-right: 0.4rem !important;
 }
+
+
+
+
+.searchable-dropdown input.form-control{
+  border-radius: var(--bs-border-radius) !important;
+}
+
+.searchable-dropdown input:focus,
+.searchable-dropdown input.active-input {
+  border-color: var(--pink-main-color);
+}
+
+.searchable-dropdown ul{
+  width: 100%;
+  padding: 10px !important;
+  max-height: 15vw;
+  overflow-y: auto;
+  position: absolute;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.searchable-dropdown ul li{
+  list-style: none;
+}

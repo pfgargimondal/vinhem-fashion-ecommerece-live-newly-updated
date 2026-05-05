@@ -136,8 +136,20 @@
 }
 
 .dfbgjhdf5 .btn-main{
-  background: var(--pink-main-color);
-  border-color: var(--pink-main-color) !important;
+  padding: 6px 22px !important;
+  border: none !important;
+  background-color: var(--pink-main-color);
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.dfbgjhdf5 .btn-main:hover{
+  padding: 6px 22px !important;
+  background: var(--pink-main-color) !important;
+  color: white;
+  font-weight: 500 !important;
+  border: none !important;
 }
 
 .dfbhdf h2{

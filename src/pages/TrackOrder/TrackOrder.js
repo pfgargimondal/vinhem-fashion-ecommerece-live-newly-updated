@@ -213,7 +213,7 @@ export const TrackOrder = () => {
                 {/* <h4 className="mb-3">Order Details</h4> */}
 
                 {orderData && (
-                  <div className="pkdoewkpoerrr">
+                  <div className="pkdoewkpoerrr text-center">
                     <Table responsive="lg">
                       <thead>
                         <tr>

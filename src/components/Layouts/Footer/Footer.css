@@ -127,6 +127,10 @@ footer .footer-bottom .fb-payment-options li img {
   width: 100%;
 }
 
+footer .footer-bottom .fb-payment-options li:last-child img{
+  width: 4vw;
+}
+
 .duiwehihiwejiurwer{
   background: #f5f5f5;
 }

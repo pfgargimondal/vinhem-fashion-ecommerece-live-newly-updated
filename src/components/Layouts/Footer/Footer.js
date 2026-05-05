@@ -304,7 +304,7 @@ export const Footer = ({ shouldHideFullHeaderFooterRoutes }) => {
     <>
       {loading && <Loader />}
       {!shouldHideFullHeaderFooterRoutes && (
-        <footer style={{ paddingBottom: mainCatgry?.some(item => pathName.startsWith(`/${item.mainCategory_slug}`) || pathName.startsWith(`/all-products`)) ? "10rem" : "" }}>
+        <footer style={{ paddingBottom: mainCatgry?.some(item => (pathName.startsWith(`/${item.mainCategory_slug}`) || pathName.startsWith(`/all-products`)) && window.innerWidth <= 991) ? "10rem" : "" }}>
           <div className="container-fluid pt-5">
             <div className="row">
               <div className="col-lg-9">

@@ -347,7 +347,7 @@ export const Blog = () => {
                             </div>  
 
                             <section className="sgfthrherwygtiydfsdde video-sidebar-section">
-                                <div className="video-wrapper mb-4">
+                                <div className="video-wrapper">
                                     {/* {blogvedio?.vedio_url && (
                                         <iframe
                                             width="100%"
@@ -366,7 +366,7 @@ export const Blog = () => {
                                     )}
                                 </div>
 
-                                <div className="video-wrapper">
+                                <div className="video-wrapper d-none">
                                     {/* {blogvedio?.vedio_url && (
                                         <iframe
                                             width="100%"

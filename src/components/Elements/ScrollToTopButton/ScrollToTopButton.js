@@ -52,7 +52,7 @@ export const ScrollToTopButton = () => {
   return (
     <>
       {visible && (
-        <button onClick={scrollToTop} style={{...styles.button, bottom: mainCatgry?.some(item => pathName.startsWith(`/${item.mainCategory_slug}`) || pathName.startsWith(`/all-products`)) ? "12rem" : "8rem"}}>↑</button>
+        <button onClick={scrollToTop} style={{...styles.button, bottom: mainCatgry?.some(item => (pathName.startsWith(`/${item.mainCategory_slug}`) || pathName.startsWith(`/all-products`)) && window.innerWidth <= 991) ? "12rem" : "10rem"}}>↑</button>
       )}
     </>
   );

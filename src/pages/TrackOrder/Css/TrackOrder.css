@@ -20,6 +20,11 @@
     padding-top:45px;
 }
 
+.dftgyttredd .btn-main:hover{
+	background: var(--pink-main-color) !important;
+	border-color: var(--pink-main-color) !important;
+}
+
 .order-tracking{
 	text-align: center;
 	width: 33.33%;

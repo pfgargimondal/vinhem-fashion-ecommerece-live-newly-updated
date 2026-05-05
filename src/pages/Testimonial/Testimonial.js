@@ -772,7 +772,7 @@ export const Testimonial = () => {
                         </div>
                     </div>
                     {TestimonialDetails?.testimonial_content?.length > 0 && (
-                        <div className="dfgsfsfsfsdf d-flex justify-content-center align-items-center">
+                        <div className="dfgsfsfsfsdf d-flex justify-content-center align-items-center mt-3">
                             <button className="btn btn-main ascokpscdjoi" onClick={handlePrev} disabled={currentPage === 1}>Prev</button>
 
                             <div className="pagination_ff d-flex align-items-center">

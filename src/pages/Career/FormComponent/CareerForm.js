@@ -223,8 +223,8 @@ export const CareerForm = ({ jobOpenings }) => {
 
           <div className="col-lg-12">
             <div className="gjsdfgs">
-              <div className="dfbgjhdf5">
-                <button type="submit" className="btn btn-main px-4 py-3">
+              <div className="dfbgjhdf5 mt-3">
+                <button type="submit" className="btn btn-main">
                   Submit
                 </button>
               </div>

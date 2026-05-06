@@ -53,8 +53,11 @@ export const Blog = () => {
         const decodedCategory = decodeURIComponent(urlLastSegment || "");
         const decodedTag = decodeURIComponent(urlTagLastSegment || "").replace(/-/g, " ");
 
+        console.log(decodedCategory.toLowerCase(), 'decodedCategory');
+
         const categoryBlogs = dataBlogs.data.filter(
-            datablog => datablog.category_name?.toLowerCase() === decodedCategory.toLowerCase()
+            // datablog => datablog.category_name?.toLowerCase() === decodedCategory.toLowerCase()
+            datablog => datablog.head_category_slug?.toLowerCase() === decodedCategory.toLowerCase()
         );
 
         const tagBlogs = dataBlogs.data.filter(dtBl => {
@@ -258,7 +261,8 @@ export const Blog = () => {
                                 <ul className="efwcegqwedae d-flex flex-wrap list-unstyled py-3">
                                     {blogCategories.map(blogCategory => (
                                         <li className="px-4 mb-2">
-                                            <Link to={`/blog/category/${blogCategory?.category?.toLowerCase().replace(/\s+/g, "-")}`}>{blogCategory?.category.toLowerCase()} ({blogCategory.count})</Link>
+                                            {/* <Link to={`/blog/category/${blogCategory?.category?.toLowerCase().replace(/\s+/g, "-")}`}>{blogCategory?.category.toLowerCase()} ({blogCategory.count})</Link> */}
+                                            <Link to={""}>{blogCategory?.category.toLowerCase()} ({blogCategory.count})</Link>
                                         </li>
                                     ))}
                                 </ul>

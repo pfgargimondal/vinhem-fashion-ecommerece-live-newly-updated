@@ -449,8 +449,9 @@ export const Footer = ({ shouldHideFullHeaderFooterRoutes }) => {
                 <li className="fttr-info-divider">|</li>
 
                 <li className="dojelkwmriower"><i className="bi me-1 bi-telephone"></i> 
-                    <a href="tel:8981750096">
-                      <span>+91 8981750096</span>
+                    <a href="tel:7003672926">
+                      {/* <span>+91 8981750096</span> */}
+                      <span>+91 7003672926</span>
                     </a>
                 </li>
 
@@ -458,11 +459,12 @@ export const Footer = ({ shouldHideFullHeaderFooterRoutes }) => {
 
                 <li className="dojelkwmriower"><i className="bi me-1 bi-whatsapp"></i> 
                     <a
-                      href="https://wa.me/918981750096"
+                      href="https://wa.me/917003672926"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span>+91 8981750096</span>
+                      {/* <span>+91 8981750096</span> */}
+                      <span>+91 7003672926</span>
                     </a>
                 </li>
               </ul>

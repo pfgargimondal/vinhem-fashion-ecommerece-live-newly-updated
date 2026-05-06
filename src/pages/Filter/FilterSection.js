@@ -27,6 +27,8 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
 
   const rate = selectedCurrency?.exchange_rate_to_inr || 1;
   const currencyData = formatPrice(0, { returnParts: true });
+console.log(currencyData, 'currencyData');
+
   const currencySymbol = currencyData.symbol;
 
   // Converted display values

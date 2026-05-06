@@ -83,7 +83,7 @@ export const HeaderBlog = () => {
                                 </li>
                                 {blogsHeader.map(blogHeaderItem => (
                                     <li className="mx-3">
-                                        <Link to={blogHeaderItem.category_url}>{blogHeaderItem.head_category}</Link>
+                                        <Link to={`/blog/category/${blogHeaderItem?.head_category_slug}`}>{blogHeaderItem.head_category}</Link>
                                     </li>
                                 ))}
                                 <li className="mx-3">
@@ -109,7 +109,7 @@ export const HeaderBlog = () => {
                         </li>
                         {blogsHeader.map(blogHeaderItem => (
                             <li className="mx-3">
-                                <Link to={blogHeaderItem.category_url}>{blogHeaderItem.head_category}</Link>
+                                <Link to={`/blog/category/${blogHeaderItem?.head_category_slug}`}>{blogHeaderItem.head_category}</Link>
                             </li>
                         ))}
                         <li className="mx-3">

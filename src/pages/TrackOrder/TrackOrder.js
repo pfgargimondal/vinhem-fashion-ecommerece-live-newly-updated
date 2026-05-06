@@ -1,6 +1,7 @@
 import Table from "react-bootstrap/Table";
 import "./Css/TrackOrder.css";
 import { useEffect, useState } from "react";
+// eslint-disable-next-line
 import http, { BASE_URL } from "../../http";
 import Loader from "../../components/Loader/Loader";
 import { toast } from "react-toastify";
@@ -228,13 +229,31 @@ export const TrackOrder = () => {
                         <tr>
                           <td>{orderData.order_id}</td>
 
-                          <td>
+                          {/* <td>
                             {orderData.shipping_method} &nbsp;
                             {orderData?.pod && (
                               <>
                                 :  &nbsp;
                                 <a
                                    href={`${BASE_URL}/all_images/pod_files/${orderData.pod}`}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                >
+                                  Click Here
+                                </a>
+                              </>
+                            )}
+                          </td> */}
+
+                          <td>
+                            {orderData.shipping_method} &nbsp;
+                            {orderData?.shipping_method && (
+                              <>:  &nbsp;</>
+                            )}
+                            {orderData?.tracking_link && (
+                              <>
+                                <a
+                                   href={`${orderData.tracking_link}`}
                                    target="_blank"
                                    rel="noopener noreferrer"
                                 >

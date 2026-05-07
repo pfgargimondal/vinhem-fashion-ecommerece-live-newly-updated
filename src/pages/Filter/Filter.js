@@ -15,7 +15,7 @@ import { useMetaData } from "../../hooks/useMetaData";
 
 export const Filter = () => {
 
-  const { formatPrice } = useCurrency();
+  const { formatPrice, selectedCurrency } = useCurrency();
   const { user } = useAuth();
   const location = useLocation();
   // eslint-disable-next-line
@@ -210,6 +210,12 @@ export const Filter = () => {
 
     const searchParams = new URLSearchParams();   // 🔥 DO NOT use location.search
 
+    const rate = selectedCurrency?.exchange_rate_to_inr || 1;
+    const formatminprice = Math.floor(
+      (minPrice === 0 ? productMinPrice : minPrice) / rate
+    );
+    const formatmaxprice = Math.floor(maxPrice / rate);
+
     if (mainCategory)
       searchParams.set("main", mainCategory);
 
@@ -247,8 +253,9 @@ export const Filter = () => {
       searchParams.set("shippingTime", shippingTime);
 
     if (minPrice > 0 || maxPrice < 1000000)
-      searchParams.set("price", `${minPrice}-${maxPrice}`);
-    
+      // searchParams.set("price", `${minPrice}-${maxPrice}`);
+    searchParams.set("price", `${String(formatminprice).replace(/,/g, "")}-${String(formatmaxprice).replace(/,/g, "")}`);
+
 
     navigate(
       {
@@ -274,7 +281,10 @@ export const Filter = () => {
     minPrice,
     maxPrice,
     location.pathname,
-    navigate
+    navigate,
+    formatPrice,
+    productMinPrice,
+    selectedCurrency
   ]);
 
 
@@ -790,7 +800,16 @@ export const Filter = () => {
                       </div>
                     </div> */}
                     <div className="doewnkrhwer">
-                      <input type="checkbox" className="d-none" id="huidweujr" name="djikeiewr" checked={newIn} onChange={(e) => setNewArrival(e.target.checked)} />
+                      <input type="checkbox" className="d-none" id="huidweujr" name="djikeiewr" checked={newIn}
+                        onChange={(e) => {
+                          setLoading(true);
+
+                          setNewArrival(e.target.checked);
+                          
+                          setTimeout(() => {
+                            setLoading(false);
+                          }, 500);
+                        }} />
 
                       <label htmlFor="huidweujr" className="btn btn-main me-1">
                         <i className="bi me-1 bi-plus-circle-dotted"></i> New In
@@ -798,7 +817,16 @@ export const Filter = () => {
                     </div>
 
                     <div className="doewnkrhwer">
-                      <input type="checkbox" className="d-none" id="daedfweweer" name="djikeiewr" value="READY TO SHIP" checked={readyToShip} onChange={(e) => setReadyToShip(e.target.checked ? e.target.value : null)} />
+                      <input type="checkbox" className="d-none" id="daedfweweer" name="djikeiewr" value="READY TO SHIP" checked={readyToShip}
+                        onChange={(e) => {
+                          setLoading(true);
+
+                          setReadyToShip(e.target.checked)
+
+                          setTimeout(() => {
+                            setLoading(false);
+                          }, 500);
+                        }} />
 
                       <label htmlFor="daedfweweer" className="btn btn-main me-1">
                         <i className="bi me-1 bi-lightning-charge"></i> Ready to Ship
@@ -806,7 +834,16 @@ export const Filter = () => {
                     </div>
 
                     <div className="doewnkrhwer">
-                      <input type="checkbox" name="djikeiewr" className="d-none" id="gfdewerwr" checked={onSale} onChange={(e) => setOnSale(e.target.checked)} />
+                      <input type="checkbox" name="djikeiewr" className="d-none" id="gfdewerwr" checked={onSale}
+                        onChange={(e) => {
+                          setLoading(true);
+
+                          setOnSale(e.target.checked);
+
+                          setTimeout(() => {
+                            setLoading(false);
+                          }, 500);
+                        }} />
 
                       <label
                         htmlFor="gfdewerwr"
@@ -817,7 +854,17 @@ export const Filter = () => {
                     </div>
 
                     <div className="doewnkrhwer">
-                      <input type="checkbox" name="djikeiewr" className="d-none" id="asddettt" checked={cstmFit} onChange={(e) => setCstmFit(e.target.checked)} />
+                      <input type="checkbox" name="djikeiewr" className="d-none" id="asddettt" checked={cstmFit}
+                        onChange={(e) => {
+                          setLoading(true);
+
+                          setCstmFit(e.target.checked);
+
+                          setTimeout(() => {
+                            setLoading(false);
+                          }, 500);
+                        }
+                      } />
 
                       <label htmlFor="asddettt" className="btn btn-main me-1">
                         <i class="bi me-1 bi-vignette"></i>  Custom-fit
@@ -830,10 +877,19 @@ export const Filter = () => {
                   <div className="podwejorjwierwer d-none d-lg-flex d-md-flex align-items-center">
                     <h5 className="mb-0">Sort By:</h5>
 
-                    <select name="" className="form-select" id="" onChange={(e) => setSortBy(e.target.value)}>
-                      <option selected value="RECOMMENDED">Recommended</option>
+                    <select name="" className="form-select" id="" value={sortBy || "RECOMMENDED"} 
+                      onChange={(e) => {
+                        setLoading(true);
 
-                      <option value="NEW_ARRIVALS">New Arrivals</option>
+                        setSortBy(e.target.value);
+
+                        setTimeout(() => {
+                          setLoading(false);
+                        }, 500);
+                      }}>
+                      <option value="RECOMMENDED">Recommended</option>
+
+                      <option value="NEW_ARRIVAL">New Arrivals</option>
 
                       <option value="BEST_SELLER">Best Seller</option>
 
@@ -861,7 +917,8 @@ export const Filter = () => {
                                 </div>
                               )}
 
-                              {newIn && (product?.new_arrival === "1" || product?.new_arrival === true) && (
+                              {/* {newIn && (product?.new_arrival === "1" || product?.new_arrival === true) && ( */}
+                              {(category === "new-in" || newIn) && (product?.new_arrival === "1" || product?.new_arrival === true) && (
                                 <div className="nw-arrvl px-0">
                                   <span className="price"><i>NEW IN</i></span>
                                 </div>

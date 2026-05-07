@@ -27,7 +27,6 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
 
   const rate = selectedCurrency?.exchange_rate_to_inr || 1;
   const currencyData = formatPrice(0, { returnParts: true });
-console.log(currencyData, 'currencyData');
 
   const currencySymbol = currencyData.symbol;
 
@@ -58,7 +57,7 @@ console.log(currencyData, 'currencyData');
     }));
   };
 
-  console.log(allFilterMappingdata, "hi");
+  // console.log(allFilterMappingdata, "hi");
 
 
   const toTitleCase = (str = "") =>
@@ -67,6 +66,10 @@ console.log(currencyData, 'currencyData');
       .replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 
   const handleSelect = (filterType, value) => {
+
+    if (window.innerWidth > 991) {
+      setLoading(true);
+    }
     switch (filterType.toLowerCase()) {
       case "color":
         setColor(value);
@@ -114,6 +117,10 @@ console.log(currencyData, 'currencyData');
       default:
         break;
     }
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }
 
 
@@ -307,8 +314,8 @@ console.log(currencyData, 'currencyData');
                   </div>
 
                   <div className="diwenjriwejrjhwer d-flex align-items-center justify-content-between mt-3">
-                    <span>{currencySymbol}{Number(minDisplay).toLocaleString("en-IN")}</span>
-                    <span>{currencySymbol}{Number(maxDisplay).toLocaleString("en-IN")}</span>
+                    <span>{currencySymbol}&nbsp;{Number(minDisplay).toLocaleString("en-IN")}</span>
+                    <span>{currencySymbol}&nbsp;{Number(maxDisplay).toLocaleString("en-IN")}</span>
                   </div>
                 </div>
               </div>

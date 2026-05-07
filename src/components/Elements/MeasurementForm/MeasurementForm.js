@@ -575,6 +575,23 @@ export const MeasurementForm = ({
 
         {isOpen && (
           <ul className="dropdown-list xdvdbdrsaegsf">
+            <li
+              className="default-option"
+              onClick={() => {
+                onChange({
+                  target: {
+                    name,
+                    value: "",
+                    type: "select-one"
+                  }
+                });
+
+                setSearch("");
+                setActiveDropdown(null);
+              }}
+            >
+              {placeholder}
+            </li>
             {filteredOptions.length > 0 ? (
               filteredOptions.map((item, i) => (
                 <li
@@ -1625,7 +1642,7 @@ export const MeasurementForm = ({
             </div>
 
             {activeGuide && (
-              <div className="col-lg-6 d-none d-lg-block d-md-block">
+              <div className="col-lg-6 cgbhdbhdfshfghxcfg d-none d-lg-block d-md-block">
                 <div className="doienkwjrewewr p-5 pt-2">
                   <span
                     className="bck-form"

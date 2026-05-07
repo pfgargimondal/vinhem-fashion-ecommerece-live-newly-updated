@@ -23,50 +23,43 @@ export const CurrencyProvider = ({ children }) => {
     }
   }, [selectedCurrency]);
 
-  const formatPrice = (priceInInr = 0, options = {}) => {
-    const { showDecimals = false, returnParts = false } = options;
+const formatPrice = (priceInInr = 0, options = {}) => {
+  const { showDecimals = false, returnParts = false } = options;
 
-    const currency = selectedCurrency || {
-      currency_code: "INR",
-      exchange_rate_to_inr: 1,
-      locale: "en-IN",
-    };
-
-    // ✅ Keep exact decimal for calculation
-    const convertedPrice =
-      priceInInr / (currency.exchange_rate_to_inr || 1);
-
-    // ✅ Round ONLY for display
-    const displayPrice = showDecimals
-      ? convertedPrice
-      : Math.round(convertedPrice);
-
-    const formatter = new Intl.NumberFormat(currency.locale || "en-IN", {
-      style: "currency",
-      currency: currency.currency_code || "INR",
-      minimumFractionDigits: showDecimals ? 2 : 0,
-      maximumFractionDigits: showDecimals ? 2 : 0,
-    });
-
-    if (!returnParts) {
-      return formatter.format(displayPrice);
-    }
-
-    const parts = formatter.formatToParts(displayPrice);
-
-    const symbol = parts.find(p => p.type === "currency")?.value || "";
-    const number = parts
-      .filter(p => p.type !== "currency")
-      .map(p => p.value)
-      .join("")
-      .trim();
-
-    return {
-      symbol,
-      number,
-      raw: convertedPrice, // 🔥 still original decimal for backend usage
-    };
+  const currency = selectedCurrency || {
+    currency_code: "INR",
+    currency_symbol: "₹",
+    exchange_rate_to_inr: 1,
+    locale: "en-IN",
   };
+
+  const convertedPrice =
+    priceInInr / (currency.exchange_rate_to_inr || 1);
+
+  const displayPrice = showDecimals
+    ? convertedPrice
+    : Math.round(convertedPrice);
+
+  // ✅ Number only formatter
+  const formatter = new Intl.NumberFormat(currency.locale || "en-IN", {
+    minimumFractionDigits: showDecimals ? 2 : 0,
+    maximumFractionDigits: showDecimals ? 2 : 0,
+  });
+
+  const formattedNumber = formatter.format(displayPrice);
+
+  const symbol = currency.currency_symbol || "₹";
+
+  if (!returnParts) {
+    return `${symbol} ${formattedNumber}`;
+  }
+
+  return {
+    symbol,
+    number: formattedNumber,
+    raw: convertedPrice,
+  };
+};
 
 
 

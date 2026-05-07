@@ -1054,8 +1054,20 @@ export const FilterProvider = ({ children }) => {
     //sortby
 
     function setSortBy(sortBy) {
-        const newState = { ...state, sortBy };
-        dispatch({ type: "SORT_BY", payload: { sortBy } });
+        const isNewArrival = sortBy === "NEW_ARRIVAL";
+
+        const newState = { ...state, sortBy, newIn: isNewArrival };
+
+        dispatch({
+            type: "SORT_BY",
+            payload: { sortBy }
+        });
+
+        dispatch({
+            type: "NEW_ARRIVAL",
+            payload: { newIn: isNewArrival }
+        });
+
         updateURLWithFilters(newState);
     }
 
@@ -1064,8 +1076,6 @@ export const FilterProvider = ({ children }) => {
             return products.sort((a, b) => a.selling_price - b.selling_price);
         } else if (state.sortBy === "HIGH_TO_LOW") {
             return products.sort((a, b) => b.selling_price - a.selling_price);
-        } else if (state.sortBy === "NEW_ARRIVALS") {
-            return products.filter(product => product.new_arrival === "1" || product?.new_arrival === true);
         } else if (state.sortBy === "BEST_SELLER") {
             return products.filter(product => product.best_seller === "1");
         } else if (state.sortBy === "DISCOUNT_HIGH_TO_LOW") {
@@ -1075,15 +1085,29 @@ export const FilterProvider = ({ children }) => {
         }
     }
 
-    // console.log(state.sortBy)
-
 
 
     //new arrival
 
     function setNewArrival(value) {
-        const newState = { ...state, newIn: value };
-        dispatch({ type: "NEW_ARRIVAL", payload: { newIn: value } });
+        const newState = {
+            ...state,
+            newIn: value,
+            sortBy: value ? "NEW_ARRIVAL" : null
+        };
+
+        dispatch({
+            type: "NEW_ARRIVAL",
+            payload: { newIn: value }
+        });
+
+        dispatch({
+            type: "SORT_BY",
+            payload: {
+                sortBy: value ? "NEW_ARRIVAL" : null
+            }
+        });
+
         updateURLWithFilters(newState);
     }
 

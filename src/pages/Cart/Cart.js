@@ -2324,7 +2324,7 @@ export const Cart = () => {
                                           </div>
                                         )}
                           
-                                        <div className="djkwehrwerwer d-flex align-items-center justify-content-between">
+                                        <div className="djkwehrwerwer drhfrgwdshdgdg d-flex align-items-center justify-content-between">
                                           <h6 className="mb-0 drthsftjh">
                                             <i class="bi me-1 bi-calendar-week"></i>
                                             Standard Delivery by
@@ -2336,6 +2336,16 @@ export const Cart = () => {
                                       </div>
                                     </div>
                                   </div>
+                                </div>
+
+                                <div className="djkwehrwerwer gbhgfjnherfgwrrw d-none align-items-center justify-content-between">
+                                  <h6 className="mb-0 drthsftjh">
+                                    <i class="bi me-1 bi-calendar-week"></i>
+                                    Standard Delivery by
+                                      {getEstimatedShippingDate(
+                                        cartItemsVal.shipping_time
+                                      )}
+                                  </h6>
                                 </div>
                               </div>
                               );

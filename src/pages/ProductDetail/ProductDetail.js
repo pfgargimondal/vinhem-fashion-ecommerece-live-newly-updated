@@ -3041,16 +3041,16 @@ for (let i = 0; i < filteredSpecs.length; i++) {
             : "mssrmnt-sbmt-modal mssrmnt-sbmt-modal-hide"
         } position-fixed bg-white`}
       >
-        <div className="size-guide-modal-header d-flex align-items-center justify-content-end px-4 py-2">
+        <div className="size-guide-modal-header shgjfgsrarjyerrr d-flex align-items-center justify-content-end px-4 py-2">
           {/* <h4 className="mb-0"></h4> */}
 
           <i
-            class="fa-solid fa-xmark"
+            class="fa-solid fnfdgdfsffff fa-xmark"
             onClick={() => setMssrmntSbmtConfrm(false)}
           ></i>
         </div>
 
-        <div className="dkewhrwerwer px-4 py-3">
+        <div className="dkewhrwerwer px-4 pb-3">
           <div className="dkjjenwjknkweh text-center">
             <h4>Once submitted then cannot be changed</h4>
 

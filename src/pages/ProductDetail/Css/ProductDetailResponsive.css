@@ -667,6 +667,7 @@
     .dewnrkhwerwe{
         display: flex;
         margin-top: 1rem;
+        flex-direction: column;
     }
     
     .dfghjdfgdfgf.ps-2{        
@@ -1093,6 +1094,17 @@
 
     .xdvdbdrsaegsf {
      height: 30vw;
+    }
+
+    .cgbhdbhdfshfghxcfg.d-none{
+        display: block !important;
+        top: 0;
+        position: absolute;
+        right: 0;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        height: 100%;
     }
 }
 

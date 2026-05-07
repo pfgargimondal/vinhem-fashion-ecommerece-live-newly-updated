@@ -259,6 +259,7 @@
 .inputAndLeftText 
 {
   /* line-height: 60px; */
+  align-items: center;
   margin-top: 9px;
 
 }
@@ -315,6 +316,7 @@
 	 -webkit-appearance: none;
 	 -moz-appearance: none;
 	 appearance: none;
+   flex: none;
 	 padding: 0;
 	 -webkit-print-color-adjust: exact;
 	 print-color-adjust: exact;
@@ -468,3 +470,41 @@
 
 
 
+
+@media only screen and (max-width: 428px){
+  .cart-wrapper .diwebjrwert_left .dweihriwerwerw p,
+  .cart-wrapper .diwebjrwert_left .dweihriwerwerw ul li {
+    font-size: 0.7rem;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 393px){
+  .cart-wrapper .diwebjrwert_left .dweihriwerwerw p,
+  .cart-wrapper .diwebjrwert_left .dweihriwerwerw ul li {
+    font-size: 2.3vw;
+  }
+
+  .cart-wrapper .dweoihrwerwer table tr td{
+    white-space: nowrap;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 338px){
+  .cart-wrapper .diwebjrwert_left .odnwejirhwerwer p .btn-main {
+    font-size: 3vw;
+  }
+
+  .svgdgwefrewrwrr .dewhrowerwer p{
+    font-size: 3.5vw;
+  }
+
+  .cart-wrapper .diwebjrwert_left .dfgjhbdfg .dnweghbjewrwer .drthsftjh {
+    font-size: 4vw;
+  }
+}

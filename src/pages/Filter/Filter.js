@@ -658,7 +658,7 @@ export const Filter = () => {
         {category && subcategory && (
           <div
             className="advtsmnt-bnnr my-4 overflow-hidden"
-            style={{ borderRadius: "1rem" }}
+            style={{ borderRadius: "0.5rem" }}
           >
             {filterdetails
               && (
@@ -687,7 +687,7 @@ export const Filter = () => {
         )}
 
         <div className="row mt-5 dffedfgwetttt">
-          <div className="col-lg-3">
+          <div className="col-lg-3 sgvadfbgsAGvsg">
             <div className="filter-options" style={
               category && !subcategory && !isSpecialPage
                 ? { transform: "translateY(-18vw)" }
@@ -1149,8 +1149,18 @@ export const Filter = () => {
               name="djikeiewr"
               className="d-none"
               id="rcmdd"
+              value={sortBy || "RECOMMENDED"} 
               checked={sortBy === "RECOMMENDED"}
-              onChange={() => { setSortBy("RECOMMENDED"); handleResSortByClose() }}
+              // onChange={() => { setSortBy("RECOMMENDED"); handleResSortByClose() }}
+              onChange={(e) => {
+                setLoading(true);
+
+                setSortBy("RECOMMENDED"); handleResSortByClose()
+                
+                setTimeout(() => {
+                  setLoading(false);
+                }, 500);
+              }}
             />
 
             <label htmlFor="rcmdd" className="srt-by-options w-100 p-2">
@@ -1164,8 +1174,18 @@ export const Filter = () => {
               name="djikeiewr"
               className="d-none"
               id="na"
-              checked={sortBy === "NEW_ARRIVALS"}
-              onChange={() => { setSortBy("NEW_ARRIVALS"); handleResSortByClose() }}
+              value={sortBy || "NEW_ARRIVAL"} 
+              checked={sortBy === "NEW_ARRIVAL"}
+              // onChange={() => { setSortBy("NEW_ARRIVALS"); handleResSortByClose() }}
+              onChange={(e) => {
+                setLoading(true);
+
+                setSortBy("NEW_ARRIVAL"); handleResSortByClose()
+                
+                setTimeout(() => {
+                  setLoading(false);
+                }, 500);
+              }}
             />
 
             <label htmlFor="na" className="srt-by-options w-100 p-2">
@@ -1179,23 +1199,39 @@ export const Filter = () => {
               name="djikeiewr"
               className="d-none"
               id="plth"
+              value={sortBy || "BEST_SELLER"} 
               checked={sortBy === "BEST_SELLER"}
-              onChange={() => { setSortBy("BEST_SELLER"); handleResSortByClose() }}
+              // onChange={() => { setSortBy("BEST_SELLER"); handleResSortByClose() }}
+              onChange={(e) => {
+                setLoading(true);
+                setSortBy("BEST_SELLER"); handleResSortByClose()
+                setTimeout(() => {
+                  setLoading(false);
+                }, 500);
+              }}
             />
 
             <label htmlFor="plth" className="srt-by-options w-100 p-2">
               <p className="mb-0">Best Seller</p>
             </label>
           </div>
-
+          
           <div className="deiwhriwehrwe">
             <input
               type="radio"
               name="djikeiewr"
               className="d-none"
               id="phtl"
+              value={sortBy || "LOW_TO_HIGH"} 
               checked={sortBy === "LOW_TO_HIGH"}
-              onChange={() => { setSortBy("LOW_TO_HIGH"); handleResSortByClose() }}
+              // onChange={() => { setSortBy("LOW_TO_HIGH"); handleResSortByClose() }}
+              onChange={(e) => {
+                setLoading(true);
+                setSortBy("LOW_TO_HIGH"); handleResSortByClose()
+                setTimeout(() => {
+                  setLoading(false);
+                }, 500);
+              }}
             />
 
             <label htmlFor="phtl" className="srt-by-options w-100 p-2">
@@ -1210,7 +1246,15 @@ export const Filter = () => {
               className="d-none"
               id="dlth"
               checked={sortBy === "HIGH_TO_LOW"}
-              onChange={() => { setSortBy("HIGH_TO_LOW"); handleResSortByClose() }}
+              value={sortBy || "HIGH_TO_LOW"} 
+              // onChange={() => { setSortBy("HIGH_TO_LOW"); handleResSortByClose() }}
+              onChange={(e) => {
+                setLoading(true);
+                setSortBy("HIGH_TO_LOW"); handleResSortByClose()
+                setTimeout(() => {
+                  setLoading(false);
+                }, 500);
+              }}
             />
 
             <label htmlFor="dlth" className="srt-by-options w-100 p-2">
@@ -1224,8 +1268,16 @@ export const Filter = () => {
               name="djikeiewr"
               className="d-none"
               id="dadw"
+              value={sortBy || "DISCOUNT_HIGH_TO_LOW"} 
               checked={sortBy === "DISCOUNT_HIGH_TO_LOW"}
-              onChange={() => { setSortBy("DISCOUNT_HIGH_TO_LOW"); handleResSortByClose() }}
+              // onChange={() => { setSortBy("DISCOUNT_HIGH_TO_LOW"); handleResSortByClose() }}
+              onChange={(e) => {
+                setLoading(true);
+                setSortBy("DISCOUNT_HIGH_TO_LOW"); handleResSortByClose()
+                setTimeout(() => {
+                  setLoading(false);
+                }, 500);
+              }}
             />
 
             <label htmlFor="dadw" className="srt-by-options w-100 p-2">
@@ -1234,6 +1286,7 @@ export const Filter = () => {
           </div>
         </div>
       </div>
+
 
       <div className="filter-bottom-fixed d-none pt-3 bg-white w-100">
         <div className="d-flex justify-content-around">

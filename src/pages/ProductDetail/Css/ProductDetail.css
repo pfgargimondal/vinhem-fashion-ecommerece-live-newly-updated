@@ -306,6 +306,7 @@
 .dsclmer {
   background: #f5f5f5;
   border-radius: 5px;
+  text-align: justify;
 }
 
 .mlkdfgmlkmlkmlk h6 {
@@ -2058,12 +2059,12 @@ h4.oijiwuihfih-eiuheir{
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.searchable-dropdown input.form-control{
+.searchable-dropdownnfbgfg input.form-control{
   border-radius: var(--bs-border-radius) !important;
 }
 
-.searchable-dropdown input:focus,
-.searchable-dropdown input.active-input {
+.searchable-dropdownnfbgfg input:focus,
+.searchable-dropdownnfbgfg input.active-input {
   border-color: var(--pink-main-color);
 }
 

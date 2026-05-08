@@ -38,7 +38,8 @@ export const ResponsiveNavbarBottom = ({ setResSearchToggle, setResSignBottom })
 
         <div className="dwsfwwer mx-4 text-center">
             <a
-                href="https://wa.me/918981750096"
+                // href="https://wa.me/918981750096"
+                href="https://wa.me/917003672926"
                 target="_blank"
                 rel="noopener noreferrer"
             >

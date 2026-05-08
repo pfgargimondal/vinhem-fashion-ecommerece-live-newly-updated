@@ -547,7 +547,7 @@ export const MeasurementForm = ({
     useEffect(() => {
       const handleClickOutside = (e) => {
         // ✅ check if click is inside ANY dropdown
-        if (e.target.closest(".searchable-dropdown")) {
+        if (e.target.closest(".searchable-dropdownnfbgfg")) {
           return;
         }
 
@@ -560,7 +560,7 @@ export const MeasurementForm = ({
     }, [setActiveDropdown]);
 
     return (
-      <div ref={ref} className="searchable-dropdown position-relative">
+      <div ref={ref} className="searchable-dropdownnfbgfg position-relative">
         <input
           type="text"
           className={`form-control ${isOpen ? "active-input" : ""}`}

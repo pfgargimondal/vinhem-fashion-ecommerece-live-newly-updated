@@ -128,8 +128,8 @@ footer .footer-bottom .fb-payment-options li img {
 }
 
 footer .footer-bottom .fb-payment-options li:last-child img{
-  /* width: 4vw; */
-  width: 16vw;
+  width: 4vw;
+  /* width: 16vw; */
 }
 
 .duiwehihiwejiurwer{
@@ -151,5 +151,10 @@ footer .footer-bottom .fb-payment-options li:last-child img{
 @media only screen and (max-width: 991px){
   footer{
     padding-bottom: 5rem;
+  }
+
+  footer .footer-bottom .fb-payment-options li:last-child img{
+    /* width: 4vw; */
+    width: 16vw;
   }
 }

@@ -784,8 +784,8 @@
 
     .dfgndfjhgdf .btn{
         width: auto;
-        padding-top: 0.9rem;
-        padding-bottom: 0.9rem;
+        padding-top: 0.9rem !important;
+        padding-bottom: 0.9rem !important;
         font-size: 1.1rem;
     }
     

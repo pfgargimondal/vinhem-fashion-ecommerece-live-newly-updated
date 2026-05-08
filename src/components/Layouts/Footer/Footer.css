@@ -128,7 +128,8 @@ footer .footer-bottom .fb-payment-options li img {
 }
 
 footer .footer-bottom .fb-payment-options li:last-child img{
-  width: 4vw;
+  /* width: 4vw; */
+  width: 16vw;
 }
 
 .duiwehihiwejiurwer{

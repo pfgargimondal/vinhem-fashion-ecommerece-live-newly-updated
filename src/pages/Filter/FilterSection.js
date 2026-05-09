@@ -9,7 +9,7 @@ import Loader from "../../components/Loader/Loader";
 import { useCurrency } from "../../context/CurrencyContext";
 
 
-export default function FilterSection({ setResFltrMenu, allFilterMappingdata, filterCategories, category, subcategory, productMinPrice }) {
+export default function FilterSection({ setResFltrMenu, allFilterMappingdata, filterCategories, category, subcategory, productMinPrice, setFilterLoading }) {
   const { minPrice, maxPrice, setPrice, mainCategory, setMainCategory, subCategory, setSubCategory, filterCategoryCntxt, setFilterCategory, setFilterCategoryName, color, setColor, material, setMaterial, designer, setDesigner, plusSize, setPlusSize, occasion, setOccasion, size, setSize, celebrity, setCelebrity, discount, setDiscount, shippingTime, setShippingTime, resetFilter } = useFilter();
   const [selectedTheme, setSelectedTheme] = useState("");
   const [sbctgry, setSbctgry] = useState(null);
@@ -133,9 +133,27 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
   }
 
   const handleResponsiveClearFilter = () => {
-    resetFilter();
+    // resetFilter();
+    // setResFltrMenu(false);
 
-    setResFltrMenu(false);
+      setFilterLoading(true);
+
+      resetFilter();
+
+      setTimeout(() => {
+        setResFltrMenu(false);
+        setFilterLoading(false);
+      }, 1000);
+
+  }
+
+  const applyFilterResponsive = () => {
+    setFilterLoading(true);
+
+      setTimeout(() => {
+        setResFltrMenu(false);
+        setFilterLoading(false);
+      }, 1000);
   }
 
 
@@ -1213,7 +1231,8 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
           <div className="doihweuijewrr bg-white d-flex align-items-center">
             <button onClick={handleResponsiveClearFilter} className="btn me-1 btn-main w-100 py-4 rounded-0">CLEAR ALL</button>
 
-            <button onClick={() => setResFltrMenu(false)} className="btn ms-1 btn-main w-100 py-4 rounded-0">APPLY</button>
+            {/* <button onClick={() => setResFltrMenu(false)} className="btn ms-1 btn-main w-100 py-4 rounded-0">APPLY</button> */}
+            <button onClick={applyFilterResponsive} className="btn ms-1 btn-main w-100 py-4 rounded-0">APPLY</button>
           </div>
         </div>
       </div>

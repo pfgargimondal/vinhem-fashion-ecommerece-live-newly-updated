@@ -36,6 +36,7 @@ export const Filter = () => {
 
   const { loading: wishlistLoading, wishlistIds, addToWishlist, removeFromWishlist } = useWishlist();
   const [loading, setLoading] = useState(true);
+  const [filterLoading, setFilterLoading] = useState(false);
   const [productsLoaded, setProductsLoaded] = useState(false);
   const [filtersLoaded, setFiltersLoaded] = useState(false);
 
@@ -90,6 +91,7 @@ export const Filter = () => {
 
 
   const handleFilterOptionRemove = ({ type, value }) => {
+    setFilterLoading(true);
 
     // 1. Remove from state
     switch (type) {
@@ -107,6 +109,10 @@ export const Filter = () => {
       case "shippingTime": removeShippingTime(value); break;
       default: break;
     }
+
+    setTimeout(() => {
+        setFilterLoading(false);
+    }, 1000);
 
     // 2. Update the URL after a tiny delay (to make sure state is updated)
     // setTimeout(() => {
@@ -287,6 +293,15 @@ export const Filter = () => {
     selectedCurrency
   ]);
 
+  const handleClearFilter = () => {
+      setFilterLoading(true);
+
+      resetFilter();
+
+      setTimeout(() => {
+          setFilterLoading(false);
+      }, 1000);
+  };
 
 
   const productsPerPage = 24;
@@ -576,7 +591,7 @@ export const Filter = () => {
     // category === "new-in" ||
     // category === "ready-to-ship";
 
-  if (loading || wishlistLoading) {
+  if (loading || wishlistLoading || filterLoading) {
     return <Loader />;
   }
 
@@ -767,7 +782,8 @@ export const Filter = () => {
                   <i class="fa-solid me-1 fa-filter"></i> Refine
                 </h5>
 
-                <h6 onClick={() => resetFilter()} className="mb-0">Clear All</h6>
+                {/* <h6 onClick={() => resetFilter()} className="mb-0">Clear All</h6> */}
+                <h6 onClick={handleClearFilter} className="mb-0">Clear All</h6>
               </div>
 
               <div
@@ -775,7 +791,7 @@ export const Filter = () => {
                   }`}
                 id="res-filtr-nav"
               >
-                <FilterSection category={category} subcategory={subcategory} filterCategory={filterCategory} setResFltrMenu={setResFltrMenu} allFilterMappingdata={allFilterMappingdata} filterCategories={filterCategories} productMinPrice={productMinPrice} />
+                <FilterSection category={category} subcategory={subcategory} filterCategory={filterCategory} setResFltrMenu={setResFltrMenu} allFilterMappingdata={allFilterMappingdata} filterCategories={filterCategories} productMinPrice={productMinPrice} setFilterLoading={setFilterLoading}/>
               </div>
             </div>
           </div>

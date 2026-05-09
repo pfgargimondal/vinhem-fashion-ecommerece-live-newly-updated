@@ -238,6 +238,10 @@
         max-width: 100%;
         overflow-x: auto;
     }
+    
+    .safsrfwee img{
+        height: auto;
+    }
 
     .mnctgy a{
         color: black;

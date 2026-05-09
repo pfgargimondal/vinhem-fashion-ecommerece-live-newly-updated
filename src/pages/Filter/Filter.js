@@ -75,6 +75,8 @@ export const Filter = () => {
      ...(shippingTime ? [{ type: "shippingTime", value: shippingTime }] : []),
   ];
 
+  console.log(filterOptionsItems);
+
   const DEFAULT_VISIBLE = 6;
 
   const [selectedFilterOptions, setSelectedFilterOptions] = useState(DEFAULT_VISIBLE);
@@ -708,8 +710,9 @@ export const Filter = () => {
                 ? { transform: "translateY(-18vw)" }
                 : {}
             }>
-              <div className="dweihrihwerwerwer pb-4">
-                <div className="doeihrmwerwer d-flex flex-wrap">
+              <div className="dweihrihwerwerwer">
+              {filterOptionsItems && (
+                <div className="doeihrmwerwer d-flex flex-wrap pb-4">
                   {filterOptionsItems.slice(0, selectedFilterOptions).map(item => {
                       if (typeof item?.value !== "string") return null;
 
@@ -765,6 +768,7 @@ export const Filter = () => {
                     })}
 
                 </div>
+              )}                
 
                 {filterOptionsItems.length > DEFAULT_VISIBLE && (
                   <p onClick={handleSelectedFilterOptionsToggle} className="mb-0 ms-4 cursor-pointer">

@@ -749,7 +749,7 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                 <i class="fa-solid fa-xmark" onClick={() => setResFltrMenu(false)}></i>
               </div>
 
-              <Row className="gx-3">
+              <Row className="h-100 gx-3">
                 <Col xs={4}>
                   <Nav variant="pills" className="dfgefsertttt sticky-top flex-column h-100">
                     <Nav.Item>

@@ -100,6 +100,10 @@
         transition: 0.2s ease-in-out;
     }
 
+    .doeihrmwerwer.pb-4{
+        padding-bottom: 1rem !important;
+    }
+
     .doewnkrhwer{
         flex: 0 0 auto;
     }
@@ -240,6 +244,7 @@
 
     .dfgefsertttt{
         border-right: 1px solid var(--light-background-color);
+        background: #f0f0f0;
     }
 
     .idjweihewr .nav-link.active{

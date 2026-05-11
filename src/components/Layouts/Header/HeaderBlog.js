@@ -125,7 +125,7 @@ export const HeaderBlog = () => {
         <div className={`${hbModal ? "hb-modal" : "hb-modal hb-modal-hide"} position-fixed`}>
             <form onSubmit={handleSearch}>
                 <div className="diewhirjwer position-realtive">
-                    <input ref={searchRef} type="text" className="form-control" placeholder="Search for products" />
+                    <input ref={searchRef} type="text" className="form-control" placeholder="Search Here" />
 
                     <button className="btn position-absolute px-3 btn-main"><i class="bi bi-search"></i></button>
                 </div>

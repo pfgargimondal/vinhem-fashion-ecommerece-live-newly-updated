@@ -315,7 +315,7 @@ export const Blog = () => {
                                     </li>
                                 </ul> */}
 
-                                <div className="social-icons-container">
+                                {/* <div className="social-icons-container">
                                     <ul className="mb-0 ps-0">
                                         <li>
                                             <a href="/">
@@ -346,6 +346,16 @@ export const Blog = () => {
                                                 <i className="fa-brands fa-youtube" />
                                             </a>
                                         </li>
+                                    </ul>
+                                </div> */}
+
+                                <div className="footer-social-icons">
+                                    <ul className="social-icons ps-0">
+                                        <li><a href="/" className="social-icon"> <i className="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="/" className="social-icon"> <i className="fa-brands fa-x"></i></a></li>
+                                        <li><a href="/" className="social-icon"> <i className="fa-brands fa-instagram"></i></a></li>
+                                        <li><a href="/" className="social-icon"> <i className="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="/" className="social-icon"> <i className="fa-brands fa-youtube"></i></a></li>
                                     </ul>
                                 </div>
                             </div>  

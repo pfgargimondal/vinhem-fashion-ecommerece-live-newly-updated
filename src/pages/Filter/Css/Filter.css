@@ -370,6 +370,7 @@
   background: #fff0fe !important;
   border-color: var(--pink-main-color) !important;
   font-weight: 500;
+  color: #000 !important;
 }
 .btn-filter-tag.btn-main i{
   width: 1.2rem;

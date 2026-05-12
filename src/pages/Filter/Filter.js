@@ -75,7 +75,7 @@ export const Filter = () => {
      ...(shippingTime ? [{ type: "shippingTime", value: shippingTime }] : []),
   ];
 
-  console.log(filterOptionsItems);
+  // console.log(filterOptionsItems);
 
   const DEFAULT_VISIBLE = 6;
 
@@ -111,6 +111,72 @@ export const Filter = () => {
       case "shippingTime": removeShippingTime(value); break;
       default: break;
     }
+
+    // REMOVE FROM URL
+    const params = new URLSearchParams(location.search);
+
+    switch (type) {
+
+        case "mainCategory":
+            params.delete("main");
+            break;
+
+        case "subCategory":
+            params.delete("subpaths");
+            break;
+
+        case "filterCategoryCntxt":
+            params.delete("filterpaths");
+            break;
+
+        case "color":
+            params.delete("color");
+            break;
+
+        case "material":
+            params.delete("material");
+            break;
+
+        case "designer":
+            params.delete("designer");
+            break;
+
+        case "plusSize":
+            params.delete("plusSize");
+            break;
+
+        case "occasion":
+            params.delete("occasion");
+            break;
+
+        case "size":
+            params.delete("size");
+            break;
+
+        case "celebrity":
+            params.delete("celebrity");
+            break;
+
+        case "discount":
+            params.delete("discount");
+            break;
+
+        case "shippingTime":
+            params.delete("shippingTime");
+            break;
+
+        default:
+            break;
+    }
+
+    navigate(
+        {
+            pathname: location.pathname,
+            search: params.toString()
+        },
+        { replace: true }
+    );
+
 
     setTimeout(() => {
         setFilterLoading(false);
@@ -216,7 +282,8 @@ export const Filter = () => {
 
   useEffect(() => {
 
-    const searchParams = new URLSearchParams();   // 🔥 DO NOT use location.search
+    // const searchParams = new URLSearchParams();   // 🔥 DO NOT use location.search
+    const searchParams = new URLSearchParams(location.search);   
 
     const rate = selectedCurrency?.exchange_rate_to_inr || 1;
     const formatminprice = Math.floor(
@@ -289,6 +356,7 @@ export const Filter = () => {
     minPrice,
     maxPrice,
     location.pathname,
+    location.search,
     navigate,
     formatPrice,
     productMinPrice,
@@ -460,9 +528,16 @@ export const Filter = () => {
           ? allProducts.filter((product) => {
               const name = product.product_name?.toLowerCase() || "";
 
+              const productPID = product.PID?.toLowerCase() || "";
+              const productItemID = product.item_id?.toLowerCase() || "";
+
               return normalizedSearch
                 .split(/\s+/)
-                .every((term) => name.includes(term));
+                .every((term) => 
+                  name.includes(term) || 
+                  productPID.includes(term) || 
+                  productItemID.includes(term)
+              );
             })
           : allProducts;
 

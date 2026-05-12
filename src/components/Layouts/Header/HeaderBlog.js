@@ -14,14 +14,27 @@ export const HeaderBlog = () => {
     const [loading, setLoading] = useState(false);
     const [blogsHeader, setBlogsHeader] = useState([]);
 
+    // const handleSearch = (e) => {
+    //     e.preventDefault();
+    //     const searchValue = searchRef.current?.value?.trim();
+
+    //     searchValue && navigate(`/all-products?search=${encodeURIComponent(searchValue)}`);
+        
+    //     searchRef.current.value = "";
+    // }
+
     const handleSearch = (e) => {
         e.preventDefault();
         const searchValue = searchRef.current?.value?.trim();
 
-        searchValue && navigate(`/all-products?search=${encodeURIComponent(searchValue)}`);
-        
+        if (searchValue) {
+            navigate(`/blog?search=${encodeURIComponent(searchValue)}`);
+        } else {
+            navigate(`/blog`);
+        }
         searchRef.current.value = "";
-    }
+    };
+
 
     const handleHbModalToggle = () => {
         const html = document.querySelector("html");
@@ -94,7 +107,7 @@ export const HeaderBlog = () => {
                     </label>
 
                     <div className="deowjrkjweirew text-center">
-                        <Link to="/"><img src={Logo} alt="" /></Link>
+                        <Link to="/blog"><img src={Logo} alt="" /></Link>
                     </div>
 
                     <div className="dasfsreer position-absolute">

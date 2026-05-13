@@ -1642,7 +1642,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
 
                                       <img
                                         src={optimizeImage(
-                                          `/images/whatsapp.png`
+                                          `/images/whatsapp.webp`
                                         )}
                                         alt="Share on Whatsapp"
                                         onClick={handleWhatsAppShare}
@@ -1650,7 +1650,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
 
                                       <img
                                         src={optimizeImage(
-                                          `/images/facebook.png`
+                                          `/images/facebook.webp`
                                         )}
                                         alt="Share on Facebook"
                                         onClick={handleFacebookShare}
@@ -1658,7 +1658,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
 
                                       <img
                                         src={optimizeImage(
-                                          `/images/twitter.png`
+                                          `/images/twitter.webp`
                                         )}
                                         alt="Share on Twitter"
                                         onClick={handleTwitterShare}
@@ -1666,7 +1666,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
 
                                       <img
                                         src={optimizeImage(
-                                          `/images/pinterest.png`
+                                          `/images/pinterest.webp`
                                         )}
                                         alt="Share on Pinterest"
                                         onClick={handlePinterestShare}
@@ -1799,25 +1799,25 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                     <span className="me-2">SHARE:</span>
 
                                     <img
-                                      src={optimizeImage("/images/whatsapp.png")}
+                                      src={optimizeImage("/images/whatsapp.webp")}
                                       alt="Share on Whatsapp"
                                       onClick={handleWhatsAppShare}
                                     />
 
                                     <img
-                                      src={optimizeImage("/images/facebook.png")}
+                                      src={optimizeImage("/images/facebook.webp")}
                                       alt="Share on Facebook"
                                       onClick={handleFacebookShare}
                                     />
 
                                     <img
-                                      src={optimizeImage("/images/twitter.png")}
+                                      src={optimizeImage("/images/twitter.webp")}
                                       alt="Share on Twitter"
                                       onClick={handleTwitterShare}
                                     />
 
                                     <img
-                                      src={optimizeImage("/images/pinterest.png")}
+                                      src={optimizeImage("/images/pinterest.webp")}
                                       alt="Share on Pinterest"
                                       onClick={handlePinterestShare}
                                     />

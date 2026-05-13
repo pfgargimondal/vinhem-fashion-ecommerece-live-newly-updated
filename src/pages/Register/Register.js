@@ -5,6 +5,7 @@ import { register } from '../../api/auth';
 import { toast } from "react-toastify";
 import "./Css/Register.css";
 import ReCAPTCHA from 'react-google-recaptcha';
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Register = () => {
   const [inputs, setInputs] = useState({
@@ -146,14 +147,18 @@ export const Register = () => {
 
           <img
             alt="Two people standing, one holding coffee cup wearing glasses and another wearing yellow shirt"
-            src="/images/21726902_6509982-removebg-preview-Photoroom.png"
+            src={optimizeImage(
+              `${window.location.origin}/images/21726902_6509982-removebg-preview-Photoroom.png`
+            )}
             className="img-fluid"
           />
         </div>
 
         <div className="col-lg-6 right-panel text-center">
           <img
-            src="/images/logo.png"
+            src={optimizeImage(
+              `${window.location.origin}/images/logo.png`
+            )}
             className="reg-log-img mb-4 mx-auto img-fluid"
             alt=""
           />

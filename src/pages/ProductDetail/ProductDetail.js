@@ -38,6 +38,7 @@ import { useMetaData } from "../../hooks/useMetaData";
 import GlobalChat from "../../components/Elements/ChatProfileDetails/GlobalChat";
 import { useChat } from "../../context/ChatContext";
 import { toggleZohoChatWindow } from "../../utils/zohoChat";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const ProductDetail = () => {
   const { token, user } = useAuth();
@@ -1279,7 +1280,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                     img && (
                                       <Nav.Item key={key}>
                                         <Nav.Link eventKey={`img-${index + 1}`}>
-                                          <img src={img} alt="" />
+                                          <img src={optimizeImage(img)} alt="" />
                                         </Nav.Link>
                                       </Nav.Item>
                                     )
@@ -1439,7 +1440,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                     img && (
                                       <Tab.Pane key={key} eventKey={tabKey}>
                                         <img
-                                          src={img}
+                                          src={optimizeImage(img)}
                                           alt=""
                                           onClick={(e) =>
                                             handlePGShowModal(e, tabKey)
@@ -1640,25 +1641,33 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                       <span className="me-2">SHARE:</span>
 
                                       <img
-                                        src="/images/whatsapp.png"
+                                        src={optimizeImage(
+                                          `/images/whatsapp.png`
+                                        )}
                                         alt="Share on Whatsapp"
                                         onClick={handleWhatsAppShare}
                                       />
 
                                       <img
-                                        src="/images/facebook.png"
+                                        src={optimizeImage(
+                                          `/images/facebook.png`
+                                        )}
                                         alt="Share on Facebook"
                                         onClick={handleFacebookShare}
                                       />
 
                                       <img
-                                        src="/images/twitter.png"
+                                        src={optimizeImage(
+                                          `/images/twitter.png`
+                                        )}
                                         alt="Share on Twitter"
                                         onClick={handleTwitterShare}
                                       />
 
                                       <img
-                                        src="/images/pinterest.png"
+                                        src={optimizeImage(
+                                          `/images/pinterest.png`
+                                        )}
                                         alt="Share on Pinterest"
                                         onClick={handlePinterestShare}
                                       />
@@ -1790,25 +1799,25 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                     <span className="me-2">SHARE:</span>
 
                                     <img
-                                      src="/images/whatsapp.png"
+                                      src={optimizeImage("/images/whatsapp.png")}
                                       alt="Share on Whatsapp"
                                       onClick={handleWhatsAppShare}
                                     />
 
                                     <img
-                                      src="/images/facebook.png"
+                                      src={optimizeImage("/images/facebook.png")}
                                       alt="Share on Facebook"
                                       onClick={handleFacebookShare}
                                     />
 
                                     <img
-                                      src="/images/twitter.png"
+                                      src={optimizeImage("/images/twitter.png")}
                                       alt="Share on Twitter"
                                       onClick={handleTwitterShare}
                                     />
 
                                     <img
-                                      src="/images/pinterest.png"
+                                      src={optimizeImage("/images/pinterest.png")}
                                       alt="Share on Pinterest"
                                       onClick={handlePinterestShare}
                                     />
@@ -2738,9 +2747,9 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                               {/* <img src={matchingProduct?.encoded_image_url_2} alt={matchingProduct.product_name}/> */}
                                               <img
                                                 className=""
-                                                src={
+                                                src={optimizeImage(
                                                   matchingProduct?.encoded_image_url_1 ||
-                                                  "/images/no-preview.jpg"
+                                                  "/images/no-preview.jpg")
                                                 }
                                                 alt={
                                                   matchingProduct?.product_name ||
@@ -2798,17 +2807,17 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                         <div className="image dpmeljkemkewr d-flex position-relative">
                                           <div className="doiewjkrniuwewer position-relative col-lg-4 overflow-hidden">
                                             <img
-                                              src={
+                                              src={optimizeImage(
                                                 matchingProduct?.encoded_image_url_2
-                                              }
+                                              )}
                                               alt={matchingProduct.product_name}
                                             />
 
                                             <img
                                               className="first"
-                                              src={
+                                              src={optimizeImage(
                                                 matchingProduct?.encoded_image_url_1
-                                              }
+                                              )}
                                               alt={matchingProduct.product_name}
                                             />
                                           </div>
@@ -2977,7 +2986,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
             <div className="row align-items-center">
               <div className="col-lg-2 mb-3">
                 <div className="diewnrjhwerwer">
-                  <img src={productDetails?.data?.encoded_image_url_1} alt="" />
+                  <img src={optimizeImage(productDetails?.data?.encoded_image_url_1)} alt="" />
                 </div>
               </div>
 
@@ -3264,7 +3273,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                         img && (
                           <Nav.Item key={key}>
                             <Nav.Link eventKey={tabKey}>
-                              <img src={img} alt="" />
+                              <img src={optimizeImage(img)} alt="" />
                             </Nav.Link>
                           </Nav.Item>
                         )
@@ -3304,7 +3313,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                       img && (
                         <Tab.Pane key={key} eventKey={tabKey}>
                           <Zoom>
-                            <img src={img} alt="" className="zoom-img" />
+                            <img src={optimizeImage(img)} alt="" className="zoom-img" />
                           </Zoom>
                         </Tab.Pane>
                       )

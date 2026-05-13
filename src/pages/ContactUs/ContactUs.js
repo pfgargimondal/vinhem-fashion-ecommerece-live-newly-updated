@@ -124,7 +124,7 @@ export const ContactUs = () => {
     }
 
     setErrors({});
-    loading(true);
+    setLoading(true);
 
     try {
       const formData = new FormData();
@@ -176,7 +176,7 @@ export const ContactUs = () => {
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong.");
     } finally {
-      loading(false);
+      setLoading(false);
     }
   };
 

@@ -6,6 +6,7 @@
     "canvg": "3.0.10"
   },
   "dependencies": {
+    "@craco/craco": "^7.1.0",
     "@paypal/react-paypal-js": "^8.9.2",
     "@react-oauth/google": "^0.12.2",
     "@testing-library/dom": "^10.4.0",
@@ -52,5 +53,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "imagemin": "^9.0.1",
+    "imagemin-webp": "^8.0.0"
   }
 }

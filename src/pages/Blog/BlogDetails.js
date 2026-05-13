@@ -141,6 +141,51 @@ export const BlogDetails = () => {
     }
   };
 
+  const handleFacebookShare = () => {
+    const encodedURL = encodeURIComponent(slug);
+    const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`;
+    window.open(facebookURL, "_blank", "noopener,noreferrer");
+  };
+
+  const handleTwitterShare = () => {
+    const url = encodeURIComponent(slug);
+    const text = encodeURIComponent("Check out this blog!");
+
+    window.open(
+      `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
+      "_blank"
+    );
+  };
+
+  const handleInstagramShare = async () => {
+    const shareData = {
+      title: document.title,
+      text: "Check out this blog!",
+      url: slug,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(slug);
+        alert("Blog link copied! Paste it on Instagram.");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleLinkedinShare = () => {
+    const url = encodeURIComponent(slug);
+
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   if (loading) {
     return <Loader />;
   }
@@ -378,7 +423,7 @@ export const BlogDetails = () => {
                   </li>
                 </ul> */}
 
-                <div className="social-icons-container">
+                {/* <div className="social-icons-container">
                   <ul className="mb-0 ps-0">
                     <li>
                       <a href="/">
@@ -410,7 +455,36 @@ export const BlogDetails = () => {
                       </a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
+                    <div className="footer-social-icons">
+                      <ul className="social-icons ps-0">
+                        <li>
+                          <button onclick={handleFacebookShare} className="social-icon">
+                            <i className="fa-brands fa-facebook-f"></i>
+                          </button>
+                        </li>
+                        <li>
+                          <button onClick={handleTwitterShare} className="social-icon">
+                            <i className="fa-brands fa-x"></i>
+                          </button>
+                        </li>
+                        <li>
+                          <button onclick={handleInstagramShare} className="social-icon">
+                            <i className="fa-brands fa-instagram"></i>
+                          </button>
+                        </li>
+                        <li>
+                          <button onClick={handleLinkedinShare} className="social-icon">
+                            <i className="fa-brands fa-linkedin-in"></i>
+                          </button>
+                        </li>
+                        <li>
+                          <a href="/" className="social-icon">
+                            <i className="fa-brands fa-youtube"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
               </div>
 
               <section className="sgfthrherwygtiydfsdde video-sidebar-section">

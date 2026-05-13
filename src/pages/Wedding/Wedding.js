@@ -12,6 +12,7 @@ import "swiper/css/pagination"; // if using pagination
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Loader from "../../components/Loader/Loader";
 import { useMetaData } from "../../hooks/useMetaData";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Wedding = () => {
   const [WeddingDetails, setWeddingDetails] = useState({});
@@ -73,19 +74,19 @@ export const Wedding = () => {
           >
             <SwiperSlide>
               <Link to={WeddingDetails?.data?.section1_url}>
-              <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section1_image1}`} className="img-fluid" alt="Slide 1" />
+              <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section1_image1}`)} className="img-fluid" alt="Slide 1" />
               </Link>
             </SwiperSlide>
 
             <SwiperSlide>
               <Link to={WeddingDetails?.data?.section1_url_2}>
-              <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section1_image2}`} className="img-fluid" alt="Slide 2" />
+              <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section1_image2}`)} className="img-fluid" alt="Slide 2" />
               </Link>
             </SwiperSlide>
 
             <SwiperSlide>
               <Link to={WeddingDetails?.data?.section1_url_3}>
-              <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section1_image3}`} className="img-fluid" alt="Slide 2" />
+              <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section1_image3}`)} className="img-fluid" alt="Slide 2" />
               </Link>
             </SwiperSlide>
 
@@ -100,7 +101,7 @@ export const Wedding = () => {
           <div className="fgjhdfgf row">
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
               <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image1}`} alt="" />
+                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image1}`)} alt="" />
                 
                 <div className="overlay-black position-absolute w-100 h-100">
                   <div className="dfbghf">
@@ -115,7 +116,7 @@ export const Wedding = () => {
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
               <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image2}`} alt="" />
+                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image2}`)} alt="" />
                 
                 <div className="overlay-black position-absolute w-100 h-100">
                   <div className="dfbghf">
@@ -130,7 +131,7 @@ export const Wedding = () => {
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
               <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image3}`} alt="" />
+                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image3}`)} alt="" />
 
                 <div className="overlay-black position-absolute w-100 h-100">
                   <div className="dfbghf">
@@ -145,7 +146,7 @@ export const Wedding = () => {
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
               <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image4}`} alt="" />
+                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image4}`)} alt="" />
 
                 <div className="overlay-black position-absolute w-100 h-100">
                   <div className="dfbghf">
@@ -160,7 +161,7 @@ export const Wedding = () => {
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
               <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image5}`} alt="" />
+                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image5}`)} alt="" />
 
                 <div className="overlay-black position-absolute w-100 h-100">
                   <div className="dfbghf">
@@ -175,7 +176,7 @@ export const Wedding = () => {
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
               <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image6}`} alt="" />
+                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image6}`)} alt="" />
 
                 <div className="overlay-black position-absolute w-100 h-100">
                   <div className="dfbghf">
@@ -190,7 +191,7 @@ export const Wedding = () => {
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
               <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image7}`} alt="" />
+                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image7}`)} alt="" />
 
                 <div className="overlay-black position-absolute w-100 h-100">
                   <div className="dfbghf">
@@ -205,7 +206,7 @@ export const Wedding = () => {
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
               <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image8}`} alt="" />
+                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image8}`)} alt="" />
 
                 <div className="overlay-black position-absolute w-100 h-100">
                   <div className="dfbghf">
@@ -230,7 +231,7 @@ export const Wedding = () => {
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <Link to={WeddingDetails?.data?.section1to4?.section3_url1}>
                   <div className="jdfkdf position-relative overflow-hidden">
-                    <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image1}`} alt="" />
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image1}`)} alt="" />
 
                     <div className="overlay-black1 position-absolute w-100 h-100">
                       <div className="dfbghf1">
@@ -247,7 +248,7 @@ export const Wedding = () => {
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <Link to={WeddingDetails?.data?.section1to4?.section3_url2}>
                 <div className="jdfkdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image2}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image2}`)} alt="" />
 
                   <div className="overlay-black1 position-absolute w-100 h-100">
                     <div className="dfbghf1">
@@ -264,7 +265,7 @@ export const Wedding = () => {
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <Link to={WeddingDetails?.data?.section1to4?.section3_url3}>
                 <div className="jdfkdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image3}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image3}`)} alt="" />
 
                   <div className="overlay-black1 position-absolute w-100 h-100">
                     <div className="dfbghf1">
@@ -281,7 +282,7 @@ export const Wedding = () => {
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <Link to={WeddingDetails?.data?.section1to4?.section3_url4}>
                 <div className="jdfkdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image4}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image4}`)} alt="" />
 
                   <div className="overlay-black1 position-absolute w-100 h-100">
                     <div className="dfbghf1">
@@ -298,7 +299,7 @@ export const Wedding = () => {
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <Link to={WeddingDetails?.data?.section1to4?.section3_url5}>
                 <div className="jdfkdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image5}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image5}`)} alt="" />
 
                   <div className="overlay-black1 position-absolute w-100 h-100">
                     <div className="dfbghf1">
@@ -315,7 +316,7 @@ export const Wedding = () => {
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <Link to={WeddingDetails?.data?.section1to4?.section3_url6}>
                 <div className="jdfkdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image6}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section3_image6}`)} alt="" />
 
                   <div className="overlay-black1 position-absolute w-100 h-100">
                     <div className="dfbghf1">
@@ -343,7 +344,7 @@ export const Wedding = () => {
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image1}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image1}`)} alt="" />
                   
                   <div className="overlay-black2 position-absolute w-100 h-100">
                     <div className="dfbghf2">
@@ -360,7 +361,7 @@ export const Wedding = () => {
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image2}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image2}`)} alt="" />
                   
                   <div className="overlay-black2 position-absolute w-100 h-100">
                     <div className="dfbghf2">
@@ -377,7 +378,7 @@ export const Wedding = () => {
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image3}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image3}`)} alt="" />
                   
                   <div className="overlay-black2 position-absolute w-100 h-100">
                     <div className="dfbghf2">
@@ -394,7 +395,7 @@ export const Wedding = () => {
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image4}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image4}`)} alt="" />
                   
                   <div className="overlay-black2 position-absolute w-100 h-100">
                     <div className="dfbghf2">
@@ -411,7 +412,7 @@ export const Wedding = () => {
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image5}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image5}`)} alt="" />
                   
                   <div className="overlay-black2 position-absolute w-100 h-100">
                     <div className="dfbghf2">
@@ -428,7 +429,7 @@ export const Wedding = () => {
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image6}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image6}`)} alt="" />
                   
                   <div className="overlay-black2 position-absolute w-100 h-100">
                     <div className="dfbghf2">
@@ -458,7 +459,7 @@ export const Wedding = () => {
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image1}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image1}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -475,7 +476,7 @@ export const Wedding = () => {
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image2}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image2}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -492,7 +493,7 @@ export const Wedding = () => {
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image3}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image3}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -509,7 +510,7 @@ export const Wedding = () => {
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image4}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image4}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -526,7 +527,7 @@ export const Wedding = () => {
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image5}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image5}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -543,7 +544,7 @@ export const Wedding = () => {
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image6}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image6}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -560,7 +561,7 @@ export const Wedding = () => {
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image7}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image7}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -577,7 +578,7 @@ export const Wedding = () => {
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image8}`} alt="" />
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image8}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -600,7 +601,7 @@ export const Wedding = () => {
         <div className="container-fluid">
           <Link to={WeddingDetails?.data?.section5to9?.section6_url}>
             <div className="dfgdfgfd">
-              <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section6_image}`} alt=""/>
+              <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section6_image}`)} alt=""/>
               {/* <div className="sdjhds"> */}
                 {/* <h4>{WeddingDetails?.data?.section5to9?.section6_text}</h4> */}
                 {/* <h3>Perfect Present for any occasion</h3> */}
@@ -616,7 +617,9 @@ export const Wedding = () => {
             <h2>{WeddingDetails?.data?.section5to9?.section7_title}</h2>
           </div>
           <div className="dbgjkdffd52" style={{
-                  backgroundImage: `url(${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_background_image})`,
+                  backgroundImage: `url(${optimizeImage(
+                    `${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_background_image}`
+                  )})`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat"
@@ -629,7 +632,7 @@ export const Wedding = () => {
                       <Link to={WeddingDetails?.data?.section5to9?.section7_url1}>
                       <div className="ffdgf548">
                         <img
-                          src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_image1}`}
+                          src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_image1}`)}
                           alt=""
                         />
                       </div>
@@ -639,7 +642,7 @@ export const Wedding = () => {
                       <Link to={WeddingDetails?.data?.section5to9?.section7_url2}>
                       <div className="ffdgf548">
                         <img
-                          src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_image2}`}
+                          src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_image2}`)}
                           alt=""
                         />
                       </div>
@@ -665,7 +668,7 @@ export const Wedding = () => {
                       <Link to={WeddingDetails?.data?.section5to9?.section7_url3}>
                       <div className="ffdgf548">
                         <img
-                          src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_image3}`}
+                          src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_image3}`)}
                           alt=""
                         />
                       </div>
@@ -675,7 +678,7 @@ export const Wedding = () => {
                       <Link to={WeddingDetails?.data?.section5to9?.section7_url4}>
                       <div className="ffdgf548">
                         <img
-                          src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_image4}`}
+                          src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section7_image4}`)}
                           alt=""
                         />
                       </div>
@@ -921,7 +924,7 @@ export const Wedding = () => {
               <div className="col-lg-3 col-6">
                 <div className="dfnghfd text-center">
                   <div className="sdhgdfg">
-                    <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section10_image1}`} alt={WeddingDetails?.data?.section5to9?.section10_text1} />
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section10_image1}`)} alt={WeddingDetails?.data?.section5to9?.section10_text1} />
                   </div>
 
                   <div className="cfgncfgb dfgsfeeer mt-3">
@@ -937,7 +940,7 @@ export const Wedding = () => {
               <div className="col-lg-3 col-6 ps-0">
                 <div className="dfnghfd fsrweerrr text-center">
                   <div className="sdhgdfg">
-                    <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section10_image2}`} alt={WeddingDetails?.data?.section5to9?.section10_text2} />
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section10_image2}`)} alt={WeddingDetails?.data?.section5to9?.section10_text2} />
                   </div>
 
                   <div className="cfgncfgb dfgsfeeer mt-3">
@@ -953,7 +956,7 @@ export const Wedding = () => {
               <div className="col-lg-3 col-6 ps-0">
                 <div className="dfnghfd text-center">
                   <div className="sdhgdfg">
-                    <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section10_image3}`} alt={WeddingDetails?.data?.section5to9?.section10_text3} />
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section10_image3}`)} alt={WeddingDetails?.data?.section5to9?.section10_text3} />
                   </div>
 
                   <div className="cfgncfgb dfgsfeeer mt-3">
@@ -969,7 +972,7 @@ export const Wedding = () => {
               <div className="col-lg-3 col-6">
                 <div className="dfnghfd fsrweerrr text-center">
                   <div className="sdhgdfg">
-                    <img src={`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section10_image4}`} alt={WeddingDetails?.data?.section5to9?.section10_text4} />
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section10_image4}`)} alt={WeddingDetails?.data?.section5to9?.section10_text4} />
                   </div>
 
                   <div className="cfgncfgb dfgsfeeer mt-3">

@@ -5,6 +5,7 @@ import { useCart } from "../../../context/CartContext";
 import { useWishlist } from "../../../context/WishlistContext";
 import { useCurrency } from "../../../context/CurrencyContext";
 import { useAuthModal } from "../../../context/AuthModalContext";
+import { optimizeImage } from "../../../utils/optimizeImage";
 
 export const FeaturedProducts = ({ featuredProduct }) => {
     const { handleLoginModal } = useAuthModal();
@@ -44,7 +45,7 @@ export const FeaturedProducts = ({ featuredProduct }) => {
                 <div className={`doiewjkrniuwewer position-relative overflow-hidden`}>
                   <Link to={`/products/${featuredProduct.slug}-${featuredProduct.PID}`}>
                     <img
-                      src={featuredProduct?.encoded_image_url_1 || "/images/no-preview.jpg"}
+                      src={optimizeImage(featuredProduct?.encoded_image_url_1 || "/images/no-preview.jpg")}
                       alt={featuredProduct?.product_name || "Product image"}
                     />
 

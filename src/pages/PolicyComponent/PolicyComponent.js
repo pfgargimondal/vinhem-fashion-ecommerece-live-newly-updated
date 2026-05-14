@@ -1,3 +1,4 @@
+import { optimizeImage } from "../../utils/optimizeImage";
 import styles from "./Css/PolicyComponent.module.css";
 
 export const PolicyComponent = ({PolicyDetails}) => {
@@ -7,7 +8,7 @@ export const PolicyComponent = ({PolicyDetails}) => {
         <div className="container-fluid">
           {PolicyDetails.data?.banner_image && (
             <img
-              src={`${PolicyDetails.image_url}/${PolicyDetails.data.banner_image}`}
+              src={optimizeImage(`${PolicyDetails.image_url}/${PolicyDetails.data.banner_image}`)}
               className="img-fluid"
               alt=""
             />

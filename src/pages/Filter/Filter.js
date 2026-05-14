@@ -12,6 +12,7 @@ import { useCurrency } from "../../context/CurrencyContext";
 import { PageNotFound } from "../PageNotFound/PageNotFound";
 import Loader from "../../components/Loader/Loader";
 import { useMetaData } from "../../hooks/useMetaData";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Filter = () => {
 
@@ -729,7 +730,7 @@ export const Filter = () => {
                 {filterdetails
                   && (
                     <img
-                      src={`${allFilterData?.banner_image_url}/${filterdetails?.image}`}
+                      src={optimizeImage(`${allFilterData?.banner_image_url}/${filterdetails?.image}`)}
                       className="img-fluid w-100"
                       alt=""
                     />
@@ -755,7 +756,7 @@ export const Filter = () => {
             {filterdetails
               && (
                 <img
-                  src={`${allFilterData?.banner_image_url}/${filterdetails?.image}`}
+                  src={optimizeImage(`${allFilterData?.banner_image_url}/${filterdetails?.image}`)}
                   className="img-fluid w-100"
                   alt=""
                 />
@@ -1022,7 +1023,7 @@ export const Filter = () => {
                               <div className={`doiewjkrniuwewer position-relative overflow-hidden ${!viewType ? "col-lg-12" : "col-lg-3"}`}>
                                 <Link to={`/products/${product.slug}-${product.PID}`}>
                                   <img
-                                    src={product?.encoded_image_url_1 || "/images/no-preview.jpg"}
+                                    src={optimizeImage(product?.encoded_image_url_1 || "/images/no-preview.jpg")}
                                     alt={product?.product_name || "Product image"}
                                   />
                                 </Link>

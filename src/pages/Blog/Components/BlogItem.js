@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { UseFormattedDate } from "../../../hooks/UseFormattedDate";
+import { optimizeImage } from "../../../utils/optimizeImage";
 
 export const BlogItem = ({blog, imageBaseUrl}) => {
     const blogDate = UseFormattedDate(blog.blog_date);
@@ -47,7 +48,7 @@ export const BlogItem = ({blog, imageBaseUrl}) => {
         <div className="dosjifrjwer">
             <Link to={`/blog/${blog?.slug}`}>
                 <img
-                    src={`${imageBaseUrl}/${blog?.blog_image}`}
+                    src={optimizeImage(`${imageBaseUrl}/${blog?.blog_image}`)}
                     className="img-fluid mb-3 w-100"
                     alt="Street Fashion"
                 />

@@ -7,6 +7,7 @@ import "./Css/BlogResponsive.css";
 import { toast } from "react-toastify";
 import { FooterBlog, HeaderBlog } from "../../components";
 import Loader from "../../components/Loader/Loader";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const BlogDetails = () => {
   const [loading, setLoading] = useState(false);
@@ -222,7 +223,7 @@ export const BlogDetails = () => {
                 </div>
 
                 <img
-                  src={`${imageBaseUrl}/${blogs?.blog_image}`}
+                  src={optimizeImage(`${imageBaseUrl}/${blogs?.blog_image}`)}
                   className="img-fluid mb-3 w-100"
                   alt={blogs?.title}
                 />
@@ -337,7 +338,7 @@ export const BlogDetails = () => {
                       <div className="col-3">
                         <div className="doejwojrwer overflow-hidden rounded-pill">
                           <img
-                            src={`${imageBaseUrl}/${blog?.blog_image}`}
+                            src={optimizeImage(`${imageBaseUrl}/${blog?.blog_image}`)}
                             className="img-fluid"
                             alt={blog?.title}
                           />
@@ -501,7 +502,7 @@ export const BlogDetails = () => {
                                         ></iframe>
                                     )} */}
                   {blogvedio?.vedio_url ? (
-                    <img width="100%" className="dckisehiwehrr" style={{ height: "100%" }} src={blogvedio.vedio_url} alt="" />
+                    <img width="100%" className="dckisehiwehrr" style={{ height: "100%" }} src={optimizeImage(blogvedio.vedio_url)} alt="" />
                   ) : (
                     <img width="100%" className="dckisehiwehrr" style={{ height: "100%" }} src="./images/fashion40.png" alt="" />
                   )}
@@ -520,7 +521,7 @@ export const BlogDetails = () => {
                                         ></iframe>
                                     )} */}
                   {blogvedio?.blog_image_two ? (
-                    <img width="100%" className="dckisehiwehrr" style={{ height: "100%" }} src={blogvedio.blog_image_two} alt="" />
+                    <img width="100%" className="dckisehiwehrr" style={{ height: "100%" }} src={optimizeImage(blogvedio.blog_image_two)} alt="" />
                   ) : (
                     <img width="100%" className="dckisehiwehrr" style={{ height: "100%" }} src="./images/fashion40.png" alt="" />
                   )}

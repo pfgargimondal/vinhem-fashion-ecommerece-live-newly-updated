@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Css/ChatProfileDetails.css";
+import { optimizeImage } from "../../../utils/optimizeImage";
 
 // ✅ GLOBAL FLAG (IMPORTANT)
 let zohoInitialized = false;
@@ -92,7 +93,7 @@ export const ChatProfileDetails = ({ setChatProfileDetailsShow }) => {
                 }`}
               >
                 <div className="text-center rounded-pill mx-1">
-                  <img src={msg.avatar} alt="avatar" />
+                  <img src={optimizeImage(msg.avatar)} alt="avatar" />
                 </div>
 
                 <div>

@@ -6,6 +6,7 @@ import Loader from "../../components/Loader/Loader";
 import { useAuthModal } from "../../context/AuthModalContext";
 import { useMetaData } from "../../hooks/useMetaData";
 import { FooterTopComponent } from "../../components/Others/FooterTopComponent";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const AboutUs = () => {
   // eslint-disable-next-line
@@ -68,7 +69,7 @@ export const AboutUs = () => {
       <div className="container-fluid">
         <div className="aboutusbannr">
           <img src={AboutUsDetails?.image_url && AboutUsDetails?.data?.banner_image
-                ? `${AboutUsDetails.image_url}/${AboutUsDetails.data.banner_image}`
+                ? optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.banner_image}`)
                 : "none"} className="w-100" style={{borderRadius: "27px", marginTop: "1rem", overflow: "hidden"}} alt="" />
 
           <div className="effgbhgrswfsdertrwe">
@@ -108,7 +109,7 @@ export const AboutUs = () => {
                   <div className="dfngjhdfgfd">
                     {AboutUsDetails.data?.second_section_image && (
                       <img
-                        src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.second_section_image}`}
+                        src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.second_section_image}`)}
                         alt=""
                       />
                     )}
@@ -189,7 +190,7 @@ export const AboutUs = () => {
                     <div className="dfgdf">
                       {AboutUsDetails.data?.fourth_section_image_one && (
                         <img
-                          src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.fourth_section_image_one}`}
+                          src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.fourth_section_image_one}`)}
                           alt=""
                         />
                       )}
@@ -215,7 +216,7 @@ export const AboutUs = () => {
                     <div className="dfgdf">
                       {AboutUsDetails.data?.fourth_section_image_two && (
                         <img
-                          src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.fourth_section_image_two}`}
+                          src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.fourth_section_image_two}`)}
                           alt=""
                         />
                       )}
@@ -241,7 +242,7 @@ export const AboutUs = () => {
                     <div className="dfgdf">
                       {AboutUsDetails.data?.fourth_section_image_three && (
                         <img
-                          src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.fourth_section_image_three}`}
+                          src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.fourth_section_image_three}`)}
                           alt=""
                         />
                       )}
@@ -287,7 +288,7 @@ export const AboutUs = () => {
               <div className="dfgbdfdf">
                 {AboutUsDetails.data?.fifth_section_image_one && (
                   <img
-                    src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_one}`}
+                    src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_one}`)}
                     alt=""
                   />
                 )}
@@ -296,7 +297,7 @@ export const AboutUs = () => {
               <div className="dfgbdfdf dfdf ">
                 {AboutUsDetails.data?.fifth_section_image_two && (
                   <img
-                    src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_two}`}
+                    src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_two}`)}
                     alt=""
                   />
                 )}
@@ -305,7 +306,7 @@ export const AboutUs = () => {
               <div className="dfgbdfdf  ">
                 {AboutUsDetails.data?.fifth_section_image_three && (
                   <img
-                    src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_three}`}
+                    src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_three}`)}
                     alt=""
                   />
                 )}
@@ -314,7 +315,7 @@ export const AboutUs = () => {
               <div className="dfgbdfdf dfdf">
                 {AboutUsDetails.data?.fifth_section_image_four && (
                   <img
-                    src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_four}`}
+                    src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_four}`)}
                     alt=""
                   />
                 )}
@@ -323,7 +324,7 @@ export const AboutUs = () => {
               <div className="dfgbdfdf">
                 {AboutUsDetails.data?.fifth_section_image_five && (
                   <img
-                    src={`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_five}`}
+                    src={optimizeImage(`${AboutUsDetails.image_url}/${AboutUsDetails.data.fifth_section_image_five}`)}
                     alt=""
                   />
                 )}

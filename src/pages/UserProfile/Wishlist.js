@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useCurrency } from "../../context/CurrencyContext";
 import Loader from "../../components/Loader/Loader";
 import { useWishlist } from "../../context/WishlistContext";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Wishlist = () => {
 
@@ -104,7 +105,7 @@ export const Wishlist = () => {
                                                         </div>
 
                                                         <Link to={`/products/${wishlistProduct.slug}-${wishlistProduct.PID}`} className="position-relative w-100 h-100 d-block overflow-hidden" style={{ borderRadius: "10px" }}>
-                                                            <img src={wishlistProduct.encoded_image_url_1} alt="not found" />
+                                                            <img src={optimizeImage(wishlistProduct.encoded_image_url_1)} alt="not found" />
 
                                                             {(wishlistProduct?.mto_quantity === "0" && wishlistProduct?.rts_quantity === "0") && (
                                                                 <div className={`${styles.czdghdfhfrrrt} position-absolute px-0`}>

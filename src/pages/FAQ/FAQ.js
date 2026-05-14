@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import { useMetaData } from "../../hooks/useMetaData";
 import { useLocation } from "react-router-dom";
+import { optimizeImage } from "../../utils/optimizeImage";
 import { FooterTopComponent } from "../../components/Others/FooterTopComponent";
 
 export const FAQ = () => {
@@ -62,7 +63,7 @@ export const FAQ = () => {
         <div className="container-fluid">
           <div className="aboutusbannr55">
             <img src={FAQDetails.data?.banner_image
-                ? `${FAQDetails.image_url}/${FAQDetails.data.banner_image}`
+                ? optimizeImage(`${FAQDetails.image_url}/${FAQDetails.data.banner_image}`)
                 : "none"} className="w-100" style={{borderRadius: "27px", marginTop: "1rem", overflow: "hidden"}} alt="" />
             <div className="dfgnhdfjhgdf">
               <div className="row">

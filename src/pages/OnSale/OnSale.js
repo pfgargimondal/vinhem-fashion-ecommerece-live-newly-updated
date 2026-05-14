@@ -12,6 +12,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./OnSale.css";
 import Loader from "../../components/Loader/Loader";
 import { useMetaData } from "../../hooks/useMetaData";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const OnSale = () => {
 
@@ -74,19 +75,19 @@ const pathName = useLocation().pathname;
         >
           <SwiperSlide>
             <Link to={OnSaleDetails?.data?.banner_url1}>
-            <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.banner_image1}`} className="img-fluid" alt="Slide 1" />
+            <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.banner_image1}`)} className="img-fluid" alt="Slide 1" />
             </Link>
           </SwiperSlide>
 
           <SwiperSlide>
             <Link to={OnSaleDetails?.data?.banner_url2}>
-            <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.banner_image2}`} className="img-fluid" alt="Slide 2" />
+            <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.banner_image2}`)} className="img-fluid" alt="Slide 2" />
             </Link>
           </SwiperSlide>
 
           <SwiperSlide>
             <Link to={OnSaleDetails?.data?.banner_url3}>
-            <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.banner_image3}`} className="img-fluid" alt="Slide 2" />
+            <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.banner_image3}`)} className="img-fluid" alt="Slide 2" />
             </Link>
           </SwiperSlide>
 
@@ -104,7 +105,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image1}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image1}`)} alt="" />
 
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -121,7 +122,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url2}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image2}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image2}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -138,7 +139,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url3}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image3}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image3}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -155,7 +156,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url4}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image4}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image4}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -172,7 +173,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url5}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image5}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image5}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -189,7 +190,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url6}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image6}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image6}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -206,7 +207,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url7}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image7}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image7}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -223,7 +224,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url8}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image8}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image8}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -240,7 +241,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url9}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image9}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image9}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -257,7 +258,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url10}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image10}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image10}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -274,7 +275,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url11}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image11}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image11}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -291,7 +292,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                  {/* <Link to={OnSaleDetails?.data?.section2_url12}> */}
                 <div className="fhgdfg position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image12}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image12}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
@@ -319,7 +320,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-4">
                 <Link to={OnSaleDetails?.data?.section3_url1}></Link>
                 <div className="dfgfdg7853 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image1}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image1}`)} alt="" />
 
                   {/* <div className="hdfbjh554 position-absolute w-100">
                     <h5>STYLIES UNDER</h5>
@@ -333,7 +334,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-4">
                 <Link to={OnSaleDetails?.data?.section3_url2}>
                 <div className="dfgfdg7853 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image2}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image2}`)} alt="" />
 
                   {/* <div className="hdfbjh554 position-absolute w-100">
                     <h5>STYLIES UNDER</h5>
@@ -348,7 +349,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-4">
                 <Link to={OnSaleDetails?.data?.section3_url3}>
                 <div className="dfgfdg7853 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image3}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image3}`)} alt="" />
 
                   {/* <div className="hdfbjh554 position-absolute w-100">
                     <h5>STYLIES UNDER</h5>
@@ -363,7 +364,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-4">
                 <Link to={OnSaleDetails?.data?.section3_url4}>
                 <div className="dfgfdg7853 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image4}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image4}`)} alt="" />
 
                   {/* <div className="hdfbjh554 position-absolute w-100">
                     <h5>STYLIES UNDER</h5>
@@ -378,7 +379,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-4">
                 <Link to={OnSaleDetails?.data?.section3_url5}>
                 <div className="dfgfdg7853 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image5}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image5}`)} alt="" />
 
                   {/* <div className="hdfbjh554 position-absolute w-100">
                     <h5>STYLIES UNDER</h5>
@@ -393,7 +394,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-4">
                 <Link to={OnSaleDetails?.data?.section3_url6}>
                 <div className="dfgfdg7853 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image6}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section3_image6}`)} alt="" />
 
                   {/* <div className="hdfbjh554 position-absolute w-100">
                     <h5>STYLIES UNDER</h5>
@@ -416,7 +417,7 @@ const pathName = useLocation().pathname;
           </div>
             <Link to={OnSaleDetails?.data?.section4_url}>
           <div className="dfngjhfdgdf">
-            <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section4_image}`}  alt="onsale"/>
+            <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section4_image}`)}  alt="onsale"/>
           </div>
           </Link>   
         </div>
@@ -431,7 +432,7 @@ const pathName = useLocation().pathname;
           <div className="dfgjhdfgdfgf dfgswfdge mt-4">
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image1}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image1}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -447,7 +448,7 @@ const pathName = useLocation().pathname;
             </div>
             
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image2}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image2}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -463,7 +464,7 @@ const pathName = useLocation().pathname;
             </div>
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image3}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image3}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -479,7 +480,7 @@ const pathName = useLocation().pathname;
             </div>
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image4}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image4}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -495,7 +496,7 @@ const pathName = useLocation().pathname;
             </div>
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image5}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image5}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -511,7 +512,7 @@ const pathName = useLocation().pathname;
             </div>
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image6}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image6}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -527,7 +528,7 @@ const pathName = useLocation().pathname;
             </div>
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image7}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image7}`)} alt="" />
               
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -543,7 +544,7 @@ const pathName = useLocation().pathname;
             </div>
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image8}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image8}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -559,7 +560,7 @@ const pathName = useLocation().pathname;
             </div>
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image9}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image9}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -575,7 +576,7 @@ const pathName = useLocation().pathname;
             </div>
 
             <div className="dfbdff position-relative overflow-hidden">
-              <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image10}`} alt="" />
+              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image10}`)} alt="" />
 
               <div className="overlay-sale position-absolute w-100 h-100">
                 <div className="fdbdfgdf">
@@ -605,7 +606,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4">
                 <Link to={OnSaleDetails?.data?.section6_url1}>
                 <div className="donhweirwer_inner">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section6_image1}`} className="img-fluid" alt="onsale" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section6_image1}`)} className="img-fluid" alt="onsale" />
                 </div>
                 </Link>
               </div>
@@ -613,7 +614,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4">
                 <Link to={OnSaleDetails?.data?.section6_url2}>
                 <div className="donhweirwer_inner">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section6_image2}`} className="img-fluid" alt="onsale" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section6_image2}`)} className="img-fluid" alt="onsale" />
                 </div>
                 </Link>
               </div>
@@ -621,7 +622,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-4">
                 <Link to={OnSaleDetails?.data?.section6_url3}>
                 <div className="donhweirwer_inner">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section6_image3}`} className="img-fluid" alt="onsale" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section6_image3}`)} className="img-fluid" alt="onsale" />
                 </div>
                 </Link>
               </div>
@@ -646,7 +647,7 @@ const pathName = useLocation().pathname;
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image1}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image1}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -663,7 +664,7 @@ const pathName = useLocation().pathname;
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image2}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image2}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -680,7 +681,7 @@ const pathName = useLocation().pathname;
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image3}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image3}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -697,7 +698,7 @@ const pathName = useLocation().pathname;
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image4}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image4}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -714,7 +715,7 @@ const pathName = useLocation().pathname;
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image5}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image5}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -731,7 +732,7 @@ const pathName = useLocation().pathname;
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image6}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image6}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -748,7 +749,7 @@ const pathName = useLocation().pathname;
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image7}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image7}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -765,7 +766,7 @@ const pathName = useLocation().pathname;
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image8}`} alt="" />
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image8}`)} alt="" />
 
                   <div className="overlay-black3 position-absolute w-100 h-100">
                     <div className="dfbghf3">
@@ -790,11 +791,15 @@ const pathName = useLocation().pathname;
                   <h2>{OnSaleDetails?.data?.section9_title}</h2>
                 </div>
                 <div className="dbgjkdffd52" style={{
-                        backgroundImage: `url(${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_background_image})`,
+                        backgroundImage: `url(${optimizeImage(
+                          `${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_background_image}`
+                        )})`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat"
                       }}>
+
+              
                   <div className="row">
                     <div className="col-lg-4 col-md-12 col-sm-12 col-12">
                       <div className="fbghjdfgfd">
@@ -803,7 +808,7 @@ const pathName = useLocation().pathname;
                             <Link to={OnSaleDetails?.data?.section9_url1}>
                             <div className="ffdgf548">
                               <img
-                                src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_image1}`}
+                                src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_image1}`)}
                                 alt=""
                               />
                             </div>
@@ -813,7 +818,7 @@ const pathName = useLocation().pathname;
                             <Link to={OnSaleDetails?.data?.section9_url2}>
                             <div className="ffdgf548">
                               <img
-                                src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_image2}`}
+                                src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_image2}`)}
                                 alt=""
                               />
                             </div>
@@ -839,7 +844,7 @@ const pathName = useLocation().pathname;
                             <Link to={OnSaleDetails?.data?.section9_url3}>
                             <div className="ffdgf548">
                               <img
-                                src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_image3}`}
+                                src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_image3}`)}
                                 alt=""
                               />
                             </div>
@@ -849,7 +854,7 @@ const pathName = useLocation().pathname;
                             <Link to={OnSaleDetails?.data?.section9_url4}>
                             <div className="ffdgf548">
                               <img
-                                src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_image4}`}
+                                src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section9_image4}`)}
                                 alt=""
                               />
                             </div>
@@ -870,7 +875,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-6">
                 <div className="dfnghfd text-center">
                   <div className="sdhgdfg">
-                    <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section7_image1}`} alt="" />
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section7_image1}`)} alt="" />
                   </div>
 
                   <div className="cfgncfgb dfgsfeeer mt-3">
@@ -886,7 +891,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-6 ps-0">
                 <div className="dfnghfd fsrweerrr text-center">
                   <div className="sdhgdfg">
-                    <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section7_image2}`} alt="" />
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section7_image2}`)} alt="" />
                   </div>
 
                   <div className="cfgncfgb dfgsfeeer mt-3">
@@ -902,7 +907,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-6 ps-0">
                 <div className="dfnghfd text-center">
                   <div className="sdhgdfg">
-                    <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section7_image3}`} alt="" />
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section7_image3}`)} alt="" />
                   </div>
 
                   <div className="cfgncfgb dfgsfeeer mt-3">
@@ -918,7 +923,7 @@ const pathName = useLocation().pathname;
               <div className="col-lg-3 col-6">
                 <div className="dfnghfd fsrweerrr text-center">
                   <div className="sdhgdfg">
-                    <img src={`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section7_image4}`} alt="" />
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section7_image4}`)} alt="" />
                   </div>
 
                   <div className="cfgncfgb dfgsfeeer mt-3">

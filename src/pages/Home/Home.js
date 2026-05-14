@@ -11,6 +11,7 @@ import "./Css/HomeResponsive.css";
 import { FooterTopComponent } from "../../components/Others/FooterTopComponent";
 import Loader from "../../components/Loader/Loader";
 import { useMetaData } from "../../hooks/useMetaData";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Home = () => {
   const [homepage, Sethomepage] = useState({});
@@ -103,7 +104,7 @@ export const Home = () => {
                   <Link to={homepage?.data?.url}>
                     <div className="gdfgdf215">
                       <img
-                        src={`${homepage?.image_url}/${homepage?.data?.banner_image1}`}
+                        src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.banner_image1}`)}
                         alt=""
                       />
                     </div>
@@ -118,7 +119,7 @@ export const Home = () => {
                   <Link to={homepage?.data?.url2}>
                     <div className="gdfgdf215">
                       <img
-                        src={`${homepage?.image_url}/${homepage?.data?.side_banner_image2}`}
+                        src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.side_banner_image2}`)}
                         alt=""
                       />
                     </div>
@@ -133,7 +134,7 @@ export const Home = () => {
                   <Link to={homepage?.data?.url3}>
                     <div className="gdfgdf215">
                       <img
-                        src={`${homepage?.image_url}/${homepage?.data?.side_banner_image3}`}
+                        src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.side_banner_image3}`)}
                         alt=""
                       />
                     </div>
@@ -149,7 +150,7 @@ export const Home = () => {
         <div className="sadasdc">
           <div className="dfghdfg548">
             <Link to={homepage?.data?.url2}>
-              <img src={`${homepage?.image_url}/${homepage?.data?.banner_image2}`} className="w-100" alt="" />
+              <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.banner_image2}`)} className="w-100" alt="" />
             </Link>
           </div> 
         </div>
@@ -174,7 +175,7 @@ export const Home = () => {
                   <Link to={homepage?.data?.h3_url1}>
                     <div className="d-flex align-items-center justify-content-center">
                       <div className="sdhgdfg">
-                        <img src={`${homepage?.image_url}/${homepage?.data?.h3_image1}`} alt="" />
+                        <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.h3_image1}`)} alt="" />
                       </div>
 
                       <div className="cfgncfgb sdfseeerrrr sefweqwrwrewrer">
@@ -189,7 +190,7 @@ export const Home = () => {
                   <Link to={homepage?.data?.h3_url2}>
                     <div className="d-flex align-items-center justify-content-center">
                       <div className="sdhgdfg">
-                        <img src={`${homepage?.image_url}/${homepage?.data?.h3_image2}`} alt="" />
+                        <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.h3_image2}`)} alt="" />
                       </div>
 
                       <div className="cfgncfgb sdfseeerrrr sefweqwrwrewrer">
@@ -204,7 +205,7 @@ export const Home = () => {
                   <Link to={homepage?.data?.h3_url3}>
                     <div className="d-flex align-items-center justify-content-center">
                       <div className="sdhgdfg">
-                        <img src={`${homepage?.image_url}/${homepage?.data?.h3_image3}`} alt="" />
+                        <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.h3_image3}`)} alt="" />
                       </div>
 
                       <div className="cfgncfgb sdfseeerrrr sefweqwrwrewrer">
@@ -219,7 +220,7 @@ export const Home = () => {
                   <Link to={homepage?.data?.h3_url4}>
                     <div className="d-flex align-items-center justify-content-center">
                       <div className="sdhgdfg">
-                        <img src={`${homepage?.image_url}/${homepage?.data?.h3_image4}`} alt="" />
+                        <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.h3_image4}`)} alt="" />
                       </div>
 
                       <div className="cfgncfgb sdfseeerrrr sefweqwrwrewrer">
@@ -245,7 +246,7 @@ export const Home = () => {
               <li className="dfhdfg" key={topCategorie.id}>
                 <div className="dbfggfhfh">
                   <Link to={`${topCategorie.url}`}>
-                    <img src={`${homepage.image_url}/${topCategorie.image}`} className="img-fluid" alt={topCategorie.title} />
+                    <img src={optimizeImage(`${homepage.image_url}/${topCategorie.image}`)} className="img-fluid" alt={topCategorie.title} />
                   </Link>
                 </div>
 
@@ -270,14 +271,14 @@ export const Home = () => {
               <div className="col-6">
                 <div className="fhdfgdf">
                   <Link to={homepage?.data?.section1_url1}>
-                    <img src={`${homepage?.image_url}/${homepage?.data?.section1_image1}`} alt="" />
+                    <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section1_image1}`)} alt="" />
                   </Link>
                 </div>
               </div>
               <div className="col-6">
                 <div className="fhdfgdf">
                   <Link to={homepage?.data?.section1_url2}>
-                    <img src={`${homepage?.image_url}/${homepage?.data?.section1_image2}`} alt="" />
+                    <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section1_image2}`)} alt="" />
                   </Link>
                 </div>
               </div>
@@ -289,7 +290,7 @@ export const Home = () => {
       <div className="container-fluid pb-5">
         <Link to={homepage?.data?.section2_url}>
           <div className="xfdjgdfgdfg">
-            <img src={`${homepage?.image_url}/${homepage?.data?.section2_image}`} className="w-100" alt="" />
+            <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section2_image}`)} className="w-100" alt="" />
           </div>
         </Link>
       </div>
@@ -324,21 +325,21 @@ export const Home = () => {
               <div className="col-lg-4 mb-lg-0 mb-md-4 mb-4">
                 <div className="nhgf65dfgdf">
                   <Link to={homepage?.data?.section3_url1}>
-                    <img src={`${homepage?.image_url}/${homepage?.data?.section3_image1}`} alt="" />
+                    <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section3_image1}`)} alt="" />
                   </Link>
                 </div>
               </div>
               <div className="col-lg-4 mb-lg-0 mb-md-4 mb-4">
                 <div className="nhgf65dfgdf">
                   <Link to={homepage?.data?.section3_url2}>
-                    <img src={`${homepage?.image_url}/${homepage?.data?.section3_image2}`} alt="" />
+                    <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section3_image2}`)} alt="" />
                   </Link>
                 </div>
               </div>
               <div className="col-lg-4 mb-lg-0 mb-md-4 mb-0">
                 <div className="nhgf65dfgdf">
                   <Link to={homepage?.data?.section3_url3}>
-                    <img src={`${homepage?.image_url}/${homepage?.data?.section3_image3}`} alt="" />
+                    <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section3_image3}`)} alt="" />
                   </Link>
                 </div>
               </div>
@@ -354,14 +355,14 @@ export const Home = () => {
               <div className="col-lg-3 mb-lg-0 mb-md-4 mb-4">
                 <div className="dfdfdffd">
                   <Link to={homepage?.data?.section3_url4}>
-                    <img src={`${homepage?.image_url}/${homepage?.data?.section3_image4}`} alt="" />
+                    <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section3_image4}`)} alt="" />
                   </Link>
                 </div>
               </div>
               <div className="col-lg-9 mb-lg-0 mb-md-4 mb-0">
                 <div className="dfdfdffd">
                   <Link to={homepage?.data?.section3_url5}>
-                    <img src={`${homepage?.image_url}/${homepage?.data?.section3_image5}`} alt="" />
+                    <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section3_image5}`)} alt="" />
                   </Link>
                 </div>
               </div>
@@ -377,7 +378,7 @@ export const Home = () => {
           </div>
           <Link to={homepage?.data?.section4_url}>
             <div className="sdfsdfsdfsd">
-              <img src={`${homepage?.image_url}/${homepage?.data?.section4_image}`} alt="" />
+              <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section4_image}`)} alt="" />
             </div>
           </Link>
         </div>
@@ -395,7 +396,7 @@ export const Home = () => {
                 <div
                   className="dfgyhdfgdf"                  
                 >
-                  <img src={`${homepage?.image_url}/${homepage?.data?.section5_image1}`} alt="" />
+                  <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section5_image1}`)} alt="" />
                   {/* <div className="dfdfsdf">
                     <h4>
                       <span>NEW IN</span>{" "}
@@ -414,7 +415,7 @@ export const Home = () => {
                 <div
                   className="dfgyhdfgdf"                  
                 >
-                  <img src={`${homepage?.image_url}/${homepage?.data?.section5_image2}`} alt="" />
+                  <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section5_image2}`)} alt="" />
                   {/* <div className="dfdfsdf">
                     <h4>
                       <span>MUST HAVE</span>
@@ -433,7 +434,7 @@ export const Home = () => {
                 <div
                   className="dfgyhdfgdf"                  
                 >
-                  <img src={`${homepage?.image_url}/${homepage?.data?.section5_image3}`} alt="" />
+                  <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section5_image3}`)} alt="" />
                   {/* <div className="dfdfsdf">
                     <h4>
                       <span>NEW IN</span>{" "}
@@ -487,7 +488,7 @@ export const Home = () => {
                   {/* <Link to={homepage?.data?.h3_url1}> */}
                     <div className="d-flex align-items-center justify-content-center">
                       <div className="sdhgdfg">
-                        <img src={`${homepage?.image_url}/${homepage?.data?.section9_image1}`} alt="" />
+                        <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section9_image1}`)} alt="" />
                       </div>
                       <div className="cfgncfgb sdfseeerrrr aedqeqweqqee">
                         <h4>{homepage?.data?.section9_title1}</h4>
@@ -503,7 +504,7 @@ export const Home = () => {
                   {/* <Link to={homepage?.data?.h3_url2}> */}
                     <div className="d-flex align-items-center justify-content-center">
                       <div className="sdhgdfg">
-                        <img src={`${homepage?.image_url}/${homepage?.data?.section9_image2}`} alt="" />
+                        <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section9_image2}`)} alt="" />
                       </div>
 
                       <div className="cfgncfgb sdfseeerrrr aedqeqweqqee">
@@ -520,7 +521,7 @@ export const Home = () => {
                   {/* <Link to={homepage?.data?.h3_url3}> */}
                     <div className="d-flex align-items-center justify-content-center">
                       <div className="sdhgdfg">
-                        <img src={`${homepage?.image_url}/${homepage?.data?.section9_image3}`} alt="" />
+                        <img src={optimizeImage(`${homepage?.image_url}/${homepage?.data?.section9_image3}`)} alt="" />
                       </div>
 
                       <div className="cfgncfgb sdfseeerrrr aedqeqweqqee">

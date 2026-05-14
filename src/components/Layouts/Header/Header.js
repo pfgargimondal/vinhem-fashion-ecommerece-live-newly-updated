@@ -21,6 +21,7 @@ import axios from "axios";
 import Loader from "../../Loader/Loader";
 
 import {BASE_URL} from "../../../http";
+import { optimizeImage } from "../../../utils/optimizeImage";
 
 export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, shouldHideHeaderCategoryRoutes }) => {
   const [resMenu, setResMenu] = useState(false);
@@ -1044,7 +1045,7 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
                                                         <div className="vertical-image">
                                                           <div className="pkopkerrwer sfsdfweweweqwq text-center">
                                                             <img
-                                                              src={`${mainBanner?.category_bannerImage_url}/${mainBanner?.[`category_bannerImage${i}`]}`}
+                                                              src={optimizeImage(`${mainBanner?.category_bannerImage_url}/${mainBanner?.[`category_bannerImage${i}`]}`)}
                                                               className="w-100"
                                                               alt={mainBanner?.[`category_bannerTitle${i}`]}
                                                             />
@@ -1085,7 +1086,7 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
                                                         to={mainBanner?.[`category_bannerURL${i}`]}
                                                       >
                                                         <img
-                                                          src={`${mainBanner?.category_bannerImage_url}/${mainBanner?.[`category_bannerImage${i}`]}`}
+                                                          src={optimizeImage(`${mainBanner?.category_bannerImage_url}/${mainBanner?.[`category_bannerImage${i}`]}`)}
                                                           className="w-100"
                                                           alt={mainBanner?.[`category_bannerTitle${i}`]}
                                                         />
@@ -1354,7 +1355,7 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
                                       <div className="col-lg-6" key={index}>
                                         <div className="pkopkerrwer text-center">
                                           <img
-                                            src={`${mainBanner?.category_bannerImage_url}/${b.image}`}
+                                            src={optimizeImage(`${mainBanner?.category_bannerImage_url}/${b.image}`)}
                                             className="w-100"
                                             alt={b.title || "banner"}
                                           />
@@ -1373,7 +1374,7 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
                                     <div className="pkopkerrwer safsrfwee text-center mb-4" key={index}>
                                       <Link to={b.url}>
                                         <img
-                                          src={`${mainBanner?.category_bannerImage_url}/${b.image}`}
+                                          src={optimizeImage(`${mainBanner?.category_bannerImage_url}/${b.image}`)}
                                           className="w-100"
                                           alt={b.title || "banner"}
                                         />
@@ -1406,7 +1407,7 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
         </div>
 
         <div className="difwehwerwer">
-          {emailToggle ? (<img src={`${BASE_URL}/public/FTP-&-Excels/Main-Frame/All-Banners/Pop-Ups/dw.jpg`}  alt="" />) : (<img src={`${BASE_URL}/public/FTP-&-Excels/Main-Frame/All-Banners/Pop-Ups/dw.jpg`} alt="" />)}
+          {emailToggle ? (<img src={optimizeImage(`${BASE_URL}/public/FTP-&-Excels/Main-Frame/All-Banners/Pop-Ups/dw.jpg`)}  alt="" />) : (<img src={optimizeImage(`${BASE_URL}/public/FTP-&-Excels/Main-Frame/All-Banners/Pop-Ups/dw.jpg`)} alt="" />)}
 
           <div className="diwekmrwerwe px-4 pb-2 pt-4">
             <h5 className="text-center mb-1">Log in or Sign up</h5>

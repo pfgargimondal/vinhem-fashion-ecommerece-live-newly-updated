@@ -6,6 +6,7 @@ import { CareerForm } from "./FormComponent/CareerForm";
 import Loader from "../../components/Loader/Loader";
 import { useLocation } from "react-router-dom";
 import { useMetaData } from "../../hooks/useMetaData";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Career = () => {
 
@@ -81,7 +82,7 @@ export const Career = () => {
       <div className="container-fluid">
         <div className="aboutusbannr position-relative">
           <img src={CareerDetails?.image_url && CareerDetails?.data?.banner_image
-            ? `${CareerDetails.image_url}/${CareerDetails.data.banner_image}`
+            ? optimizeImage(`${CareerDetails.image_url}/${CareerDetails.data.banner_image}`)
             : "./image/fashion-caeer.png"} className="w-100" style={{ borderRadius: "27px", marginTop: "1rem", overflow: "hidden" }} alt="" />
           <div className="container-fluid">
             <div className="dfgnhdfjhgdf">

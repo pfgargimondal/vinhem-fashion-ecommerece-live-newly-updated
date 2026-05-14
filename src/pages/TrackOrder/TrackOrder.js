@@ -7,6 +7,7 @@ import Loader from "../../components/Loader/Loader";
 import { toast } from "react-toastify";
 import { useMetaData } from "../../hooks/useMetaData";
 import { useLocation } from "react-router-dom";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const TrackOrder = () => {
 
@@ -103,7 +104,7 @@ export const TrackOrder = () => {
         <div className="container-fluid">
           <div className="aboutusbannr">
             <img src={TrackingOrderDetails?.image_url && TrackingOrderDetails?.data?.banner_image
-                ? `${TrackingOrderDetails.image_url}/${TrackingOrderDetails.data.banner_image}`
+                ? optimizeImage(`${TrackingOrderDetails.image_url}/${TrackingOrderDetails.data.banner_image}`)
                 : "none"} className="w-100" style={{borderRadius: "27px", marginTop: "1rem", overflow: "hidden"}} alt="" />
             <div className="sdfgdfgdfg">
                 <div className="dfgnhdfjhgdf">

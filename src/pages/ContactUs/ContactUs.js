@@ -6,6 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Loader from "../../components/Loader/Loader";
 import { useMetaData } from "../../hooks/useMetaData";
 import { useLocation } from "react-router-dom";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const ContactUs = () => {
   const [ContactUsDetails, setContactUsDetails] = useState({});
@@ -189,7 +190,7 @@ export const ContactUs = () => {
       <div className="container-fluid">
         <div className={styles.aboutusbannr}>
           <img src={ContactUsImage && ContactUsDetails.contact_details?.banner_image
-                ? `${ContactUsImage}/${ContactUsDetails.contact_details.banner_image}`
+                ? optimizeImage(`${ContactUsImage}/${ContactUsDetails.contact_details.banner_image}`)
                 : "none"} className="w-100" style={{borderRadius: "27px", marginTop: "1rem", overflow: "hidden"}} alt="" />
         </div>
       </div>

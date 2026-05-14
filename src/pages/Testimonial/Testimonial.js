@@ -14,6 +14,7 @@ import { FooterTopComponent } from "../../components/Others/FooterTopComponent";
 import Loader from "../../components/Loader/Loader";
 import { Link, useLocation } from "react-router-dom";
 import { useMetaData } from "../../hooks/useMetaData";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Testimonial = () => {
     const [loading, setLoading] = useState(false);
@@ -107,7 +108,7 @@ export const Testimonial = () => {
                     </div>
                     {TestimonialDetails?.banner?.banner_image && (
                         <img
-                            src={`${TestimonialDetails?.banner_url}/${TestimonialDetails?.banner.banner_image}`}
+                            src={optimizeImage(`${TestimonialDetails?.banner_url}/${TestimonialDetails?.banner.banner_image}`)}
                             className="img-fluid"
                             alt=""
                         />
@@ -157,7 +158,7 @@ export const Testimonial = () => {
                                     <div class="dfgdf">
                                         {TestimonialDetails.data?.second_section_image_one && (
                                             <img
-                                                src={`${TestimonialDetails.image_url}/${TestimonialDetails.data.second_section_image_one}`}
+                                                src={optimizeImage(`${TestimonialDetails.image_url}/${TestimonialDetails.data.second_section_image_one}`)}
                                                 alt=""
                                             />
                                         )}
@@ -173,7 +174,7 @@ export const Testimonial = () => {
                                     <div class="dfgdf">
                                         {TestimonialDetails.data?.second_section_image_two && (
                                             <img
-                                                src={`${TestimonialDetails.image_url}/${TestimonialDetails.data.second_section_image_two}`}
+                                                src={optimizeImage(`${TestimonialDetails.image_url}/${TestimonialDetails.data.second_section_image_two}`)}
                                                 alt=""
                                             />
                                         )}
@@ -189,7 +190,7 @@ export const Testimonial = () => {
                                     <div class="dfgdf">
                                         {TestimonialDetails.data?.second_section_image_three && (
                                             <img
-                                                src={`${TestimonialDetails.image_url}/${TestimonialDetails.data.second_section_image_three}`}
+                                                src={optimizeImage(`${TestimonialDetails.image_url}/${TestimonialDetails.data.second_section_image_three}`)}
                                                 alt=""
                                             />
                                         )}
@@ -657,7 +658,7 @@ export const Testimonial = () => {
                                         <div className="oeijmewrwer d-flex p-2">
                                             <div className="col-lg-3">
                                                 <div className="djewojewr_left">
-                                                    <img src={`${TestimonialDetails?.testimonial_url}/${contentVal?.image}`} alt="" />
+                                                    <img src={optimizeImage(`${TestimonialDetails?.testimonial_url}/${contentVal?.image}`)} alt="" />
                                                 </div>
                                             </div>
 

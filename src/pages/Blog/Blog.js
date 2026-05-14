@@ -10,6 +10,7 @@ import "./Css/Blog.css";
 import "./Css/BlogResponsive.css";
 import { FooterBlog, HeaderBlog } from "../../components";
 import Loader from "../../components/Loader/Loader";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Blog = () => {
   const [loading, setLoading] = useState(false);
@@ -201,7 +202,7 @@ export const Blog = () => {
             <SwiperSlide key={blogBannerItem?.id}>
               <div className="lklklkdssdd-slider">
                 <img
-                  src={`${blogBannerimageBaseUrl}/${blogBannerItem?.image}`}
+                  src={optimizeImage(`${blogBannerimageBaseUrl}/${blogBannerItem?.image}`)}
                   alt={blogBannerItem?.image}
                   className="img-fluid w-100"
                 />
@@ -277,7 +278,7 @@ export const Blog = () => {
                         <div className="col-3">
                           <div className="doejwojrwer overflow-hidden rounded-pill">
                             <img
-                              src={`${imageBaseUrl}/${popularBlog?.blog_image}`}
+                              src={optimizeImage(`${imageBaseUrl}/${popularBlog?.blog_image}`)}
                               className="img-fluid"
                               alt={popularBlog?.title}
                             />
@@ -464,7 +465,7 @@ export const Blog = () => {
                       width="100%"
                       className="dckisehiwehrr"
                       style={{ height: "100%" }}
-                      src={blogvedio.vedio_url}
+                      src={optimizeImage(blogvedio.vedio_url)}
                       alt=""
                     />
                   ) : (
@@ -495,7 +496,7 @@ export const Blog = () => {
                       width="100%"
                       className="dckisehiwehrr"
                       style={{ height: "100%" }}
-                      src={blogvedio.blog_image_two}
+                      src={optimizeImage(blogvedio.blog_image_two)}
                       alt=""
                     />
                   ) : (

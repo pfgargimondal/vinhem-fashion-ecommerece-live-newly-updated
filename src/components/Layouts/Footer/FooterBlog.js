@@ -5,6 +5,7 @@ import "./FooterBlog.css";
 import Loader from "../../Loader/Loader";
 import http from "../../../http";
 import { useEffect, useState } from "react";
+import { optimizeImage } from "../../../utils/optimizeImage";
 
 export const FooterBlog = ({ blogCategories, allblogCategories }) => {
     const [loading, setLoading] = useState(false);
@@ -78,7 +79,7 @@ export const FooterBlog = ({ blogCategories, allblogCategories }) => {
                                 <div className="certification-grid mt-3">
                                     {blogsFooterImage.map((blogsFooterImageItem) => (
                                         <img
-                                            src={blogsFooterImageItem.image}
+                                            src={optimizeImage(blogsFooterImageItem.image)}
                                             alt="CERTIFIED COMPANY"
                                         />
                                     ))}

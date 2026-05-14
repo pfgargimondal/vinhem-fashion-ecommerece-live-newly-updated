@@ -5,6 +5,7 @@ import http from "../../http";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/AuthContext";
 import Loader from "../../components/Loader/Loader";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 
 export const OrderDetails = () => {
@@ -681,7 +682,7 @@ export const OrderDetails = () => {
                     <tr key={index}>
                       <td className="d-flex align-items-center gap-3">
                         <img
-                          src={item?.product_image || "/images/no-image.png"}
+                          src={optimizeImage(item?.product_image) || "/images/no-image.png"}
                           className="rounded"
                           alt={item?.product?.product_name}
                           width={70}

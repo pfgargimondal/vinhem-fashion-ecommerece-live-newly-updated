@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import Loader from "../../components/Loader/Loader";
 import { useMetaData } from "../../hooks/useMetaData";
 import { useLocation } from "react-router-dom";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const BecomeVendor = () => {
   const [loading, setLoading] = useState(false);
@@ -186,7 +187,7 @@ export const BecomeVendor = () => {
             <img
               src={
                 supplierRegistrationBanner && supplierRegistrationImageUrl
-                  ? `${supplierRegistrationImageUrl}/${supplierRegistrationBanner}`
+                  ? optimizeImage(`${supplierRegistrationImageUrl}/${supplierRegistrationBanner}`)
                   : "none"
               }
               className="w-100"

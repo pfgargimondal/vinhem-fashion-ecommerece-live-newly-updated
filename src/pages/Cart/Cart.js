@@ -63,6 +63,7 @@ export const Cart = () => {
                         
   const pathName = useLocation().pathname;
 
+  console.log(selectedDiscount, 'selectedDiscount');
   // console.log(localStorage.getItem("selectedCurrency"), 'selectedCurrency');
 
   const fetchCartlist = useCallback(async () => {
@@ -432,7 +433,11 @@ export const Cart = () => {
           );
           setShippingCharge(charge);
 
-          localStorage.setItem("shipping_charge", charge);
+          if(freeShipping){
+            localStorage.setItem("shipping_charge", 0);
+          }else{
+            localStorage.setItem("shipping_charge", charge);
+          }
 
           const formattedShipping = formatShippingAddress(apiData);
           const formattedBilling = formatBillingAddress(apiData);
@@ -457,7 +462,7 @@ export const Cart = () => {
     };
 
     fetchPreviousAddress();
-  }, [token,getShippingCharge,totalPrice?.cart_totalWeight]);
+  }, [token,getShippingCharge,totalPrice?.cart_totalWeight, freeShipping]);
 
   // console.log(previousAddress, 'previousAddress');
   // console.log(shippingCharge, 'shippingCharge');
@@ -511,7 +516,12 @@ export const Cart = () => {
     if (name === "shipping_country") {
       const charge = getShippingCharge(value, totalPrice.cart_totalWeight);
       setShippingCharge(charge);
-      localStorage.setItem("shipping_charge", charge);
+
+      if(freeShipping){
+        localStorage.setItem("shipping_charge", 0);
+      }else{
+        localStorage.setItem("shipping_charge", charge);
+      }
     }
 
   };
@@ -972,7 +982,7 @@ export const Cart = () => {
   const handlePlacedOrder = async(method = null, transactionId = null) => {
     setLoading(true);
 
-    console.log(method, 'method');
+    // console.log(method, 'method');
 
     if (!agreeTerms) {
       toast.error("You must agree to the Terms & Conditions before continuing.");
@@ -1955,7 +1965,7 @@ export const Cart = () => {
                             <tr>
                               <td className="">Coupon Discount :</td>
                               <td className="sergvasdrg">
-                                (-) {formatPrice(shippingCharge, { showDecimals: true })}
+                                (-) {formatPrice(appliedDiscount, { showDecimals: true })}
                               </td>
                             </tr>
                           ):null}
@@ -1998,14 +2008,28 @@ export const Cart = () => {
                                     {formatPrice(
                                     freeShipping
                                       ? (
+                                          appliedDiscount > 0 ?
+                                          Number(totalPrice.total_selling_price) -
+                                          appliedDiscount +
+                                          Number(totalPrice.total_add_on_charges) +
+                                          Number(totalPrice.custom_fit_charges) +
+                                          Number(totalPrice.stiching_charges)
+                                          :
                                           Number(totalPrice.total_selling_price) +
                                           Number(totalPrice.total_add_on_charges) +
                                           Number(totalPrice.custom_fit_charges) +
                                           Number(totalPrice.stiching_charges)
                                         )
                                       : (
+                                          appliedDiscount > 0 ?
                                           Number(totalPrice.total_selling_price) -
                                           appliedDiscount +
+                                          Number(totalPrice.total_add_on_charges) +
+                                          Number(totalPrice.custom_fit_charges) +
+                                          Number(totalPrice.stiching_charges) +
+                                          Number(shippingCharge)
+                                          :
+                                          Number(totalPrice.total_selling_price) +
                                           Number(totalPrice.total_add_on_charges) +
                                           Number(totalPrice.custom_fit_charges) +
                                           Number(totalPrice.stiching_charges) +
@@ -2044,13 +2068,17 @@ export const Cart = () => {
                         - {formatPrice(
                           freeShipping
                             ? (
-                                Number(totalPrice.total_discount_price) + Number(shippingCharge)
+                                appliedDiscount > 0
+                                  ? Number(totalPrice.total_discount_price) + appliedDiscount + Number(shippingCharge)
+                                  : Number(totalPrice.total_discount_price) + Number(shippingCharge)
                               )
                             : (
-                               Number(totalPrice.total_discount_price) + appliedDiscount
-                                
+                                appliedDiscount > 0
+                                  ? Number(totalPrice.total_discount_price) + appliedDiscount
+                                  : Number(totalPrice.total_discount_price)
                               ),
-                          { showDecimals: true })}
+                          { showDecimals: true }
+                        )}
                       </span>
                     </div>
 
@@ -2072,14 +2100,30 @@ export const Cart = () => {
                         {formatPrice(
                           freeShipping
                             ? (
+                                appliedDiscount > 0
+                                ?
+                                Number(totalPrice.total_selling_price)  -
+                                appliedDiscount +
+                                Number(totalPrice.total_add_on_charges) +
+                                Number(totalPrice.custom_fit_charges) +
+                                Number(totalPrice.stiching_charges)
+                                : 
                                 Number(totalPrice.total_selling_price) +
                                 Number(totalPrice.total_add_on_charges) +
                                 Number(totalPrice.custom_fit_charges) +
                                 Number(totalPrice.stiching_charges)
                               )
                             : (
+                                appliedDiscount > 0
+                                ?
                                 Number(totalPrice.total_selling_price) -
                                 appliedDiscount +
+                                Number(totalPrice.total_add_on_charges) +
+                                Number(totalPrice.custom_fit_charges) +
+                                Number(totalPrice.stiching_charges) +
+                                Number(shippingCharge)
+                                : 
+                                Number(totalPrice.total_selling_price) +
                                 Number(totalPrice.total_add_on_charges) +
                                 Number(totalPrice.custom_fit_charges) +
                                 Number(totalPrice.stiching_charges) +
@@ -2690,7 +2734,7 @@ export const Cart = () => {
                             <tr>
                               <td className="">Coupon Discount :</td>
                               <td className="sergvasdrg">
-                                (-) {formatPrice(shippingCharge, { showDecimals: true })}
+                                (-) {formatPrice(appliedDiscount, { showDecimals: true })}
                               </td>
                             </tr>
                           ):null}
@@ -2757,14 +2801,28 @@ export const Cart = () => {
                                     {formatPrice(
                                     freeShipping
                                       ? (
+                                          appliedDiscount > 0 ?
+                                          Number(totalPrice.total_selling_price) -
+                                          appliedDiscount +
+                                          Number(totalPrice.total_add_on_charges) +
+                                          Number(totalPrice.custom_fit_charges) +
+                                          Number(totalPrice.stiching_charges)
+                                          :
                                           Number(totalPrice.total_selling_price) +
                                           Number(totalPrice.total_add_on_charges) +
                                           Number(totalPrice.custom_fit_charges) +
                                           Number(totalPrice.stiching_charges)
                                         )
                                       : (
+                                          appliedDiscount > 0 ?
                                           Number(totalPrice.total_selling_price) -
                                           appliedDiscount +
+                                          Number(totalPrice.total_add_on_charges) +
+                                          Number(totalPrice.custom_fit_charges) +
+                                          Number(totalPrice.stiching_charges) +
+                                          Number(shippingCharge)
+                                          :
+                                          Number(totalPrice.total_selling_price) +
                                           Number(totalPrice.total_add_on_charges) +
                                           Number(totalPrice.custom_fit_charges) +
                                           Number(totalPrice.stiching_charges) +
@@ -2804,13 +2862,17 @@ export const Cart = () => {
                         - {formatPrice(
                           freeShipping
                             ? (
-                                Number(totalPrice.total_discount_price) + Number(shippingCharge)
+                                appliedDiscount > 0
+                                  ? Number(totalPrice.total_discount_price) + appliedDiscount + Number(shippingCharge)
+                                  : Number(totalPrice.total_discount_price) + Number(shippingCharge)
                               )
                             : (
-                               Number(totalPrice.total_discount_price) + appliedDiscount
-                                
+                                appliedDiscount > 0
+                                  ? Number(totalPrice.total_discount_price) + appliedDiscount
+                                  : Number(totalPrice.total_discount_price)
                               ),
-                          { showDecimals: true })}
+                          { showDecimals: true }
+                        )}
                       </span>
                     </div>
 
@@ -2832,14 +2894,30 @@ export const Cart = () => {
                         {formatPrice(
                           freeShipping
                             ? (
+                                appliedDiscount > 0
+                                ?
+                                Number(totalPrice.total_selling_price)  -
+                                appliedDiscount +
+                                Number(totalPrice.total_add_on_charges) +
+                                Number(totalPrice.custom_fit_charges) +
+                                Number(totalPrice.stiching_charges)
+                                : 
                                 Number(totalPrice.total_selling_price) +
                                 Number(totalPrice.total_add_on_charges) +
                                 Number(totalPrice.custom_fit_charges) +
                                 Number(totalPrice.stiching_charges)
                               )
                             : (
+                                appliedDiscount > 0
+                                ?
                                 Number(totalPrice.total_selling_price) -
                                 appliedDiscount +
+                                Number(totalPrice.total_add_on_charges) +
+                                Number(totalPrice.custom_fit_charges) +
+                                Number(totalPrice.stiching_charges) +
+                                Number(shippingCharge)
+                                : 
+                                Number(totalPrice.total_selling_price) +
                                 Number(totalPrice.total_add_on_charges) +
                                 Number(totalPrice.custom_fit_charges) +
                                 Number(totalPrice.stiching_charges) +
@@ -3112,17 +3190,47 @@ export const Cart = () => {
                     className="d-none position-absolute"
                     checked={selectedCoupon === couponItemsVal.code}
                     disabled={couponApplied || !couponItemsVal.is_applicable || !couponItemsVal.is_matched}
-                    onChange={() => {
-                      if (!couponItemsVal.is_applicable || !couponItemsVal.is_matched) return;
+                    // onChange={() => {
+                    //   if (!couponItemsVal.is_applicable || !couponItemsVal.is_matched) return;
 
-                      setSelectedCoupon(couponItemsVal.code);
+                    //   setSelectedCoupon(couponItemsVal.code);
 
-                      let discount = couponItemsVal.type === "percent"
-                        ? (Number(totalPrice.cart_totalPrice) * parseInt(couponItemsVal.value)) / 100
-                        : parseInt(couponItemsVal.value);
+                    //   let discount = couponItemsVal.type === "percent"
+                    //     ? (Number(totalPrice.cart_totalPrice) * parseInt(couponItemsVal.value)) / 100
+                    //     : parseInt(couponItemsVal.value);
+
+                    //   setSelectedDiscount(discount);
+                    //   setAppliedDiscount(discount);
+                    // }}
+
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setSelectedCoupon(value);
+
+                      const coupon = couponItems.find(c => c.code === value);
+
+                      if (!coupon || !coupon.is_applicable || !coupon.is_matched) {
+                        setSelectedDiscount(0);
+                        setAppliedDiscount(0);
+                        setFreeShipping(false);
+                        setShippingDiscount(0);
+                        return;
+                      }
+
+                      let discount = coupon.type === "percent"
+                        ? (Number(totalPrice.cart_totalPrice) * parseInt(coupon.value)) / 100
+                        : parseInt(coupon.value);
 
                       setSelectedDiscount(discount);
                       setAppliedDiscount(discount);
+
+                      if (coupon.apply_ShippingCost === "Yes") {
+                        setFreeShipping(true);
+                        setShippingDiscount(shippingCharge);
+                      } else {
+                        setFreeShipping(false);
+                        setShippingDiscount(0);
+                      }
                     }}
                   />
 

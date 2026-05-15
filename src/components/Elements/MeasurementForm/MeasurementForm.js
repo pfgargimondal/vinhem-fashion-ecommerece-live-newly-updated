@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect, useRef, useMemo } from "react";
+import { optimizeImage } from "../../../utils/optimizeImage";
 
 export const MeasurementForm = ({
   productDetails,
@@ -645,9 +646,11 @@ export const MeasurementForm = ({
                 <div className="text-center mb-3">
                   <img
                     src={
-                      productDetails?.data?.mesurament_form_data?.[
-                      `${feildNameGuide}_options_photo`
-                      ] || "/images/default-guide.jpg"
+                      optimizeImage(
+                        productDetails?.data?.mesurament_form_data?.[
+                          `${feildNameGuide}_options_photo`
+                        ] || "/images/default-guide.jpg"
+                      )
                     }
                     className="img-fluid"
                     alt={activeGuide}
@@ -692,8 +695,7 @@ export const MeasurementForm = ({
                     <div className="ihjnugherewr">
                       <img
                         src={
-                          productDetails?.data?.product_image
-                            ?.encoded_image_url_1
+                          optimizeImage(productDetails?.data?.product_image?.encoded_image_url_1)
                         }
                         alt=""
                       />
@@ -1656,9 +1658,11 @@ export const MeasurementForm = ({
                     <div className="text-center mb-3">
                       <img
                         src={
+                          optimizeImage(
                           productDetails?.data?.mesurament_form_data?.[
                             `${feildNameGuide}_options_photo`
                           ] || "/images/default-guide.jpg"
+                          )
                         }
                         className="img-fluid"
                         alt={activeGuide}

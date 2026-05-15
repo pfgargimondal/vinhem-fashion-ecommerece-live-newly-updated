@@ -1902,7 +1902,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                       
                                   </div>
 
-                                  {/* {productDetails?.data?.designer_sizeChart?.length > 0 && ( */}
+                                  {productDetails?.data?.designer_sizeChart?.length > 0 && (
                                     <div className="select-form-side oifjrkljforrf d-none">
                                       <div className="dokewhkjrhuiwerwer skdncfjsdbcfksdnf">
                                         <button
@@ -1913,10 +1913,10 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                         </button>
                                       </div>
                                     </div>
-                                  {/* // )} */}
+                                  )}
                                 </div>
 
-                                {/* {productDetails?.data?.designer_sizeChart?.length > 0 && ( */}
+                                {productDetails?.data?.designer_sizeChart?.length > 0 && (
                                   <div className="select-form-side fdgdhsgdgdgdfg">
                                     <div className="dokewhkjrhuiwerwer skdncfjsdbcfksdnf">
                                       <button
@@ -1927,7 +1927,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                       </button>
                                     </div>
                                   </div>
-                                {/* )} */}
+                                )}
                                
                                 {(productDetails?.data?.stitching_option?.toLowerCase() === "ready to wear")&&
                                 productDetails?.data?.custom_fit?.toLowerCase() === "yes" && (

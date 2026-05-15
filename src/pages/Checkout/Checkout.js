@@ -15,6 +15,7 @@ import { useCart } from "../../context/CartContext";
 // ✅ NEW: PayPal button component
 import RazorpayButton from "../../components/PaymentGateway/RazorpayButton";
 import PayPalButton from "../../components/PaymentGateway/PayPalButton";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 
 export const Checkout = () => {
@@ -877,7 +878,7 @@ export const Checkout = () => {
                     <div className="row">
                       <div className="col-lg-3">
                         <div className="idjkewerr_left">
-                          <img src={cartItemsVal.encoded_image_url_1} alt="" />
+                          <img src={optimizeImage(cartItemsVal.encoded_image_url_1)} alt="" />
                         </div>
                       </div>
 

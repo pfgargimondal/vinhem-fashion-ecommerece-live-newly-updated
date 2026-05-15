@@ -18,6 +18,7 @@ import { BillingAddress } from "./Components/BillingAddress";
 import { placeOrderAPI } from "../../api/order";
 import Loader from "../../components/Loader/Loader";
 import { useMetaData } from "../../hooks/useMetaData";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 
 export const Cart = () => {
@@ -1201,7 +1202,7 @@ export const Cart = () => {
                               <div className="donweihrwewer">
                                 <Link to={`/products/${cartItemsVal.slug}-${cartItemsVal.PID}`}>
                                   <img
-                                    src={cartItemsVal?.encoded_image_url_1 || "/images/no-preview.jpg"}
+                                    src={optimizeImage(cartItemsVal?.encoded_image_url_1 || "/images/no-preview.jpg")}
                                     alt={cartItemsVal.product_name}
                                   />
                                 </Link>
@@ -2204,7 +2205,7 @@ export const Cart = () => {
                                     <div className="donweihrwewer">
                                       <Link to={`/products/${cartItemsVal.slug}-${cartItemsVal.PID}`}>
                                         <img
-                                          src={cartItemsVal?.encoded_image_url_1 || "/images/no-preview.jpg"}
+                                          src={optimizeImage(cartItemsVal?.encoded_image_url_1 || "/images/no-preview.jpg")}
                                           alt={cartItemsVal.product_name}
                                         />
                                       </Link>
@@ -3022,42 +3023,52 @@ export const Cart = () => {
                 className="form-control"
                 placeholder="Enter Coupon Code"
                 // value={selectedCoupon}
-                value={selectedCoupon}
-                disabled={couponApplied}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSelectedCoupon(value);
+                value=""
+                // disabled={couponApplied}
+                // onChange={(e) => {
+                //   const value = e.target.value;
+                //   setSelectedCoupon(value);
 
-                  const coupon = couponItems.find(c => c.code === value);
+                //   const coupon = couponItems.find(c => c.code === value);
 
-                  if (!coupon || !coupon.is_applicable || !coupon.is_matched) {
-                    setSelectedDiscount(0);
-                    setAppliedDiscount(0);
-                    setFreeShipping(false);
-                    setShippingDiscount(0);
-                    return;
-                  }
+                //   if (!coupon || !coupon.is_applicable || !coupon.is_matched) {
+                //     setSelectedDiscount(0);
+                //     setAppliedDiscount(0);
+                //     setFreeShipping(false);
+                //     setShippingDiscount(0);
+                //     return;
+                //   }
 
-                  let discount = coupon.type === "percent"
-                    ? (Number(totalPrice.cart_totalPrice) * parseInt(coupon.value)) / 100
-                    : parseInt(coupon.value);
+                //   let discount = coupon.type === "percent"
+                //     ? (Number(totalPrice.cart_totalPrice) * parseInt(coupon.value)) / 100
+                //     : parseInt(coupon.value);
 
-                  setSelectedDiscount(discount);
-                  setAppliedDiscount(discount);
+                //   setSelectedDiscount(discount);
+                //   setAppliedDiscount(discount);
 
-                  if (coupon.apply_ShippingCost === "Yes") {
-                    setFreeShipping(true);
-                    setShippingDiscount(shippingCharge);
-                  } else {
-                    setFreeShipping(false);
-                    setShippingDiscount(0);
-                  }
-                }}
+                //   if (coupon.apply_ShippingCost === "Yes") {
+                //     setFreeShipping(true);
+                //     setShippingDiscount(shippingCharge);
+                //   } else {
+                //     setFreeShipping(false);
+                //     setShippingDiscount(0);
+                //   }
+                // }}
               />
 
 
-
-              {!couponApplied ? (
+              <button
+                  type="button"
+                  className="btn position-absolute btn-main"
+                  // onClick={() => {
+                  //   const coupon = couponItems.find(c => c.code === selectedCoupon);
+                  //   if (!coupon || !coupon.is_applicable || !coupon.is_matched) return;
+                  //   setCouponApplied(true);
+                  // }}
+                >
+                  Apply
+                </button>
+              {/* {!couponApplied ? (
                 <button
                   type="button"
                   className="btn position-absolute btn-main"
@@ -3084,7 +3095,7 @@ export const Cart = () => {
                 >
                   Remove
                 </button>
-              )}
+              )} */}
             </div>
           </div>
 
@@ -3139,38 +3150,55 @@ export const Cart = () => {
                           </h5>
 
                           <div className="fsdrwedewee mt-2 text-center">
-                            <Link
-                              to=""
-                              className={
-                                (!couponItemsVal.is_applicable || !couponItemsVal.is_matched)
-                                  ? "disabled"
-                                  : ""
-                              }
-                              onClick={(e) => {
-                                e.preventDefault();
-                                if (!couponItemsVal.is_applicable || !couponItemsVal.is_matched) return;
-
-                                setSelectedCoupon(couponItemsVal.code);
-                                setCouponApplied(true);
-
-                                let discount = couponItemsVal.type === "percent"
-                                  ? (Number(totalPrice.cart_totalPrice) * parseInt(couponItemsVal.value)) / 100
-                                  : parseInt(couponItemsVal.value);
-
-                                setSelectedDiscount(discount);
-                                setAppliedDiscount(discount);
-
-                                if (couponItemsVal.apply_ShippingCost === "Yes") {
-                                  setFreeShipping(true);
-                                  setShippingDiscount(shippingCharge);
-                                } else {
-                                  setFreeShipping(false);
-                                  setShippingDiscount(0);
+                            {selectedCoupon !== couponItemsVal.code ? (
+                              <Link
+                                to=""
+                                className={
+                                  (!couponItemsVal.is_applicable || !couponItemsVal.is_matched)
+                                    ? "disabled"
+                                    : ""
                                 }
-                              }}
-                            >
-                              TAP TO APPLY
-                            </Link>
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  if (!couponItemsVal.is_applicable || !couponItemsVal.is_matched) return;
+
+                                  setSelectedCoupon(couponItemsVal.code);
+                                  setCouponApplied(true);
+
+                                  let discount = couponItemsVal.type === "percent"
+                                    ? (Number(totalPrice.cart_totalPrice) * parseInt(couponItemsVal.value)) / 100
+                                    : parseInt(couponItemsVal.value);
+
+                                  setSelectedDiscount(discount);
+                                  setAppliedDiscount(discount);
+
+                                  if (couponItemsVal.apply_ShippingCost === "Yes") {
+                                    setFreeShipping(true);
+                                    setShippingDiscount(shippingCharge);
+                                  } else {
+                                    setFreeShipping(false);
+                                    setShippingDiscount(0);
+                                  }
+                                }}
+                              >
+                                TAP TO APPLY
+                              </Link>
+                              ) : (
+                                <Link
+                                  to=""
+                                  className="d-flex align-items-center justify-content-center"
+                                  onClick={() => {
+                                    setSelectedCoupon("");
+                                    setSelectedDiscount(0);
+                                    setAppliedDiscount(0);
+                                    setCouponApplied(false);
+                                    setFreeShipping(false);
+                                    setShippingDiscount(0);
+                                  }}
+                                >
+                                <i style={{ transform: "initial", marginTop: "1px" }} className="bi copn-checked-icon me-1 bi-check-circle-fill"></i> Remove
+                              </Link>
+                             )}
                           </div>
                         </div>
                       </div>
@@ -3192,8 +3220,7 @@ export const Cart = () => {
                     {(couponItemsVal.is_applicable && couponItemsVal.is_matched)
                         ? <img src="./images/cissor.png" className="w-100 p-3" alt="" />
                         : ""
-                    }
-                    <i class="bi copn-checked-icon position-absolute bi-check-circle-fill"></i>
+                    }                    
                   </label>
 
                   {!couponItemsVal.is_applicable ? (

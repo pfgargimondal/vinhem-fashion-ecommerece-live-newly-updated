@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import http, { BASE_URL } from "../../http";
 import EmojiPicker from "emoji-picker-react";
 import Loader from "../../components/Loader/Loader";
+import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Chat = () => {
 
@@ -221,7 +222,7 @@ export const Chat = () => {
                         >
                           <div className="d-flex align-items-center">
                             <img
-                              src={`${chatSupportAvatarBaseURL}/${chatAdmin.profile_picture}`}
+                              src={optimizeImage(`${chatSupportAvatarBaseURL}/${chatAdmin.profile_picture}`)}
                               alt={chatAdmin.name}
                               className="rounded-circle me-2"
                               width="40"
@@ -298,7 +299,7 @@ export const Chat = () => {
                               messageContent.push(
                                 <img
                                   key="img"
-                                  src={fileUrl}
+                                  src={optimizeImage(fileUrl)}
                                   alt=""
                                   className="img-fluid rounded mt-1"
                                   style={{ maxWidth: "200px" }}

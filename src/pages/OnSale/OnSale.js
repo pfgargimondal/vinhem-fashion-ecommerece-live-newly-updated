@@ -103,207 +103,205 @@ const pathName = useLocation().pathname;
             <div className="row">
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 
+                 <Link to={OnSaleDetails?.data?.section2_url1}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image1}`)} alt="" />
 
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text1}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url1}>
                       <button>SHOP NOW</button>
-                      </Link>
                     </div>
                   </div>
                 </div>
-                
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url2}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url2}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image2}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text2}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url2}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url2}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url3}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url3}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image3}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text3}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url3}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url3}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url4}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url4}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image4}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text4}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url4}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url4}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url5}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url5}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image5}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text5}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url5}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url5}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url6}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url6}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image6}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text6}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url6}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url6}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url7}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url7}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image7}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text7}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url7}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url7}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url8}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url8}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image8}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text8}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url8}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url8}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url9}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url9}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image9}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text9}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url9}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url9}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url10}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url10}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image10}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text10}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url10}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url10}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url11}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url11}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image11}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text11}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url11}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url11}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                 {/* <Link to={OnSaleDetails?.data?.section2_url12}> */}
+                 <Link to={OnSaleDetails?.data?.section2_url12}>
                 <div className="fhgdfg position-relative overflow-hidden">
                   <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section2_image12}`)} alt="" />
                   
                   <div className="overlay-sales position-absolute w-100 h-100">
                     <div className="cvbjhdfdf">
                       <h4 className="mb-0">{OnSaleDetails?.data?.section2_text12}</h4>
-                      <Link to={OnSaleDetails?.data?.section2_url12}>
+                      {/* <Link to={OnSaleDetails?.data?.section2_url12}> */}
                         <button>SHOP NOW</button>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+                </Link>
               </div> 
             </div>
           </div>
@@ -430,166 +428,167 @@ const pathName = useLocation().pathname;
           </div>
 
           <div className="dfgjhdfgdfgf dfgswfdge mt-4">
+              <Link to={OnSaleDetails?.data?.section5_url1}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image1}`)} alt="" />
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image1}`)} alt="" />
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title1}</h5>
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </Link>
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
-                </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title1}</h5>
-                  <Link to={OnSaleDetails?.data?.section5_url1}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image2}`)} alt="" />
+              <Link to={OnSaleDetails?.data?.section5_url2}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image2}`)} alt="" />
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title2}</h5>
+                        <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title2}</h5>
-                   <Link to={OnSaleDetails?.data?.section5_url2}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image3}`)} alt="" />
+              <Link to={OnSaleDetails?.data?.section5_url3}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image3}`)} alt="" />
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title3}</h5>
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title3}</h5>
-                   <Link to={OnSaleDetails?.data?.section5_url3}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image4}`)} alt="" />
+              <Link to={OnSaleDetails?.data?.section5_url4}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image4}`)} alt="" />
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title4}</h5>
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title4}</h5>
-                   <Link to={OnSaleDetails?.data?.section5_url4}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image5}`)} alt="" />
+              <Link to={OnSaleDetails?.data?.section5_url5}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image5}`)} alt="" />
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title5}</h5>
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title5}</h5>
-                   <Link to={OnSaleDetails?.data?.section5_url5}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image6}`)} alt="" />
+              <Link to={OnSaleDetails?.data?.section5_url6}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image6}`)} alt="" />
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title6}</h5>
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title6}</h5>
-                   <Link to={OnSaleDetails?.data?.section5_url6}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image7}`)} alt="" />
-              
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+              <Link to={OnSaleDetails?.data?.section5_url7}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image7}`)} alt="" />
+                  
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title7}</h5>
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title7}</h5>
-                  <Link to={OnSaleDetails?.data?.section5_url7}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image8}`)} alt="" />
+              <Link to={OnSaleDetails?.data?.section5_url8}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image8}`)} alt="" />
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title8}</h5>
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title8}</h5>
-                   <Link to={OnSaleDetails?.data?.section5_url8}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image9}`)} alt="" />
+              <Link to={OnSaleDetails?.data?.section5_url9}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image9}`)} alt="" />
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title9}</h5>
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title9}</h5>
-                   <Link to={OnSaleDetails?.data?.section5_url9}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
 
-            <div className="dfbdff position-relative overflow-hidden">
-              <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image10}`)} alt="" />
+              <Link to={OnSaleDetails?.data?.section5_url10}>
+                <div className="dfbdff position-relative overflow-hidden">
+                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section5_image10}`)} alt="" />
 
-              <div className="overlay-sale position-absolute w-100 h-100">
-                <div className="fdbdfgdf">
-                  {/* <h6>Up to 50% off</h6> */}
+                  <div className="overlay-sale position-absolute w-100 h-100">
+                    <div className="fdbdfgdf">
+                      {/* <h6>Up to 50% off</h6> */}
+                    </div>
+                    <div className="bsdfhsdfsdf">
+                      <h5>{OnSaleDetails?.data?.section5_discount_title10}</h5>
+                      
+                      <button>SHOP NOW</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="bsdfhsdfsdf">
-                  <h5>{OnSaleDetails?.data?.section5_discount_title10}</h5>
-                   <Link to={OnSaleDetails?.data?.section5_url10}>
-                  <button>SHOP NOW</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </Link>
             
           </div>
         </div>
@@ -646,139 +645,139 @@ const pathName = useLocation().pathname;
             <div className="row">
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image1}`)} alt="" />
+                <Link to={OnSaleDetails?.data?.section8_url1}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image1}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {OnSaleDetails?.data?.section8_text1}
-                      </h4>
-                      <Link to={OnSaleDetails?.data?.section8_url1}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {OnSaleDetails?.data?.section8_text1}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image2}`)} alt="" />
+                <Link to={OnSaleDetails?.data?.section8_url2}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image2}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {OnSaleDetails?.data?.section8_text2}
-                      </h4>
-                      <Link to={OnSaleDetails?.data?.section8_url2}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {OnSaleDetails?.data?.section8_text2}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image3}`)} alt="" />
+                <Link to={OnSaleDetails?.data?.section8_url3}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image3}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {OnSaleDetails?.data?.section8_text3}
-                      </h4>
-                      <Link to={OnSaleDetails?.data?.section8_url3}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {OnSaleDetails?.data?.section8_text3}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image4}`)} alt="" />
+                 <Link to={OnSaleDetails?.data?.section8_url4}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image4}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {OnSaleDetails?.data?.section8_text4}
-                      </h4>
-                      <Link to={OnSaleDetails?.data?.section8_url4}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {OnSaleDetails?.data?.section8_text4}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image5}`)} alt="" />
+                <Link to={OnSaleDetails?.data?.section8_url5}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image5}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {OnSaleDetails?.data?.section8_text5}
-                      </h4>
-                      <Link to={OnSaleDetails?.data?.section8_url5}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {OnSaleDetails?.data?.section8_text5}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image6}`)} alt="" />
+                <Link to={OnSaleDetails?.data?.section8_url6}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image6}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {OnSaleDetails?.data?.section8_text6}
-                      </h4>
-                      <Link to={OnSaleDetails?.data?.section8_url6}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {OnSaleDetails?.data?.section8_text6}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image7}`)} alt="" />
+                <Link to={OnSaleDetails?.data?.section8_url7}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image7}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {OnSaleDetails?.data?.section8_text7}
-                      </h4>
-                      <Link to={OnSaleDetails?.data?.section8_url7}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {OnSaleDetails?.data?.section8_text7}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image8}`)} alt="" />
+                <Link to={OnSaleDetails?.data?.section8_url8}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${OnSaleDetails?.image_url}/${OnSaleDetails?.data?.section8_image8}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {OnSaleDetails?.data?.section8_text8}
-                      </h4>
-                      <Link to={OnSaleDetails?.data?.section8_url8}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {OnSaleDetails?.data?.section8_text8}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

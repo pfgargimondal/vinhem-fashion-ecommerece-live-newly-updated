@@ -100,123 +100,123 @@ export const Wedding = () => {
           </div>
           <div className="fgjhdfgf row">
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-              <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image1}`)} alt="" />
-                
-                <div className="overlay-black position-absolute w-100 h-100">
-                  <div className="dfbghf">
-                    <h4>{WeddingDetails?.data?.section1to4?.section2_text1}</h4>
-                    <Link to={WeddingDetails?.data?.section1to4?.section2_url1}>
-                      <button>SHOP NOW</button>
-                    </Link>
+              <Link to={WeddingDetails?.data?.section1to4?.section2_url1}>
+                <div className="dfgdfg255 overflow-hidden position-relative">
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image1}`)} alt="" />
+                  
+                  <div className="overlay-black position-absolute w-100 h-100">
+                    <div className="dfbghf">
+                      <h4>{WeddingDetails?.data?.section1to4?.section2_text1}</h4>
+                        <button>SHOP NOW</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-              <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image2}`)} alt="" />
-                
-                <div className="overlay-black position-absolute w-100 h-100">
-                  <div className="dfbghf">
-                    <h4>{WeddingDetails?.data?.section1to4?.section2_text2}</h4>
-                    <Link to={WeddingDetails?.data?.section1to4?.section2_url2}>
-                      <button>SHOP NOW</button>
-                    </Link>
+              <Link to={WeddingDetails?.data?.section1to4?.section2_url2}>
+                <div className="dfgdfg255 overflow-hidden position-relative">
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image2}`)} alt="" />
+                  
+                  <div className="overlay-black position-absolute w-100 h-100">
+                    <div className="dfbghf">
+                      <h4>{WeddingDetails?.data?.section1to4?.section2_text2}</h4>
+                        <button>SHOP NOW</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-              <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image3}`)} alt="" />
+              <Link to={WeddingDetails?.data?.section1to4?.section2_url3}>
+                <div className="dfgdfg255 overflow-hidden position-relative">
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image3}`)} alt="" />
 
-                <div className="overlay-black position-absolute w-100 h-100">
-                  <div className="dfbghf">
-                    <h4>{WeddingDetails?.data?.section1to4?.section2_text3}</h4>
-                    <Link to={WeddingDetails?.data?.section1to4?.section2_url3}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                  <div className="overlay-black position-absolute w-100 h-100">
+                    <div className="dfbghf">
+                      <h4>{WeddingDetails?.data?.section1to4?.section2_text3}</h4>
+                        <button>SHOP NOW</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-              <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image4}`)} alt="" />
+              <Link to={WeddingDetails?.data?.section1to4?.section2_url4}>
+                <div className="dfgdfg255 overflow-hidden position-relative">
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image4}`)} alt="" />
 
-                <div className="overlay-black position-absolute w-100 h-100">
-                  <div className="dfbghf">
-                    <h4>{WeddingDetails?.data?.section1to4?.section2_text4}</h4>
-                    <Link to={WeddingDetails?.data?.section1to4?.section2_url4}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                  <div className="overlay-black position-absolute w-100 h-100">
+                    <div className="dfbghf">
+                      <h4>{WeddingDetails?.data?.section1to4?.section2_text4}</h4>
+                        <button>SHOP NOW</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-              <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image5}`)} alt="" />
+              <Link to={WeddingDetails?.data?.section1to4?.section2_url5}>
+                <div className="dfgdfg255 overflow-hidden position-relative">
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image5}`)} alt="" />
 
-                <div className="overlay-black position-absolute w-100 h-100">
-                  <div className="dfbghf">
-                    <h4>{WeddingDetails?.data?.section1to4?.section2_text5}</h4>
-                    <Link to={WeddingDetails?.data?.section1to4?.section2_url5}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                  <div className="overlay-black position-absolute w-100 h-100">
+                    <div className="dfbghf">
+                      <h4>{WeddingDetails?.data?.section1to4?.section2_text5}</h4>
+                        <button>SHOP NOW</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-              <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image6}`)} alt="" />
+              <Link to={WeddingDetails?.data?.section1to4?.section2_url6}>
+                <div className="dfgdfg255 overflow-hidden position-relative">
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image6}`)} alt="" />
 
-                <div className="overlay-black position-absolute w-100 h-100">
-                  <div className="dfbghf">
-                    <h4>{WeddingDetails?.data?.section1to4?.section2_text6}</h4>
-                    <Link to={WeddingDetails?.data?.section1to4?.section2_url6}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                  <div className="overlay-black position-absolute w-100 h-100">
+                    <div className="dfbghf">
+                      <h4>{WeddingDetails?.data?.section1to4?.section2_text6}</h4>
+                        <button>SHOP NOW</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-              <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image7}`)} alt="" />
+              <Link to={WeddingDetails?.data?.section1to4?.section2_url7}>
+                <div className="dfgdfg255 overflow-hidden position-relative">
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image7}`)} alt="" />
 
-                <div className="overlay-black position-absolute w-100 h-100">
-                  <div className="dfbghf">
-                    <h4>{WeddingDetails?.data?.section1to4?.section2_text7}</h4>
-                    <Link to={WeddingDetails?.data?.section1to4?.section2_url7}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                  <div className="overlay-black position-absolute w-100 h-100">
+                    <div className="dfbghf">
+                      <h4>{WeddingDetails?.data?.section1to4?.section2_text7}</h4>
+                        <button>SHOP NOW</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-lg-3 col-md-6 col-sm-6 col-6 mb-4">
-              <div className="dfgdfg255 overflow-hidden position-relative">
-                <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image8}`)} alt="" />
+              <Link to={WeddingDetails?.data?.section1to4?.section2_url8}>
+                <div className="dfgdfg255 overflow-hidden position-relative">
+                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section2_image8}`)} alt="" />
 
-                <div className="overlay-black position-absolute w-100 h-100">
-                  <div className="dfbghf">
-                    <h4>{WeddingDetails?.data?.section1to4?.section2_text8}</h4>
-                    <Link to={WeddingDetails?.data?.section1to4?.section2_url8}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                  <div className="overlay-black position-absolute w-100 h-100">
+                    <div className="dfbghf">
+                      <h4>{WeddingDetails?.data?.section1to4?.section2_text8}</h4>
+                        <button>SHOP NOW</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -343,105 +343,105 @@ export const Wedding = () => {
             <div className="row">
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image1}`)} alt="" />
-                  
-                  <div className="overlay-black2 position-absolute w-100 h-100">
-                    <div className="dfbghf2">
-                      <h4>
-                        {WeddingDetails?.data?.section1to4?.section4_text1}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section1to4?.section4_url1}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                <Link to={WeddingDetails?.data?.section1to4?.section4_url1}>
+                  <div className="dfbhhfgdf position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image1}`)} alt="" />
+                    
+                    <div className="overlay-black2 position-absolute w-100 h-100">
+                      <div className="dfbghf2">
+                        <h4>
+                          {WeddingDetails?.data?.section1to4?.section4_text1}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image2}`)} alt="" />
-                  
-                  <div className="overlay-black2 position-absolute w-100 h-100">
-                    <div className="dfbghf2">
-                      <h4>
-                        {WeddingDetails?.data?.section1to4?.section4_text2}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section1to4?.section4_url2}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                <Link to={WeddingDetails?.data?.section1to4?.section4_url2}>
+                  <div className="dfbhhfgdf position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image2}`)} alt="" />
+                    
+                    <div className="overlay-black2 position-absolute w-100 h-100">
+                      <div className="dfbghf2">
+                        <h4>
+                          {WeddingDetails?.data?.section1to4?.section4_text2}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image3}`)} alt="" />
-                  
-                  <div className="overlay-black2 position-absolute w-100 h-100">
-                    <div className="dfbghf2">
-                      <h4>
-                        {WeddingDetails?.data?.section1to4?.section4_text3}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section1to4?.section4_url3}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                <Link to={WeddingDetails?.data?.section1to4?.section4_url3}>
+                  <div className="dfbhhfgdf position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image3}`)} alt="" />
+                    
+                    <div className="overlay-black2 position-absolute w-100 h-100">
+                      <div className="dfbghf2">
+                        <h4>
+                          {WeddingDetails?.data?.section1to4?.section4_text3}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image4}`)} alt="" />
-                  
-                  <div className="overlay-black2 position-absolute w-100 h-100">
-                    <div className="dfbghf2">
-                      <h4>
-                        {WeddingDetails?.data?.section1to4?.section4_text4}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section1to4?.section4_url4}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                <Link to={WeddingDetails?.data?.section1to4?.section4_url4}>
+                  <div className="dfbhhfgdf position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image4}`)} alt="" />
+                    
+                    <div className="overlay-black2 position-absolute w-100 h-100">
+                      <div className="dfbghf2">
+                        <h4>
+                          {WeddingDetails?.data?.section1to4?.section4_text4}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image5}`)} alt="" />
-                  
-                  <div className="overlay-black2 position-absolute w-100 h-100">
-                    <div className="dfbghf2">
-                      <h4>
-                        {WeddingDetails?.data?.section1to4?.section4_text5}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section1to4?.section4_url5}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                <Link to={WeddingDetails?.data?.section1to4?.section4_url5}>
+                  <div className="dfbhhfgdf position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image5}`)} alt="" />
+                    
+                    <div className="overlay-black2 position-absolute w-100 h-100">
+                      <div className="dfbghf2">
+                        <h4>
+                          {WeddingDetails?.data?.section1to4?.section4_text5}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image6}`)} alt="" />
-                  
-                  <div className="overlay-black2 position-absolute w-100 h-100">
-                    <div className="dfbghf2">
-                      <h4>
-                        {WeddingDetails?.data?.section1to4?.section4_text6}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section1to4?.section4_url6}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                <Link to={WeddingDetails?.data?.section1to4?.section4_url6}>
+                  <div className="dfbhhfgdf position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section1to4?.section4_image6}`)} alt="" />
+                    
+                    <div className="overlay-black2 position-absolute w-100 h-100">
+                      <div className="dfbghf2">
+                        <h4>
+                          {WeddingDetails?.data?.section1to4?.section4_text6}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
             </div>
@@ -458,139 +458,139 @@ export const Wedding = () => {
             <div className="row">
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image1}`)} alt="" />
+                <Link to={WeddingDetails?.data?.section5to9?.section5_url1}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image1}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {WeddingDetails?.data?.section5to9?.section5_text1}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section5to9?.section5_url1}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {WeddingDetails?.data?.section5to9?.section5_text1}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image2}`)} alt="" />
+                <Link to={WeddingDetails?.data?.section5to9?.section5_url2}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image2}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {WeddingDetails?.data?.section5to9?.section5_text2}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section5to9?.section5_url2}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {WeddingDetails?.data?.section5to9?.section5_text2}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image3}`)} alt="" />
+                <Link to={WeddingDetails?.data?.section5to9?.section5_url3}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image3}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {WeddingDetails?.data?.section5to9?.section5_text3}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section5to9?.section5_url3}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {WeddingDetails?.data?.section5to9?.section5_text3}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image4}`)} alt="" />
+                <Link to={WeddingDetails?.data?.section5to9?.section5_url4}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image4}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {WeddingDetails?.data?.section5to9?.section5_text4}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section5to9?.section5_url4}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {WeddingDetails?.data?.section5to9?.section5_text4}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image5}`)} alt="" />
+                <Link to={WeddingDetails?.data?.section5to9?.section5_url5}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image5}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {WeddingDetails?.data?.section5to9?.section5_text5}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section5to9?.section5_url5}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {WeddingDetails?.data?.section5to9?.section5_text5}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image6}`)} alt="" />
+                <Link to={WeddingDetails?.data?.section5to9?.section5_url6}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image6}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {WeddingDetails?.data?.section5to9?.section5_text6}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section5to9?.section5_url6}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {WeddingDetails?.data?.section5to9?.section5_text6}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image7}`)} alt="" />
+                <Link to={WeddingDetails?.data?.section5to9?.section5_url7}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image7}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {WeddingDetails?.data?.section5to9?.section5_text7}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section5to9?.section5_url7}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {WeddingDetails?.data?.section5to9?.section5_text7}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="col-lg-3 col-md-6 col-sm-6 col-6">
-                <div className="dfbhhfgdf55 position-relative overflow-hidden">
-                  <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image8}`)} alt="" />
+                <Link to={WeddingDetails?.data?.section5to9?.section5_url8}>
+                  <div className="dfbhhfgdf55 position-relative overflow-hidden">
+                    <img src={optimizeImage(`${WeddingDetails?.image_url}/${WeddingDetails?.data?.section5to9?.section5_image8}`)} alt="" />
 
-                  <div className="overlay-black3 position-absolute w-100 h-100">
-                    <div className="dfbghf3">
-                      <h4>
-                        {WeddingDetails?.data?.section5to9?.section5_text8}
-                      </h4>
-                      <Link to={WeddingDetails?.data?.section5to9?.section5_url8}>
-                      <button>SHOP NOW</button>
-                    </Link>
+                    <div className="overlay-black3 position-absolute w-100 h-100">
+                      <div className="dfbghf3">
+                        <h4>
+                          {WeddingDetails?.data?.section5to9?.section5_text8}
+                        </h4>
+                        <button>SHOP NOW</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

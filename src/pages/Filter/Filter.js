@@ -665,9 +665,10 @@ export const Filter = () => {
   };
 
   const isSpecialPage = 
-    category === "all-products";
-    // category === "new-in" ||
-    // category === "ready-to-ship";
+    category === "all-products" ||
+    category === "new-in" ||
+    category === "ready-to-ship" ||
+    category === "eid-store";
 
   if (loading || wishlistLoading || filterLoading) {
     return <Loader />;

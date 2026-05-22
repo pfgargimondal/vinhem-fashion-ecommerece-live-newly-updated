@@ -834,61 +834,100 @@ export const MeasurementForm = ({
                     <p className="mb-3">Choose a size to be customized:</p>
 
                     <div className="okemlkwnjrirwer mb-3 d-flex align-items-center">
-                      {productDetails?.data?.product_allSize?.flatMap(
-                        (item, index) => {
-                          // Collect normal + plus sizes (if any)
-                          const sizes = [
-                            {
-                              label: item.filter_size,
-                              value: item.filter_size,
-                              price: item.selling_price,
-                            },
-                          ];
+                      
+                      {(() => {
+                        const sizeOrder = [
+                          "Free Size",
+                          "XXS",
+                          "XS",
+                          "S",
+                          "M",
+                          "L",
+                          "XL",
+                          "2XL",
+                          "3XL",
+                          "4XL",
+                          "5XL",
+                          "6XL",
+                          "7XL",
+                          "8XL",
+                          "9XL",
+                          "10XL",
+                        ];
 
-                          if (item.plus_sizes && item.plus_sizes !== "0") {
-                            sizes.push({
-                              label: item.plus_sizes,
-                              value: item.plus_sizes,
-                              price: item.plus_sizes_charges,
-                            });
-                          }
+                        // Collect all sizes
+                        const allSizes =
+                          productDetails?.data?.product_allSize?.flatMap((item) => {
+                            const sizes = [];
 
-                          const uniqueSizes = sizes.filter(
-                            (size, idx, arr) => idx === arr.findIndex((s) => s.value === size.value)
+                            if (item.filter_size) {
+                              sizes.push({
+                                label: item.filter_size,
+                                value: item.filter_size,
+                                price: item.selling_price,
+                              });
+                            }
+
+                            if (item.plus_sizes && item.plus_sizes !== "0") {
+                              sizes.push({
+                                label: item.plus_sizes,
+                                value: item.plus_sizes,
+                                price: item.plus_sizes_charges,
+                              });
+                            }
+
+                            return sizes;
+                          }) || [];
+
+                        // Remove duplicate sizes
+                        const uniqueSizes = allSizes.filter(
+                          (size, index, arr) =>
+                            index === arr.findIndex((s) => s.value === size.value)
+                        );
+
+                        // Sort sizes
+                        const sortedSizes = uniqueSizes.sort((a, b) => {
+                          const prefixA = a.value.split("-")[0];
+                          const prefixB = b.value.split("-")[0];
+
+                          return (
+                            sizeOrder.indexOf(prefixA) - sizeOrder.indexOf(prefixB)
                           );
+                        });
 
-                          return uniqueSizes.map((sizeObj, subIndex) => (
-                            <div
-                              className="doeiwjrkweirwe me-2 mb-2"
-                              key={`${index}-${subIndex}`}
+                        return sortedSizes.map((sizeObj, index) => (
+                          <div
+                            className="doeiwjrkweirwe me-2 mb-2"
+                            key={index}
+                          >
+                            <input
+                              id={`size-${index}`}
+                              name="selected_size"
+                              type="radio"
+                              value={sizeObj.value}
+                              checked={selectedSize === sizeObj.value}
+                              onChange={handleSizeChange}
+                              className="d-none position-absolute"
+                            />
+
+                            <label
+                              htmlFor={`size-${index}`}
+                              className={`text-center p-2 border rounded ${
+                                selectedSize === sizeObj.value
+                                  ? "bg-dark text-white"
+                                  : ""
+                              }`}
+                              style={{ minWidth: "70px", cursor: "pointer" }}
                             >
-                              <input
-                                id={`size-${index}-${subIndex}`}
-                                name="selected_size"
-                                type="radio"
-                                value={sizeObj.value}
-                                checked={selectedSize === sizeObj.value}
-                                onChange={handleSizeChange}
-                                className="d-none position-absolute"
-                              />
-                              <label
-                                htmlFor={`size-${index}-${subIndex}`}
-                                className={`text-center p-2 border rounded ${
-                                  selectedSize === sizeObj.value
-                                    ? "bg-dark text-white"
-                                    : ""
-                                }`}
-                                style={{ minWidth: "70px", cursor: "pointer" }}
-                              >
-                                <span className="d-block mb-1">
-                                  ₹{parseFloat(sizeObj.price || 0).toFixed(2)}
-                                </span>
-                                <small>{sizeObj.label}</small>
-                              </label>
-                            </div>
-                          ));
-                        }
-                      )}
+                              <span className="d-block mb-1">
+                                ₹{parseFloat(sizeObj.price || 0).toFixed(2)}
+                              </span>
+
+                              <small>{sizeObj.label}</small>
+                            </label>
+                          </div>
+                        ));
+                      })()}
                     </div>
                   </>
                 )}

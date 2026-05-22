@@ -375,8 +375,9 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                     const isAllProducts = currentPath.includes("all-products");
                     const isnewIn = currentPath.includes("new-in");
                     const isreadyToShip = currentPath.includes("ready-to-ship");
+                    const iseidStore = currentPath.includes("eid-store");
 
-                    const showMainCategory = isAllProducts || isnewIn || isreadyToShip || mainCategorySlug === urlMain;
+                    const showMainCategory = isAllProducts || isnewIn || isreadyToShip || iseidStore || mainCategorySlug === urlMain;
                     if (!showMainCategory) return null;
 
                     const isSubCategoryURL = !!urlSub;
@@ -604,6 +605,7 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                           const colorCode = colorObj.color_code;
 
                           return (
+                            
                             <div className="doewjkrnhweiurwer clor-fltr-optn" key={index}>
                               <div className="cdwehjirnweijrowejrowejr">
                                 <div className="checkbox-wrapper-33">
@@ -909,9 +911,10 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                           const isAllProducts = currentPath.includes("all-products");
                           const isnewIn = currentPath.includes("new-in");
                           const isreadyToShip = currentPath.includes("ready-to-ship");
+                          const iseidStore = currentPath.includes("eid-store");
 
                           // const showMainCategory = isAllProducts || mainCategorySlug === urlMain;
-                          const showMainCategory = isAllProducts || isnewIn || isreadyToShip || mainCategorySlug === urlMain;
+                          const showMainCategory = isAllProducts || isnewIn || isreadyToShip || iseidStore || mainCategorySlug === urlMain;
                           // if (!showMainCategory) return null;
                           if (!showMainCategory) return null;
 
@@ -1104,9 +1107,8 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                         <div className="doewjkrnhweiurwer bdfgsdfseewewrr">
                           {(FilterMappingdata.filter_option || "").toLowerCase() === "color" ? (
                             FilterMappingdata.colors?.map((colorObj, index) => {
-                              const colorValue = colorObj.color_name;
+                              const colorValue = colorObj.color_name; 
                               const colorCode = colorObj.color_code; 
-
                               return (
                                 <div className="doewjkrnhweiurwer clor-fltr-optn" key={index}>
                                   <div className="cdwehjirnweijrowejrowejr">

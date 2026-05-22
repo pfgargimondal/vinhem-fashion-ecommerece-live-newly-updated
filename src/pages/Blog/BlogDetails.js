@@ -457,7 +457,7 @@ export const BlogDetails = () => {
                     </li>
                   </ul>
                 </div> */}
-                    <div className="footer-social-icons">
+                    {/* <div className="footer-social-icons">
                       <ul className="social-icons ps-0">
                         <li>
                           <button onclick={handleFacebookShare} className="social-icon">
@@ -485,6 +485,28 @@ export const BlogDetails = () => {
                           </a>
                         </li>
                       </ul>
+                    </div> */}
+
+                    <div className="socl-meda-icons">
+                      <button onclick={handleFacebookShare}>
+                        <i className="fa-brands fa-facebook-f" />
+                      </button>
+
+                      <button onClick={handleTwitterShare}>
+                        <i className="fa-brands fa-x" />
+                      </button>
+
+                      <button onclick={handleInstagramShare}>
+                        <i className="fa-brands fa-instagram" />
+                      </button>
+
+                      <button onClick={handleLinkedinShare}>
+                        <i className="fa-brands fa-linkedin-in" />
+                      </button>
+
+                      <a href="/">
+                        <i className="fa-brands fa-youtube" />
+                      </a>
                     </div>
               </div>
 

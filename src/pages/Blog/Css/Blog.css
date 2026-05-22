@@ -142,6 +142,7 @@
 
 .fgfrfdrdtreere{
     border-bottom: 2px solid var(--black-background-color);
+    margin-top: -2.5rem;
 }
 
 .dasdesrweedewr h3{
@@ -575,7 +576,7 @@ img.dckisehiwehrr{
     border-radius: 8px;
 }
 
-.footer-social-icons {
+.footer-social-icons ul {
     display: flex;
     justify-content: center;
 }
@@ -588,7 +589,6 @@ ul.social-icons {
 .social-icons li {
     vertical-align: top;
     display: inline;
-    height: 100px;
     margin-right: 10px;
 }
 .social-icons li i{
@@ -598,7 +598,7 @@ ul.social-icons {
     color: #fff;
     text-decoration: none;
 }
-.fa-facebook-f {
+/* .fa-facebook-f {
     padding:10px 14px;
     -o-transition:.5s;
     -ms-transition:.5s;
@@ -657,4 +657,57 @@ ul.social-icons {
 }
 .fa-youtube:hover {
     background-color: #ED0000;
+} */
+
+
+.socl-meda-icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.socl-meda-icons a {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 26px;
+  margin: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+  background-size: 100% 200%;
+  background-position: 0% 5%;
+
+  transition: background-position 0.5s, color 0.5s;
+}
+
+.socl-meda-icons a:nth-child(1) {
+  color: #1877F2;
+  background-image: linear-gradient(#fff 50%, #1877F2 50%);
+}
+
+.socl-meda-icons a:nth-child(2) {
+  color: #1DA1F2;
+  background-image: linear-gradient(#fff 50%, #1DA1F2 50%);
+}
+
+.socl-meda-icons a:nth-child(3) {
+  color: #d62976;
+  background-image: linear-gradient(#fff 50%, #d62976 50%);
+}
+
+.socl-meda-icons a:nth-child(4) {
+  color: #0A66C2;
+  background-image: linear-gradient(#fff 50%, #0A66C2 50%);
+}
+
+.socl-meda-icons a:nth-child(5) {
+  color: #FF0033;
+  background-image: linear-gradient(#fff 50%, #FF0033 50%);
+}
+
+.socl-meda-icons a:hover {
+  background-position: 0% 100%;
+  color: #fff;
 }

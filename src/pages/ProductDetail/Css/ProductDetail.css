@@ -608,7 +608,7 @@ p.sidifsdiyhr{
 }
 
 .okemlkwnjrirwer{
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .customize-modal .dhwekrwerwer .doeiwjrkweirwe label.bg-dark{
@@ -1028,6 +1028,7 @@ p.sidifsdiyhr{
 h4.oijiwuihfih-eiuheir{
   color: var(--grey-border-color);
   text-transform: capitalize;
+  font-size: 1.4rem;
 }
 
 .skdncfjsdbcfksdnf .btn-main{
@@ -1077,18 +1078,20 @@ h4.oijiwuihfih-eiuheir{
    border-radius: 5px;
 }
  .jidnwenjrwerwer .center h3 {
-	 font-size: 2.5rem;
+	 font-size: 1.8rem;
    font-family: "Merriweather", serif;
 }
 
 .jidnwenjrwerwer .coupon .center > div h6{
   display: inline-block;
   font-weight: 400;
+  font-size: 0.8rem;
   border-bottom: 1px solid var(--text-lighter-gray-color);
 }
 
 .jidnwenjrwerwer .coupon .center > div h5{
   font-weight: 600;
+  font-size: 1.1rem;
 }
 
  .jidnwenjrwerwer .center small {

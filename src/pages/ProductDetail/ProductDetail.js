@@ -1903,8 +1903,8 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                   </div>
 
                                   {productDetails?.data?.designer_sizeChart?.length > 0 && (
-                                    <div className="select-form-side oifjrkljforrf d-none">
-                                      <div className="dokewhkjrhuiwerwer skdncfjsdbcfksdnf">
+                                    <div className={`select-form-side oifjrkljforrf ${((window.innerWidth <= 991) && (productDetails?.data?.custom_fit?.toLowerCase() === "yes")) ? "d-block" : "d-none"}`}>
+                                      <div className="dokewhkjrhuiwerwer bhfjffsfdf skdncfjsdbcfksdnf">
                                         <button
                                           className="btn btn-main px-0"
                                           onClick={() => setShowSizeGuide(!showSizeGuide)}
@@ -1917,7 +1917,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                 </div>
 
                                 {productDetails?.data?.designer_sizeChart?.length > 0 && (
-                                  <div className="select-form-side fdgdhsgdgdgdfg">
+                                  <div className={`select-form-side fdgdhsgdgdgdfg ${((window.innerWidth <= 991) && (productDetails?.data?.custom_fit?.toLowerCase() !== "yes")) ? "d-block" : ""}`}>
                                     <div className="dokewhkjrhuiwerwer skdncfjsdbcfksdnf">
                                       <button
                                         className="btn btn-main px-0"

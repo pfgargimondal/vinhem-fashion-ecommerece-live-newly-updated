@@ -465,6 +465,10 @@
   .sfgdjfregbytjreee {
     gap: 7.2vw !important;
   }
+
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 8.7vw !important;
+  }
 }
 
 
@@ -481,9 +485,23 @@
 
 
 
+@media only screen and (max-width: 416px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 8.5vw !important;
+  }
+}
+
+
+
+
+
 @media only screen and (max-width: 414px){
   .sfgdjfregbytjreee {
     gap: 1.6vw !important;
+  }
+
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3vw !important;
   }
 }
 
@@ -511,9 +529,23 @@
 
 
 
+@media only screen and (max-width: 404px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 2.8vw !important;
+  }
+}
+
+
+
+
+
 @media only screen and (max-width: 393px){
   .sfgdjfregbytjreee {
     gap: 2.2vw !important;
+  }
+
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3.8vw !important;
   }
 }
 
@@ -526,6 +558,17 @@
     gap: 2vw !important;
   }
 }
+
+
+
+
+
+@media only screen and (max-width: 381px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3.6vw !important;
+  }
+}
+
 
 
 
@@ -550,6 +593,17 @@
 
 
 
+
+@media only screen and (max-width: 370px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3.4vw !important;
+  }
+}
+
+
+
+
+
 @media only screen and (max-width: 364px){
   .sfgdjfregbytjreee {
     gap: 1.5vw !important;
@@ -563,6 +617,20 @@
 @media only screen and (max-width: 360px){
   .sfgdjfregbytjreee {
     gap: 2.5vw !important;
+  }
+
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 4.5vw !important;
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 357px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 4.3vw !important;
   }
 }
 
@@ -584,6 +652,10 @@
   .sfgdjfregbytjreee {
     gap: 2.1vw !important;
   }
+
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 4vw !important;
+  }
 }
 
 
@@ -604,8 +676,22 @@
   .sfgdjfregbytjreee {
     gap: 1.7vw !important;
   }
+
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3.9vw !important;
+  }
 }
 
+
+
+
+
+
+@media only screen and (max-width: 325px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3.7vw !important;
+  }
+}
 
 
 
@@ -641,6 +727,16 @@
 
 
 
+@media only screen and (max-width: 315px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3.5vw !important;
+  }
+}
+
+
+
+
+
 @media only screen and (max-width: 310px){
   .sfgdjfregbytjreee {
     gap: 1.1vw !important;
@@ -651,8 +747,28 @@
 
 
 
+@media only screen and (max-width: 307px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3.3vw !important;
+  }
+}
+
+
+
+
+
 @media only screen and (max-width: 305px){
   .sfgdjfregbytjreee {
     gap: 0.9vw !important;
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 299px){
+  .shipping-days.sfgdjfregbytjreee {
+    gap: 3vw !important;
   }
 }

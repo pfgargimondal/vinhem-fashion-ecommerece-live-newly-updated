@@ -561,12 +561,16 @@
         display: none;
     }
 
-    .oifjrkljforrf.d-none{
+    /* .oifjrkljforrf.d-none{
         display: block !important;
-    }
+    } */
 
     .align-items-center.sdfasdctgerrrrwe{
         align-items: unset !important;
+    }
+
+    .bhfjffsfdf{
+        padding-top: 5px;
     }
 
     .dfsfdtgrefcd .col-5{
@@ -597,6 +601,7 @@
 
     .jnmkjhihewirwer div > table{
         width: max-content;
+        min-width: 100%;
     }
 
     .doiejnwkhrwer p {

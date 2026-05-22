@@ -529,6 +529,7 @@
     }
 
     .nw-arrvl {
+        left: -1.3%;
         background-size: 80px;
         line-height: 2.6;
         font-size: 14px;
@@ -554,10 +555,6 @@
 @media only screen and (max-width: 575px){
     .doiewjkrniuwewer {
         height: auto !important;
-    }
-
-    .nw-arrvl {
-        left: -0.5%;
     }
 }
 
@@ -725,6 +722,32 @@
         font-size: 10px;
         width: 42px !important;
     }
+
+    .nw-arrvl {
+        left: -1.25%;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 371px){
+    .nw-arrvl {
+        left: -1.27%;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 365px){
+    .nw-arrvl {
+        left: -1.28%;
+    }
 }
 
 
@@ -739,6 +762,32 @@
 
     .fdbdfgdfgdf h6{
         font-size: 2.8vw !important;
+    }
+
+    .nw-arrvl {
+        left: -1.28%;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 356px){
+    .nw-arrvl {
+        left: -1.7%;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 335px){
+    .nw-arrvl {
+        left: -1.8%;
     }
 }
 
@@ -855,4 +904,8 @@
     .idjweihewr .nav-link p {
         font-size: 10px;
     }
+
+    .nw-arrvl {
+        left: -1.4%;
+    }    
 }

@@ -1532,7 +1532,7 @@ export const Cart = () => {
                               <td>VinHem Discount :</td>
 
                               <td style={{color:"green"}}>
-                                (-) &nbsp;
+                                (-)&nbsp;
                                 {/* <i class="bi bi-currency-rupee"></i> */}
                                 {formatPrice(totalPrice.total_discount_price, { showDecimals: true })}
                               </td>
@@ -1873,7 +1873,7 @@ export const Cart = () => {
                             <td>VinHem Discount :</td>
 
                             <td style={{color:"green"}}>
-                              (-) &nbsp;
+                              (-)&nbsp;
                               {/* <i class="bi bi-currency-rupee"></i> */}
                               {formatPrice(totalPrice.total_discount_price, { showDecimals: true })}
                             </td>
@@ -1933,7 +1933,7 @@ export const Cart = () => {
                        
                           <tr>
                             <td>
-                              Shipping & Duties :
+                              Shipping & Duties :&nbsp;
                               {freeShipping && (
                                 <span className="sergvasdrg">(Coupon Applied)</span>
                               )}
@@ -2642,7 +2642,7 @@ export const Cart = () => {
                             <td>VinHem Discount :</td>
 
                             <td style={{color:"green"}}>
-                              (-) &nbsp;
+                              (-)&nbsp;
                               {/* <i class="bi bi-currency-rupee"></i> */}
                               {formatPrice(totalPrice.total_discount_price, { showDecimals: true })}
                             </td>
@@ -2702,7 +2702,7 @@ export const Cart = () => {
                        
                           <tr>
                             <td>
-                              Shipping & Duties : 
+                              Shipping & Duties :&nbsp;
                               {freeShipping && (
                                 <span className="sergvasdrg">(Coupon Applied)</span>
                               )}
@@ -3247,8 +3247,7 @@ export const Cart = () => {
                         <div>
                           <h3>{couponItemsVal.code}</h3>
 
-                          <h6 className="pb-2">Valid until &nbsp;
-                            <b>{ValidityDate(couponItemsVal.expiry_date)}</b></h6>
+                          <h6 className="pb-2">Valid until <b>{ValidityDate(couponItemsVal.expiry_date)}</b></h6>
 
                           <h5>Get instant discount worth &nbsp;
                             {couponItemsVal.type === 'percent'
@@ -3332,11 +3331,11 @@ export const Cart = () => {
                   </label>
 
                   {!couponItemsVal.is_applicable ? (
-                    <h4 className="oijiwuihfih-eiuheir mt-3 text-center">
+                    <h4 className="oijiwuihfih-eiuheir my-4 text-center">
                       {couponItemsVal.disable_reason}
                     </h4>
                   ) : !couponItemsVal.is_matched ? (
-                    <h4 className="oijiwuihfih-eiuheir mt-3 text-center">
+                    <h4 className="oijiwuihfih-eiuheir my-4 text-center">
                       This coupon is not valid for products in your cart
                     </h4>
                   ) : null}       

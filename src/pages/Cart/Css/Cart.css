@@ -285,7 +285,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 9999999;
+  z-index: 999999999;
   opacity: 1;
   visibility: visible;
   transition: 0.1s ease-in-out;
@@ -343,7 +343,7 @@
 }
 
 .coupon-modal{
-  width: 27%;
+  width: 28%;
 }
 
 .dcvsdfggewe label,

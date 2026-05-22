@@ -106,7 +106,7 @@ export const FeaturedProducts = ({ featuredProduct }) => {
                 </div>
 
                 <div className={`fdbdfgdfgdf`}>
-                  <div className={`sfgdjfregbytjreee d-flex align-items-center`}>
+                  <div className={`sfgdjfregbytjreee d-flex align-items-center ${featuredProduct.shipping_time.includes("Days") ? "shipping-days" : ""}`}>
                     <h6 className="dokwehorjweojrower"><i class="bi bi-truck"></i> Ships in {featuredProduct.shipping_time}</h6>
 
                     {featuredProduct.rts_quantity > '0' && (

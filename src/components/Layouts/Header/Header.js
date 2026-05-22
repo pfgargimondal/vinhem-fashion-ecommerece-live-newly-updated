@@ -23,7 +23,7 @@ import Loader from "../../Loader/Loader";
 import {BASE_URL} from "../../../http";
 import { optimizeImage } from "../../../utils/optimizeImage";
 
-export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, shouldHideHeaderCategoryRoutes }) => {
+export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, shouldHideHeaderCategoryRoutes, footerBottomResNav }) => {
   const [resMenu, setResMenu] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
   const [searchCurrency, setSearchCurrency] = useState("");
@@ -1634,7 +1634,9 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
 
       {/*res navbar bottom footer*/}
       
-      <ResponsiveNavbarBottom resSearchToggle={resSearchToggle} setResSearchToggle={setResSearchToggle} setResSignBottom={setResSignBottom} />
+      {!footerBottomResNav && (
+        <ResponsiveNavbarBottom resSearchToggle={resSearchToggle} setResSearchToggle={setResSearchToggle} setResSignBottom={setResSignBottom} />
+      )}      
 
       {/*res accnt drpdwn*/}
 

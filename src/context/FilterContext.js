@@ -818,12 +818,25 @@ export const FilterProvider = ({ children }) => {
 
         if (!selectedOccasion) return products;
 
-        return products.filter(product => {
-            const productOccasion = product.filter_occasion
-                ?.toLowerCase()
-                .replace(/ /g, "-");
+        // return products.filter(product => {
+        //     const productOccasion = product.filter_occasion
+        //         ?.toLowerCase()
+        //         .replace(/ /g, "-");
 
-            return productOccasion === selectedOccasion;
+        //     return productOccasion === selectedOccasion;
+        // });
+
+        return products.filter(product => {
+            if (!product.filter_occasion) return false;
+
+            // Split multiple values by comma
+            const occasions = product.filter_occasion
+                .split(",")
+                .map(item =>
+                    item.trim().toLowerCase().replace(/ /g, "-")
+                );
+
+            return occasions.includes(selectedOccasion);
         });
     }
 

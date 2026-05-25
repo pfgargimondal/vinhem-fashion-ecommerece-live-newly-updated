@@ -1102,7 +1102,7 @@ export const Filter = () => {
                                 <div className="d-flex flex-wrap align-items-center">
                                   <h5 className="mb-0">
                                     {formatPrice(product.selling_price)}
-                                  </h5>
+                                  </h5> 
 
                                   <span class="gdfg55 d-flex align-items-center ms-2">
                                     {/* <i class="bi bi-currency-rupee"></i>  */}

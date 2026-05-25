@@ -1292,6 +1292,15 @@
 
 
 
+@media only screen and (max-width: 575px){
+    .dhbdgshfggdgrg .nw-arrvl {
+        left: -0.8%;
+    }
+}
+
+
+
+
 
 @media only screen and (max-width: 551px){
     .large-image-tab .tab-content > .active{
@@ -1618,7 +1627,16 @@
     .weqwthyuytredfgw.cbgdrfsfewerrr {
         padding-left: 16px;
     }
+
+    .dhbdgshfggdgrg .nw-arrvl {
+        left: -1.1%;
+    }
+
+    .modal-dialog{
+        width: 80% !important;
+    }
 }
+
 
 
 
@@ -1664,12 +1682,28 @@
 
 
 
+@media only screen and (max-width: 350px){
+    .oijdmkmeiwrew .copn-cde{
+        width: 100%;
+    }
+
+    .oijdmkmeiwrew .copn-cde.me-5{
+        margin-right: 0 !important;
+    }
+}
+
+
+
+
+
+
 @media only screen and (max-width: 349px){
     .dfgndfjhgdf .btn-main.me-3{
         margin-right: 0 !important;
         margin-bottom: 1rem !important;
     }
 }
+
 
 
 
@@ -1693,33 +1727,20 @@
 
 
 
-@media only screen and (max-width: 360px){
-    .modal-dialog{
-        width: 80% !important;
-    }
-}
-
-
-
-
-
-@media only screen and (max-width: 350px){
-    .oijdmkmeiwrew .copn-cde{
-        width: 100%;
-    }
-
-    .oijdmkmeiwrew .copn-cde.me-5{
-        margin-right: 0 !important;
-    }
-}
-
-
-
-
 
 @media only screen and (max-width: 328px){
     .dfgndfjhgdf .btn.me-4 {
         margin-right: 9px !important;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 321px){
+    .dhbdgshfggdgrg .nw-arrvl {
+        left: -0.85%;
     }
 }
 

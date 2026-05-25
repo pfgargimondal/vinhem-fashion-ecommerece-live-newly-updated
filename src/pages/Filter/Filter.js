@@ -15,13 +15,14 @@ import { useMetaData } from "../../hooks/useMetaData";
 import { optimizeImage } from "../../utils/optimizeImage";
 
 export const Filter = () => {
-
+  // eslint-disable-next-line
   const { formatPrice, selectedCurrency } = useCurrency();
   const { user } = useAuth();
   const location = useLocation();
   // eslint-disable-next-line
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  // eslint-disable-next-line
   const { products, initialProductList, mainCategory, subCategory, filterCategory, filterCategoryCntxt, color, material, designer, plusSize, occasion, size, celebrity, discount, shippingTime, minPrice, maxPrice, sortBy, setSortBy, setNewArrival, setReadyToShip, setCstmFit, setOnSale, resetFilter, onSale, newIn, readyToShip, removeMainCategory, removeSubCategory, removeFilterCategory, removeColor, removeMaterial, removeDesigner, removePlusSize, removeOccasion, removeSize, removeCelebrity, removeDiscount, removeShippingTime, cstmFit, page: currentPage, setPage } = useFilter();
   // eslint-disable-next-line
   const [viewType, setViewType] = useState(false);
@@ -281,88 +282,88 @@ export const Filter = () => {
   //   navigate
   // ]);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    // const searchParams = new URLSearchParams();   // 🔥 DO NOT use location.search
-    const searchParams = new URLSearchParams(location.search);   
+  //   const searchParams = new URLSearchParams();   // 🔥 DO NOT use location.search
+  //   // const searchParams = new URLSearchParams(location.search);    
 
-    const rate = selectedCurrency?.exchange_rate_to_inr || 1;
-    const formatminprice = Math.floor(
-      (minPrice === 0 ? productMinPrice : minPrice) / rate
-    );
-    const formatmaxprice = Math.floor(maxPrice / rate);
+  //   const rate = selectedCurrency?.exchange_rate_to_inr || 1;
+  //   const formatminprice = Math.floor(
+  //     (minPrice === 0 ? productMinPrice : minPrice) / rate
+  //   );
+  //   const formatmaxprice = Math.floor(maxPrice / rate);
 
-    if (mainCategory)
-      searchParams.set("main", mainCategory);
+  //   if (mainCategory)
+  //     searchParams.set("main", mainCategory);
 
-    if (subCategory)
-      searchParams.set("subpaths", subCategory);
+  //   if (subCategory)
+  //     searchParams.set("subpaths", subCategory);
 
-    if (filterCategoryCntxt)
-      searchParams.set("filterpaths", filterCategoryCntxt);
+  //   if (filterCategoryCntxt)
+  //     searchParams.set("filterpaths", filterCategoryCntxt);
 
-    if (color)
-      searchParams.set("color", color);
+  //   if (color)
+  //     searchParams.set("color", color);
 
-    if (material)
-      searchParams.set("material", material);
+  //   if (material)
+  //     searchParams.set("material", material);
 
-    if (designer)
-      searchParams.set("designer", designer);
+  //   if (designer)
+  //     searchParams.set("designer", designer);
 
-    if (plusSize)
-      searchParams.set("plusSize", plusSize);
+  //   if (plusSize)
+  //     searchParams.set("plusSize", plusSize);
 
-    if (occasion)
-      searchParams.set("occasion", occasion);
+  //   if (occasion)
+  //     searchParams.set("occasion", occasion);
 
-    if (size)
-      searchParams.set("size", size);
+  //   if (size)
+  //     searchParams.set("size", size);
 
-    if (celebrity)
-      searchParams.set("celebrity", celebrity);
+  //   if (celebrity)
+  //     searchParams.set("celebrity", celebrity);
 
-    if (discount)
-      searchParams.set("discount", discount);
+  //   if (discount)
+  //     searchParams.set("discount", discount);
 
-    if (shippingTime)
-      searchParams.set("shippingTime", shippingTime);
+  //   if (shippingTime)
+  //     searchParams.set("shippingTime", shippingTime);
 
-    if (minPrice > 0 || maxPrice < 1000000)
-      // searchParams.set("price", `${minPrice}-${maxPrice}`);
-    searchParams.set("price", `${String(formatminprice).replace(/,/g, "")}-${String(formatmaxprice).replace(/,/g, "")}`);
+  //   if (minPrice > 0 || maxPrice < 1000000)
+  //     // searchParams.set("price", `${minPrice}-${maxPrice}`);
+  //   searchParams.set("price", `${String(formatminprice).replace(/,/g, "")}-${String(formatmaxprice).replace(/,/g, "")}`);
 
 
-    navigate(
-      {
-        pathname: location.pathname,
-        search: searchParams.toString()
-      },
-      { replace: true }
-    );
+  //   navigate(
+  //     {
+  //       pathname: location.pathname,
+  //       search: searchParams.toString()
+  //     },
+  //     { replace: true }
+  //   );
 
-  }, [
-    mainCategory,
-    subCategory,
-    filterCategoryCntxt,
-    color,
-    material,
-    designer,
-    plusSize,
-    occasion,
-    size,
-    celebrity,
-    discount,
-    shippingTime,
-    minPrice,
-    maxPrice,
-    location.pathname,
-    location.search,
-    navigate,
-    formatPrice,
-    productMinPrice,
-    selectedCurrency
-  ]);
+  // }, [
+  //   mainCategory,
+  //   subCategory,
+  //   filterCategoryCntxt,
+  //   color,
+  //   material,
+  //   designer,
+  //   plusSize,
+  //   occasion,
+  //   size,
+  //   celebrity,
+  //   discount,
+  //   shippingTime,
+  //   minPrice,
+  //   maxPrice,
+  //   location.pathname,
+  //   // location.search,
+  //   navigate,
+  //   formatPrice,
+  //   productMinPrice,
+  //   selectedCurrency
+  // ]);
 
   const handleClearFilter = () => {
       setFilterLoading(true);
@@ -1082,7 +1083,7 @@ export const Filter = () => {
                               </div>
 
                               <div className={`fdbdfgdfgdf ${!viewType ? "col-lg-12 px-1" : "col-lg-9"}`}>
-                                <div className={`iakdpleejwrwerer d-flex align-items-center`}>
+                                <div className={`iakdpleejwrwerer idewjreporkejrgtgtg d-flex align-items-center ${product.shipping_time.includes("Days") ? "shipping-days" : ""}`}>
                                   <h6><i class="bi me-1 bi-truck"></i> Ships in {product.shipping_time}</h6>
 
                                   {/* {product.product_category === "READY TO SHIP" && (

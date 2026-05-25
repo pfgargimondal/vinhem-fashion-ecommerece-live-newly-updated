@@ -2,6 +2,10 @@
     .iakdpleejwrwerer{
         gap: 14px;
     }
+
+    .idewjreporkejrgtgtg.shipping-days{
+        gap: 10px;
+    }
 }
 
 
@@ -13,7 +17,12 @@
     .iakdpleejwrwerer{
         gap: 14px;
     }
+
+    .idewjreporkejrgtgtg.shipping-days{
+        gap: 10px;
+    }
 }
+
 
 
 
@@ -22,6 +31,10 @@
 @media only screen and (max-width: 2550px){
     .iakdpleejwrwerer{
         gap: 19px;
+    }
+
+    .idewjreporkejrgtgtg.shipping-days{
+        gap: 16px;
     }
 }
 
@@ -36,6 +49,20 @@
 
     .iakdpleejwrwerer h6 {
         font-size: 13px !important;
+    }
+    
+    .idewjreporkejrgtgtg.shipping-days{
+        gap: 9px;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 1869px){
+    .idewjreporkejrgtgtg.shipping-days{
+        gap: 8px;
     }
 }
 
@@ -57,6 +84,16 @@
 
 
 
+@media only screen and (max-width: 1686px){
+    .idewjreporkejrgtgtg.shipping-days{
+        gap: 3px;
+    }
+}
+
+
+
+
+
 @media only screen and (max-width: 1600px){
     .iakdpleejwrwerer {
         gap: 5px;
@@ -64,7 +101,7 @@
 
     .iakdpleejwrwerer h6 {
         font-size: 11px !important;
-    }
+    }    
 }
 
 
@@ -79,6 +116,10 @@
 
     .iakdpleejwrwerer h6 {
         font-size: 9px !important;
+    }
+
+    .idewjreporkejrgtgtg.shipping-days{
+        gap: 9px;
     }
 }
 
@@ -479,10 +520,31 @@
 
 
 
+@media only screen and (max-width: 667px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 8px;
+    }
+}
+
+
+
+
+
 
 @media only screen and (max-width: 663px){
     .iakdpleejwrwerer {
         gap: 1.5vw;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 652px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 7px;
     }
 }
 
@@ -496,6 +558,29 @@
         gap: 1.2vw;
     }
 }
+
+
+
+
+
+
+@media only screen and (max-width: 635px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 6px;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 620px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 5px;
+    }
+}
+
 
 
 
@@ -563,9 +648,42 @@
 
 
 
+@media only screen and (max-width: 563px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 4px;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 547px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 3px;
+    }
+}
+
+
+
+
+
+
 @media only screen and (max-width: 536px){
     .iakdpleejwrwerer {
         gap: 0.9vw;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 531px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 2px;
     }
 }
 
@@ -584,10 +702,35 @@
 
 
 
+@media only screen and (max-width: 516px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 1px;
+    }
+}
+
+
+
+
+
 
 @media only screen and (max-width: 510px){
     .iakdpleejwrwerer {
         gap: 0.5vw;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 500px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 6px;
+    }
+
+    .idewjreporkejrgtgtg.shipping-days h6 {
+        padding: 5px 3px;
     }
 }
 
@@ -628,6 +771,17 @@
 
 
 
+@media only screen and (max-width: 483px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 5px;
+    }
+}
+
+
+
+
+
+
 @media only screen and (max-width: 476px){
     .iakdpleejwrwerer {
         gap: 0.2vw;
@@ -642,6 +796,40 @@
 @media only screen and (max-width: 470px){
     .iakdpleejwrwerer {
         gap: 0.1vw;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 466px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 4px;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 450px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 3px;
+    }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 434px){
+    .idewjreporkejrgtgtg.shipping-days {
+        gap: 2px;
     }
 }
 
@@ -673,6 +861,17 @@
         font-size: 2.5vw !important;
     }
 }
+
+
+
+
+
+@media only screen and (max-width: 419px){
+    .idjweihewr .nav-link p {
+        font-size: 12px;
+    }
+}
+
 
 
 
@@ -860,6 +1059,11 @@
 
     .saojdkjierwerwer {
         padding-inline: 0.2rem !important;
+    }
+
+    #res-filtr-nav.saojdkjierwerwer {
+        padding-left: 0 !important;
+        padding-right: 0.2rem !important;
     }
     
     .dfgefsertttt.h-100{        

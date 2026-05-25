@@ -41,104 +41,105 @@ export const FilterProvider = ({ children }) => {
 
 
 
-    function updateURLWithFilters(newState) {
+    // function updateURLWithFilters(newState) {
 
-        const searchParams = new URLSearchParams(location.search);
+    //     // const searchParams = new URLSearchParams(location.search);
+    //      const searchParams = new URLSearchParams(); 
 
-        if (newState.mainCategory)
-            searchParams.set("main", newState.mainCategory);
-        else
-            searchParams.delete("main");
+    //     if (newState.mainCategory)
+    //         searchParams.set("main", newState.mainCategory);
+    //     else
+    //         searchParams.delete("main");
 
-        if (newState.subCategory)
-            searchParams.set("subpaths", newState.subCategory);
-        else
-            searchParams.delete("subpaths");
+    //     if (newState.subCategory)
+    //         searchParams.set("subpaths", newState.subCategory);
+    //     else
+    //         searchParams.delete("subpaths");
 
-        if (newState.filterCategory) {
-            searchParams.set("filterpaths", newState.filterCategory);
-        } else {
-            searchParams.delete("filterpaths");
-        }
+    //     if (newState.filterCategory) {
+    //         searchParams.set("filterpaths", newState.filterCategory);
+    //     } else {
+    //         searchParams.delete("filterpaths");
+    //     }
 
-        if (newState.filterCategoryName.length)
-            searchParams.set("filter", newState.filterCategoryName.join(","));
+    //     if (newState.filterCategoryName.length)
+    //         searchParams.set("filter", newState.filterCategoryName.join(","));
 
-        if (newState.color)
-            searchParams.set("color", newState.color);
-        else
-            searchParams.delete("color");
+    //     if (newState.color)
+    //         searchParams.set("color", newState.color);
+    //     else
+    //         searchParams.delete("color");
 
-        // if (newState.color.length)
-        //     searchParams.set("color", newState.color.join(","));
+    //     // if (newState.color.length)
+    //     //     searchParams.set("color", newState.color.join(","));
 
-        if (newState.material)
-            searchParams.set("material", newState.material);
-        else
-            searchParams.delete("material");
+    //     if (newState.material)
+    //         searchParams.set("material", newState.material);
+    //     else
+    //         searchParams.delete("material");
 
-        if (newState.designer)
-            searchParams.set("designer", newState.designer);
-        else
-            searchParams.delete("designer");
+    //     if (newState.designer)
+    //         searchParams.set("designer", newState.designer);
+    //     else
+    //         searchParams.delete("designer");
 
-        // if (newState.plusSize.length)
-        //     searchParams.set("plusSize", newState.plusSize.join(","));
+    //     // if (newState.plusSize.length)
+    //     //     searchParams.set("plusSize", newState.plusSize.join(","));
 
-        if (newState.plusSize)
-            searchParams.set("plusSize", newState.plusSize);
-        else
-            searchParams.delete("plusSize");
+    //     if (newState.plusSize)
+    //         searchParams.set("plusSize", newState.plusSize);
+    //     else
+    //         searchParams.delete("plusSize");
 
-        if (newState.occasion)
-            searchParams.set("occasion", newState.occasion);
-        else
-            searchParams.delete("occasion");
+    //     if (newState.occasion)
+    //         searchParams.set("occasion", newState.occasion);
+    //     else
+    //         searchParams.delete("occasion");
 
-        if (newState.size)
-            searchParams.set("size", newState.size);
-        else
-            searchParams.delete("size");
+    //     if (newState.size)
+    //         searchParams.set("size", newState.size);
+    //     else
+    //         searchParams.delete("size");
 
-        // if (newState.size.length)
-        //     searchParams.set("size", newState.size.join(","));
+    //     // if (newState.size.length)
+    //     //     searchParams.set("size", newState.size.join(","));
 
-        if (newState.celebrity)
-            searchParams.set("celebrity", newState.celebrity);
-        else
-            searchParams.delete("celebrity");
+    //     if (newState.celebrity)
+    //         searchParams.set("celebrity", newState.celebrity);
+    //     else
+    //         searchParams.delete("celebrity");
 
-        // ❌ REMOVE DISCOUNT FROM URLSearchParams
-        searchParams.delete("discount");
+    //     // ❌ REMOVE DISCOUNT FROM URLSearchParams
+    //     searchParams.delete("discount");
 
-        if (newState.shippingTime)
-            searchParams.set("shippingTime", newState.shippingTime);
-        else
-            searchParams.delete("shippingTime");
+    //     if (newState.shippingTime)
+    //         searchParams.set("shippingTime", newState.shippingTime);
+    //     else
+    //         searchParams.delete("shippingTime");
 
-        if (typeof newState.page === "number") {
-            if (newState.page > 1)
-                searchParams.set("page", newState.page);
-            else
-                searchParams.delete("page");
-        }
+    //     if (typeof newState.page === "number") {
+    //         if (newState.page > 1)
+    //             searchParams.set("page", newState.page);
+    //         else
+    //             searchParams.delete("page");
+    //     }
 
-        // ✅ Convert to string FIRST
-        let queryString = searchParams.toString();
+    //     // ✅ Convert to string FIRST
+    //     let queryString = searchParams.toString();
 
-        // 🔥 Manually append discount to keep % visible
-        if (newState.discount) {
-            queryString += (queryString ? "&" : "") + `discount=${newState.discount}`;
-        }
+    //     // 🔥 Manually append discount to keep % visible
+    //     if (newState.discount) {
+    //         queryString += (queryString ? "&" : "") + `discount=${newState.discount}`;
+    //     }
 
-        // navigate(`${location.pathname}?${queryString}`, { replace: true });
-        navigate(
-            queryString
-                ? `${location.pathname}?${queryString}`
-                : location.pathname,
-            { replace: true }
-        );
-    }
+    //     // navigate(`${location.pathname}?${queryString}`, { replace: true });
+    //     navigate(
+    //         queryString
+    //             ? `${location.pathname}?${queryString}`
+    //             : location.pathname,
+    //         { replace: true }
+    //     );
+    // }
 
 
     // function restoreFiltersFromURL() {
@@ -173,6 +174,187 @@ export const FilterProvider = ({ children }) => {
 
     //     dispatch({ type: "RESTORE_FROM_URL", payload: newState });
     // }
+
+    function updateURLWithFilters(newState, options = {}) {
+
+        const {
+            clearAll = false
+        } = options;
+
+        // ✅ if category changed -> start fresh URL
+        const searchParams = clearAll
+            ? new URLSearchParams()
+            : new URLSearchParams(location.search);
+
+        // =========================
+        // PRESERVE SEARCH ONLY
+        // =========================
+
+        const existingSearch = location.search
+            ? new URLSearchParams(location.search).get("search")
+            : null;
+
+        // =========================
+        // MAIN CATEGORY
+        // =========================
+
+        if (newState.mainCategory)
+            searchParams.set("main", newState.mainCategory);
+        else
+            searchParams.delete("main");
+
+        // =========================
+        // SUB CATEGORY
+        // =========================
+
+        if (newState.subCategory)
+            searchParams.set("subpaths", newState.subCategory);
+        else
+            searchParams.delete("subpaths");
+
+        // =========================
+        // FILTER CATEGORY
+        // =========================
+
+        if (newState.filterCategory)
+            searchParams.set("filterpaths", newState.filterCategory);
+        else
+            searchParams.delete("filterpaths");
+
+        // =========================
+        // FILTER NAME
+        // =========================
+
+        if (newState.filterCategoryName?.length)
+            searchParams.set("filter", newState.filterCategoryName.join(","));
+        else
+            searchParams.delete("filter");
+
+        // =========================
+        // COLOR
+        // =========================
+
+        if (newState.color)
+            searchParams.set("color", newState.color);
+        else
+            searchParams.delete("color");
+
+        // =========================
+        // MATERIAL
+        // =========================
+
+        if (newState.material)
+            searchParams.set("material", newState.material);
+        else
+            searchParams.delete("material");
+
+        // =========================
+        // DESIGNER
+        // =========================
+
+        if (newState.designer)
+            searchParams.set("designer", newState.designer);
+        else
+            searchParams.delete("designer");
+
+        // =========================
+        // PLUS SIZE
+        // =========================
+
+        if (newState.plusSize)
+            searchParams.set("plusSize", newState.plusSize);
+        else
+            searchParams.delete("plusSize");
+
+        // =========================
+        // OCCASION
+        // =========================
+
+        if (newState.occasion)
+            searchParams.set("occasion", newState.occasion);
+        else
+            searchParams.delete("occasion");
+
+        // =========================
+        // SIZE
+        // =========================
+
+        if (newState.size)
+            searchParams.set("size", newState.size);
+        else
+            searchParams.delete("size");
+
+        // =========================
+        // CELEBRITY
+        // =========================
+
+        if (newState.celebrity)
+            searchParams.set("celebrity", newState.celebrity);
+        else
+            searchParams.delete("celebrity");
+
+        // =========================
+        // DISCOUNT
+        // =========================
+
+        if (newState.discount)
+            searchParams.set("discount", newState.discount);
+        else
+            searchParams.delete("discount");
+
+        // =========================
+        // SHIPPING
+        // =========================
+
+        if (newState.shippingTime)
+            searchParams.set("shippingTime", newState.shippingTime);
+        else
+            searchParams.delete("shippingTime");
+
+        // =========================
+        // PRICE
+        // =========================
+
+        if (
+            newState.minPrice > 0 ||
+            newState.maxPrice < 1000000
+        ) {
+            searchParams.set(
+                "price",
+                `${newState.minPrice}-${newState.maxPrice}`
+            );
+        } else {
+            searchParams.delete("price");
+        }
+
+        // =========================
+        // PAGE
+        // =========================
+
+        if (newState.page > 1)
+            searchParams.set("page", newState.page);
+        else
+            searchParams.delete("page");
+
+        // =========================
+        // KEEP SEARCH
+        // =========================
+
+        if (!clearAll && existingSearch) {
+            searchParams.set("search", existingSearch);
+        }
+
+        // =========================
+        // NAVIGATE
+        // =========================
+
+        navigate(
+            searchParams.toString()
+                ? `${location.pathname}?${searchParams.toString()}`
+                : location.pathname,
+            { replace: true }
+        );
+    }
 
 
     function restoreFiltersFromURL() {
@@ -229,10 +411,15 @@ export const FilterProvider = ({ children }) => {
     }
 
 
+    // useEffect(() => {
+    //     restoreFiltersFromURL();
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, []);
+
     useEffect(() => {
         restoreFiltersFromURL();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [location.search]);
 
 
 
@@ -302,7 +489,10 @@ export const FilterProvider = ({ children }) => {
             payload: { mainCategory: value }
         });
 
-        updateURLWithFilters(newState);
+        // updateURLWithFilters(newState);
+        updateURLWithFilters(newState, {
+            clearAll: true
+        });
     }
     
 
@@ -371,7 +561,11 @@ export const FilterProvider = ({ children }) => {
             payload: { subPath: value }
         });
 
-        updateURLWithFilters(newState);
+        // updateURLWithFilters(newState);
+
+        updateURLWithFilters(newState, {
+            clearAll: true
+        });
     }
 
     function filterSubCategory(products) {

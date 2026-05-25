@@ -203,13 +203,13 @@ export const ProductDetail = () => {
     }
   };
 
-  // const handleMuteToggle = () => {
-  //   const largeVideo = document.querySelector(".odjeowmkoiwewer video");
+  const handleMuteToggle = () => {
+    const largeVideo = document.querySelector(".odjeowmkoiwewer video");
 
-  //   largeVideo.muted = !largeVideo.muted;
+    largeVideo.muted = !largeVideo.muted;
 
-  //   setVideoMute(!videoMute);
-  // };
+    setVideoMute(!videoMute);
+  };
 
   const handleLaterToggle = () => {
     const html = document.querySelector("html");
@@ -1477,7 +1477,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                       Your browser does not support the video tag.
                                     </video>
 
-                                    {/* {activeKey === "video" && (
+                                    {activeKey === "video" && (
                                       <div
                                         className="dweuihrweuhre bg-white rounded-3 px-3 py-1 position-absolute d-flex align-items-center"
                                         onClick={handleMuteToggle}
@@ -1498,7 +1498,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                           {videoMute ? "Enable sound" : "Disable sound"}
                                         </span>
                                       </div>
-                                    )} */}
+                                    )}
                                   </Tab.Pane>
                                 )}
                               </Tab.Content>

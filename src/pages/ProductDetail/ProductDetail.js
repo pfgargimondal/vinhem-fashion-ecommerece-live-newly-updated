@@ -64,6 +64,7 @@ export const ProductDetail = () => {
   const [sr, setSr] = useState(() => window.innerWidth >= 992);
    // eslint-disable-next-line
   // const [chatProfileDetailsShow, setChatProfileDetailsShow] = useState(false);
+  // eslint-disable-next-line
   const [videoMute, setVideoMute] = useState(true);
   const { handleLoginModal } = useAuthModal();
   // eslint-disable-next-line
@@ -202,13 +203,13 @@ export const ProductDetail = () => {
     }
   };
 
-  const handleMuteToggle = () => {
-    const largeVideo = document.querySelector(".odjeowmkoiwewer video");
+  // const handleMuteToggle = () => {
+  //   const largeVideo = document.querySelector(".odjeowmkoiwewer video");
 
-    largeVideo.muted = !largeVideo.muted;
+  //   largeVideo.muted = !largeVideo.muted;
 
-    setVideoMute(!videoMute);
-  };
+  //   setVideoMute(!videoMute);
+  // };
 
   const handleLaterToggle = () => {
     const html = document.querySelector("html");
@@ -1453,35 +1454,53 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                 })}
 
                                 {/* ================= VIDEO VIEW ================= */}
-                                <Tab.Pane eventKey="video" className="odjeowmkoiwewer">
-                                  <video
-                                    loop
-                                    autoPlay
-                                    muted={videoMute}
-                                    onClick={handleVideoControl}
-                                  >
-                                    <source
-                                      src={productDetails?.data?.product_image?.encoded_vedio_link}
-                                      type="video/mp4"
-                                    />
-                                  </video>
-
-                                  {activeKey === "video" && (
-                                    <div
-                                      className="dweuihrweuhre bg-white rounded-3 px-3 py-1 position-absolute d-flex align-items-center"
-                                      onClick={handleMuteToggle}
+                                {productDetails?.data?.product_image?.encoded_vedio_link && (
+                                  <Tab.Pane eventKey="video" className="odjeowmkoiwewer position-relative">
+                                    <video
+                                      loop
+                                      autoPlay
+                                      playsInline
+                                      controls
+                                      muted={videoMute}
+                                      onClick={handleVideoControl}
+                                      style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover"
+                                      }}
                                     >
-                                      <i
-                                        className={`bi ${
-                                          videoMute ? "bi-volume-mute" : "bi-volume-up"
-                                        } me-1`}
-                                      ></i>
-                                      <span>
-                                        {videoMute ? "Enable sound" : "Disable sound"}
-                                      </span>
-                                    </div>
-                                  )}
-                                </Tab.Pane>
+                                      <source
+                                        src={productDetails?.data?.product_image?.encoded_vedio_link}
+                                        type="video/mp4"
+                                      />
+
+                                      Your browser does not support the video tag.
+                                    </video>
+
+                                    {/* {activeKey === "video" && (
+                                      <div
+                                        className="dweuihrweuhre bg-white rounded-3 px-3 py-1 position-absolute d-flex align-items-center"
+                                        onClick={handleMuteToggle}
+                                        style={{
+                                          bottom: "10px",
+                                          right: "10px",
+                                          zIndex: 2,
+                                          cursor: "pointer"
+                                        }}
+                                      >
+                                        <i
+                                          className={`bi ${
+                                            videoMute ? "bi-volume-mute" : "bi-volume-up"
+                                          } me-1`}
+                                        ></i>
+
+                                        <span>
+                                          {videoMute ? "Enable sound" : "Disable sound"}
+                                        </span>
+                                      </div>
+                                    )} */}
+                                  </Tab.Pane>
+                                )}
                               </Tab.Content>
                             </div>
 

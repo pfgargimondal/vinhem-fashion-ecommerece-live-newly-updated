@@ -150,15 +150,33 @@ export const Blog = () => {
   const totalPages = Math.ceil(blogs.length / blogsPerPage);
 
   const handlePageChange = (pageNumber) => {
+    setLoading(true);
+
     setCurrentPage(pageNumber);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   const handlePrevPage = () => {
+    setLoading(true);
+
     currentPage > 1 && setCurrentPage((prev) => prev - 1);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   const handleNextPage = () => {
+    setLoading(true);
+
     currentPage < totalPages && setCurrentPage((prev) => prev + 1);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   const pageNumbers = [];

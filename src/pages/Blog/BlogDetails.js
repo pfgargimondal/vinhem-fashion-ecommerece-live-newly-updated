@@ -488,21 +488,21 @@ export const BlogDetails = () => {
                     </div> */}
 
                     <div className="socl-meda-icons">
-                      <button onclick={handleFacebookShare}>
+                      <a href="/" onclick={handleFacebookShare}>
                         <i className="fa-brands fa-facebook-f" />
-                      </button>
+                      </a>
 
-                      <button onClick={handleTwitterShare}>
+                      <a href="/" onClick={handleTwitterShare}>
                         <i className="fa-brands fa-x" />
-                      </button>
+                      </a>
 
-                      <button onclick={handleInstagramShare}>
+                      <a href="/" onclick={handleInstagramShare}>
                         <i className="fa-brands fa-instagram" />
-                      </button>
+                      </a>
 
-                      <button onClick={handleLinkedinShare}>
+                      <a href="/" onClick={handleLinkedinShare}>
                         <i className="fa-brands fa-linkedin-in" />
-                      </button>
+                      </a>
 
                       <a href="/">
                         <i className="fa-brands fa-youtube" />

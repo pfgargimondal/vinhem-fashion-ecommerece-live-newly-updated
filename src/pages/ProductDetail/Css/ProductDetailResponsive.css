@@ -612,6 +612,10 @@
         height: 0;
     }
 
+    .odnwejihrwerwer.sticky-top{
+        position: initial !important;
+    }
+
     .small-image-tabs .nav-item{
         margin: 0 auto !important;
     }

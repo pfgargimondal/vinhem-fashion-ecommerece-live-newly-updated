@@ -281,6 +281,8 @@
         border: 1px solid var(--light-background-color);
         border-right: 0;
         border-radius: 0 !important;
+        padding-top: 0.95rem;
+        padding-bottom: 0.95rem;
     }
 
     .dfgefsertttt{
@@ -630,6 +632,19 @@
     .dfgefsertttt{
         border-right: 0;
     }
+
+    .idjweihewr .col-4 {
+        width: 35.333333%;
+    }
+
+    .idjweihewr .col-8 {
+        width: 64.666667%;
+    }
+
+    .idjweihewr .nav-link {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
 }
 
 
@@ -868,7 +883,12 @@
 
 @media only screen and (max-width: 419px){
     .idjweihewr .nav-link p {
-        font-size: 12px;
+        font-size: 14px;
+    }
+
+    .idjweihewr .nav-link {
+        padding-top: 1.1rem;
+        padding-bottom: 1.1rem;
     }
 }
 
@@ -899,6 +919,17 @@
 
 
 
+@media only screen and (max-width: 412px){
+    .idjweihewr .nav-link {
+        padding-top: 1.4rem;
+        padding-bottom: 1.4rem;
+    }
+}
+
+
+
+
+
 
 @media only screen and (max-width: 393px){
     .fdbdfgdfgdf h6 {
@@ -906,7 +937,7 @@
     }
 
     .idjweihewr .nav-link{
-        padding-inline: 5px !important;
+        padding: 1.2rem 5px !important;
     }
 }
 
@@ -965,6 +996,10 @@
 
     .nw-arrvl {
         left: -1.28%;
+    }
+
+    .idjweihewr .nav-link {
+        padding: 1.09rem 5px !important;
     }
 }
 
@@ -1065,10 +1100,15 @@
         padding-left: 0 !important;
         padding-right: 0.2rem !important;
     }
-    
-    .dfgefsertttt.h-100{        
-        height: 79vh !important;
+
+    .idjweihewr .nav-link {
+        padding-top: 1.1rem;
+        padding-bottom: 1.1rem;
     }
+    
+    /* .dfgefsertttt.h-100{        
+        height: 79vh !important;
+    } */
 
     .dfgefsertttt{
         overflow-y: auto;
@@ -1079,12 +1119,8 @@
         max-height: 76vh;
     }
 
-    .doihweuijewrr{
-        padding: 5px;
-    }
-
     .idjweihewr .nav-link p {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 
@@ -1105,11 +1141,11 @@
         width: 38px !important;
     }
 
-    .idjweihewr .nav-link p {
-        font-size: 10px;
-    }
-
     .nw-arrvl {
         left: -1.4%;
     }    
+
+    .idjweihewr .col-4 {
+        height: 78vh;
+    }
 }

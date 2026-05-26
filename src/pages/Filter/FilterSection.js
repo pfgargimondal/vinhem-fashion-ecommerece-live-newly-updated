@@ -743,14 +743,14 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
         </div>
 
         <div className="dweihruiwehrjnwer d-none">
+          <div className="hgbdfbgbeedcfbrr d-flex align-items-center justify-content-between p-3">
+            <h4 className="mb-0">Refine</h4>
+
+            <i class="fa-solid fa-xmark" onClick={() => setResFltrMenu(false)}></i>
+          </div>
+
           <div className="idjweihewr">
             <Tab.Container id="left-tabs-example" defaultActiveKey="resfilter-price-range">
-              <div className="hgbdfbgbeedcfbrr d-flex align-items-center justify-content-between p-3">
-                <h4 className="mb-0">Refine</h4>
-
-                <i class="fa-solid fa-xmark" onClick={() => setResFltrMenu(false)}></i>
-              </div>
-
               <Row className="h-100 gx-3">
                 <Col xs={4}>
                   <Nav variant="pills" className="dfgefsertttt sticky-top flex-column h-100">

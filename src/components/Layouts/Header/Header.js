@@ -910,7 +910,7 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
                                       <div className="diwejikrwer">
                                         <button className="btn mb-3 btn-main w-100" onClick={handleLoginModal}>Sign in with Mobile/Email</button>
 
-                                        <button className="btn btn-main bg-white text-dark w-100" onClick={() => googleLogin()}>
+                                        <button className="btn btn-main bg-white hnjfdgdfgsgrttt text-dark w-100" onClick={() => googleLogin()}>
                                           <img src="/images/search.png" className="me-2" alt="" /> Sign in with Google</button>
                                       </div>
                                     </div>
@@ -1465,7 +1465,7 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
 
               <p className="my-2 text-center">or</p>
 
-              <button className="btn btn-main bg-white text-dark w-100" onClick={() => googleLogin()}><img src="/images/search.png" className="me-2" alt="" /> Sign in with Google</button>
+              <button className="btn btn-main bg-white bgdfzhdfsdfsdf text-dark w-100" onClick={() => googleLogin()}><img src="/images/search.png" className="me-2" alt="" /> Sign in with Google</button>
             </div>
 
             <h6 className="dfweoijtweer mt-3">By continuing, I agree to <Link>Vinhem Fashion policies</Link> and <Link>T&Cs</Link></h6>
@@ -1653,7 +1653,7 @@ export const Header = ({ shouldHideHeader, shouldHideFullHeaderFooterRoutes, sho
           <div className="diwejikrwer">
             <button className="btn mb-3 btn-main w-100" onClick={() => {handleLoginModal(); setResSignBottom(false)}}>Sign in with Mobile/Email</button>
 
-            <button className="btn btn-main bg-white text-dark w-100" onClick={() => googleLogin()}><img src="/images/search.png" className="me-2" alt="" /> Sign in with Google</button>
+            <button className="btn btn-main bg-white bgdfzhdfsdfsdf text-dark w-100" onClick={() => googleLogin()}><img src="/images/search.png" className="me-2" alt="" /> Sign in with Google</button>
           </div>
         </div>
       </div>

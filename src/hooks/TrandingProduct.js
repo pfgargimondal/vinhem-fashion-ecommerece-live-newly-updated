@@ -12,6 +12,7 @@ export default function TrandingProduct() {
   const [trandingProducts, setTrandingProducts] = useState([]);
   
   const swiperConfig = {
+    modules: [Autoplay, Pagination, Navigation, Mousewheel],
     spaceBetween: 20,
     slidesPerView: 4,
     navigation: true,

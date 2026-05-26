@@ -394,10 +394,18 @@ export const Filter = () => {
   };
 
   const handlePageClick = (page) => {
+    setLoading(true);
+
     setPage(page);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   const handlePrev = () => {
+    setLoading(true);
+
     if (currentPage > 1) {
       const newPage = currentPage - 1;
       setPage(newPage);
@@ -406,9 +414,15 @@ export const Filter = () => {
         setPageWindowStart(prev => Math.max(1, prev - 1));
       }
     }
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   const handleNext = () => {
+    setLoading(true);
+    
     if (currentPage < totalPages) {
       const newPage = currentPage + 1;
       setPage(newPage);
@@ -417,6 +431,10 @@ export const Filter = () => {
         setPageWindowStart(prev => prev + 1);
       }
     }
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
 

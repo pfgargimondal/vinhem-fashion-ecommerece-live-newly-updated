@@ -802,7 +802,7 @@ export const Filter = () => {
         <div className="row mt-5 dffedfgwetttt">
           <div className="col-lg-3 sgvadfbgsAGvsg">
             <div className="filter-options" style={
-              category && !subcategory && !isSpecialPage
+              category && !subcategory && (window.innerWidth > 991 && !isSpecialPage) 
                 ? { transform: "translateY(-18vw)" }
                 : {}
             }>

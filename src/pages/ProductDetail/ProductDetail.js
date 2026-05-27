@@ -201,6 +201,8 @@ export const ProductDetail = () => {
       // only pause when playing
       largeVideo.pause();
     }
+
+    console.log("Hello");
   };
 
   const handleMuteToggle = () => {
@@ -1475,7 +1477,11 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                               <Tab.Content className="slider-inner"
                                 style={{
                                   transform: isMobileView
-                                    ? `translateX(-${slideIndex * 100}%)`
+                                    ? `translateX(-${
+                                      activeKey === "video"
+                                      ? Math.round(slideIndex * 55.55)
+                                      : slideIndex * 100
+                                    }%)`
                                     : "none",
                                   transition: isMobileView ? "transform .4s ease" : "none",
                                   display: isMobileView ? "flex" : "block"
@@ -1518,13 +1524,14 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                       loop
                                       autoPlay
                                       playsInline
-                                      controls
+                                      controls={false}
                                       muted={videoMute}
                                       onClick={handleVideoControl}
                                       style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "cover"
+                                        objectFit: "cover",
+                                        borderRadius: "0.375rem"
                                       }}
                                     >
                                       <source
@@ -1539,12 +1546,6 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                       <div
                                         className="dweuihrweuhre bg-white rounded-3 px-3 py-1 position-absolute d-flex align-items-center"
                                         onClick={handleMuteToggle}
-                                        style={{
-                                          bottom: "10px",
-                                          right: "10px",
-                                          zIndex: 2,
-                                          cursor: "pointer"
-                                        }}
                                       >
                                         <i
                                           className={`bi ${
@@ -3356,6 +3357,30 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                         )
                       );
                     })}
+
+                    {productDetails?.data?.product_image
+                      ?.encoded_vedio_link && (
+                      <Nav.Item className="nijnihninerrr">
+                        <Nav.Link eventKey="video">
+                          <div className="dowenfrkwer position-relative">
+                            <video muted>
+                              <source
+                                src={
+                                  productDetails?.data
+                                    ?.product_image
+                                    ?.encoded_vedio_link
+                                }
+                                type="video/mp4"
+                              />
+                            </video>
+
+                            <div className="dnweikrwer overflow-hidden rounded-pill position-absolute">
+                              <i className="bi position-absolute bi-play-fill"></i>
+                            </div>
+                          </div>
+                        </Nav.Link>
+                      </Nav.Item>
+                    )}
                   </Nav>
 
                   {productDetails?.data?.product_image?.encoded_image_url_5 && (
@@ -3396,6 +3421,50 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                       )
                     );
                   })}
+
+                  {/* ================= VIDEO VIEW ================= */}
+                    {productDetails?.data?.product_image?.encoded_vedio_link && (
+                      <Tab.Pane eventKey="video" className="odjeowmkoiwewer position-relative">
+                        <video
+                          loop
+                          autoPlay
+                          playsInline
+                          controls={false}
+                          muted={videoMute}
+                          onClick={handleVideoControl}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            borderRadius: "0.375rem"
+                          }}
+                        >
+                          <source
+                            src={productDetails?.data?.product_image?.encoded_vedio_link}
+                            type="video/mp4"
+                          />
+
+                          Your browser does not support the video tag.
+                        </video>
+
+                        {activeKey === "video" && (
+                          <div
+                            className="dweuihrweuhre bg-white rounded-3 px-3 py-1 position-sticky d-inline-flex align-items-center"
+                            onClick={handleMuteToggle}
+                          >
+                            <i
+                              className={`bi ${
+                                videoMute ? "bi-volume-mute" : "bi-volume-up"
+                              } me-1`}
+                            ></i>
+
+                            <span>
+                              {videoMute ? "Enable sound" : "Disable sound"}
+                            </span>
+                          </div>
+                        )}
+                      </Tab.Pane>
+                    )}
                 </Tab.Content>
               </Col>
             </Row>

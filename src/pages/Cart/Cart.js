@@ -1638,7 +1638,7 @@ export const Cart = () => {
                         <span>
                           {/* <i class="bi bi-currency-rupee"></i>  */}
                           {/* - {formatPrice(Number(totalPrice.total_discount_price) + appliedDiscount, { showDecimals: true })} */}
-                          - {formatPrice(Number(totalPrice.total_discount_price), { showDecimals: true })}
+                          (-) {formatPrice(Number(totalPrice.total_discount_price), { showDecimals: true })}
                         </span>
                       </div>
 
@@ -2065,7 +2065,7 @@ export const Cart = () => {
 
                       <span>
                         {/* <i class="bi bi-currency-rupee"></i>  */}
-                        - {formatPrice(
+                        (-) {formatPrice(
                           freeShipping
                             ? (
                                 appliedDiscount > 0
@@ -2859,7 +2859,7 @@ export const Cart = () => {
 
                       <span>
                         {/* <i class="bi bi-currency-rupee"></i>  */}
-                        - {formatPrice(
+                        (-) {formatPrice(
                           freeShipping
                             ? (
                                 appliedDiscount > 0

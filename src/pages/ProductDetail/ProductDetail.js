@@ -525,6 +525,8 @@ export const ProductDetail = () => {
   const isOutOfStock = availableQty < 1 || selectedQuantity < 1;
 
 
+  
+
   // useEffect(() => {
   //   if (productDetails?.data?.mto_quantity) {
   //     setAvailableQty(productDetails.data.mto_quantity);
@@ -649,8 +651,6 @@ export const ProductDetail = () => {
 
     return total;
   };
-
-
 
 
   const updateQtyAndPriceBySize = useCallback((normalizedSize) => {

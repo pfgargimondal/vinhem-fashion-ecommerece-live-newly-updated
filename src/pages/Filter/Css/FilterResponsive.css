@@ -141,6 +141,10 @@
         transition: 0.2s ease-in-out;
     }
 
+    .filter-options{
+        transform: initial !important;
+    }
+
     .doeihrmwerwer.pb-4{
         padding-bottom: 1rem !important;
     }

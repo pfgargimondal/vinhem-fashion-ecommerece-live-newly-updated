@@ -683,11 +683,8 @@ export const Filter = () => {
       .replace(/\b\w/g, (char) => char.toUpperCase());
   };
 
-  const isSpecialPage = 
-    category === "all-products" ||
-    category === "new-in" ||
-    category === "ready-to-ship" ||
-    category === "eid-store";
+  // const isSpecialPage = 
+  //   category === "all-products";
 
   if (loading || wishlistLoading || filterLoading) {
     return <Loader />;
@@ -802,7 +799,7 @@ export const Filter = () => {
         <div className="row mt-5 dffedfgwetttt">
           <div className="col-lg-3 sgvadfbgsAGvsg">
             <div className="filter-options" style={
-              category && !subcategory && (window.innerWidth > 991 && !isSpecialPage) 
+              category && !subcategory && category !== "all-products"
                 ? { transform: "translateY(-18vw)" }
                 : {}
             }>

@@ -2788,7 +2788,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                         <hr />
 
                         <div
-                          className="coisdefisdhifhsdjifjhosd doiwejrjwejr"
+                          className="coisdefisdhifhsdjifjhosd dhfhgsersefsfsdf doiwejrjwejr"
                           style={{ height: "100vh" }}>
                           {productDetails?.data?.matching_product?.length > 0 && (
                             <Swiper

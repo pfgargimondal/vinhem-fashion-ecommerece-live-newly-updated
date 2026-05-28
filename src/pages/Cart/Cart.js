@@ -3181,7 +3181,14 @@ export const Cart = () => {
             <h5 className="mb-4 text-center">Offers Available To Apply</h5>
 
             <div className="deoiwjrewrwer">
-              {couponItems?.map((couponItemsVal) => (
+              {couponItems?.sort((a, b) => {
+                const aEnabled =
+                  a.is_applicable && a.is_matched ? 1 : 0;
+                const bEnabled =
+                  b.is_applicable && b.is_matched ? 1 : 0;
+                return bEnabled - aEnabled;
+              })
+              ?.map((couponItemsVal) => (
                 <div className="jidnwenjrwerwer mb-2">
                   <input
                     id={couponItemsVal.code}

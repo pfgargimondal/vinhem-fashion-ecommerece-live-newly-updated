@@ -360,9 +360,35 @@ export const OrderHistory = () => {
                                                                     <i className="bi me-1 bi-folder-x"></i> Cancellation Not Available
                                                                 </button>
                                                                 ) : orderHistoryVal.order_status === "Delivered" ? (
-                                                                <button className={`btn ${styles.return_ordr} border-0 px-0`}>
-                                                                    <i className="bi me-1 bi-folder-x"></i> Return Order
-                                                                </button>
+                                                                    (() => {
+                                                                        const deliveredDate = new Date(
+                                                                            orderHistoryVal.delivery_date
+                                                                        );
+                                                                        const currentDate = new Date();
+                                                                        const diffTime =
+                                                                            currentDate - deliveredDate;
+                                                                        const diffDays =
+                                                                            diffTime / (1000 * 60 * 60 * 24);
+                                                                        const canReturn = diffDays <= 2;
+                                                                        return canReturn ? (
+
+                                                                            <button
+                                                                                className={`btn ${styles.return_ordr} border-0 px-0`}
+                                                                            >
+                                                                                <i className="bi me-1 bi-arrow-counterclockwise"></i>
+                                                                                Return Order
+                                                                            </button>
+                                                                        ) : (
+                                                                            <button
+                                                                                className="btn border-0 px-0 text-muted"
+                                                                                disabled
+                                                                            >
+                                                                                <i className="bi me-1 bi-clock-history"></i>
+
+                                                                                Return Period Expired
+                                                                            </button>
+                                                                        );
+                                                                    })()
                                                                 ) : orderHistoryVal.order_status === "Returned" ? (
                                                                 <button className={`btn ${styles.return_ordr} border-0 px-0`}>
                                                                     <i className="bi me-1 bi-folder-x"></i> Return Completed
@@ -396,8 +422,18 @@ export const OrderHistory = () => {
                                                             <button className={styles.dfgfd5544c}>{orderHistoryVal.order_status}</button>
                                                         ) : orderHistoryVal.order_status === "Shipped" ? (
                                                             <button className={styles.dfgfd5544b}>{orderHistoryVal.order_status}</button>
-                                                        ) : orderHistoryVal.order_status === "Deliverd" ? (
-                                                            <button className={styles.dfgfd5544}>{orderHistoryVal.order_status}</button>
+                                                        ) : orderHistoryVal.order_status === "Delivered" ? (
+                                                            <div className="d-flex align-items-center justify-content-center gap-2">
+                                                                <button className={styles.dfgfd5544}>
+                                                                    {orderHistoryVal.order_status}
+                                                                </button>
+
+                                                                <span className="text-muted small">
+                                                                    | {new Date(orderHistoryVal.delivery_date)
+                                                                        .toLocaleDateString("en-GB")
+                                                                        .replace(/\//g, "-")}
+                                                                </span>
+                                                            </div>
                                                         ) : orderHistoryVal.order_status === "Returned" ? (
                                                             <button className={styles.dfgfd5544dvxc}>{orderHistoryVal.order_status}</button>
                                                         ) : (

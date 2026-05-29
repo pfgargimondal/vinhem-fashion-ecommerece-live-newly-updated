@@ -749,17 +749,33 @@ export const ProductDetail = () => {
 
   const data = productDetails.data;
 
+  const stitchingType =
+    data?.stitching_option?.toLowerCase();
+
+  const isReadyToWear =
+    stitchingType === "ready to wear";
+
+  const isUnstitched =
+    stitchingType === "unstiched-fabric" ||
+    stitchingType === "unstitched-fabric" ||
+    stitchingType === "semi-stitched";
+
   // =========================
-  // PRODUCT ALREADY IN CART
+  // PRODUCT IN CART
   // =========================
   if (Number(data.product_INCart) === 1) {
 
-    // ✅ Restore quantity
-    const cartQty = Number(data.product_CartQuantity || 1);
+    // -------------------------
+    // Restore quantity
+    // -------------------------
+    const cartQty =
+      Number(data.product_CartQuantity || 1);
 
     setSelectedQuantity(cartQty);
 
-    // ✅ Restore stitching option
+    // -------------------------
+    // Restore stitch option
+    // -------------------------
     const cartStitchOption =
       data.product_CartActualStichingOption || "";
 
@@ -790,84 +806,27 @@ export const ProductDetail = () => {
     // =========================
     // READY TO WEAR
     // =========================
-    if (data.product_CartSize) {
-
-      const normalizedSize =
-        normalizeSize(data.product_CartSize);
-
-      setSelectedSize(normalizedSize);
+    if (isReadyToWear) {
 
       // IMPORTANT
-      updateQtyAndPriceBySize(normalizedSize);
+      // restore cart size
+      if (data.product_CartSize) {
 
-    }
+        const normalizedSize =
+          normalizeSize(data.product_CartSize);
 
-    // =========================
-    // UNSTITCHED / SEMI STITCHED
-    // =========================
-    else {
+        setSelectedSize(normalizedSize);
 
-      const stitchingType =
-        data?.stitching_option?.toLowerCase();
+        updateQtyAndPriceBySize(normalizedSize);
 
-      if (
-        stitchingType === "unstiched-fabric" ||
-        stitchingType === "unstitched-fabric" ||
-        stitchingType === "semi-stitched"
-      ) {
-
-        // IMPORTANT
-        const qty =
-          Number(data?.rts_quantity || 0) > 0
-            ? Number(data?.rts_quantity || 0)
-            : Number(data?.mto_quantity || 0);
-
-        setAvailableQty(qty);
-
-        // IMPORTANT
-        setSelectedSize("");
-
-        const sellingPrice = parseFloat(
-          data?.product_CartActualPrice ||
-          data?.selling_price ||
-          0
-        );
-
-        setSelectedPrice(sellingPrice);
-
-        setSizeAccordingPrice(sellingPrice);
-
-        setSizeAccordingMRPPrice(
-          parseFloat(data?.mrp_price || 0)
-        );
-
-        setSelectedQuantity(cartQty);
-
-        setSelectedStitchOption("unstitched-fabric");
-
-        setFinalPrice(sellingPrice * cartQty);
       }
+
     }
-  }
-
-  // =========================
-  // PRODUCT NOT IN CART
-  // =========================
-  else {
-
-    setSelectedQuantity(1);
-
-    const stitchingType =
-      data?.stitching_option?.toLowerCase();
 
     // =========================
     // UNSTITCHED / SEMI STITCHED
     // =========================
-    if (
-      stitchingType === "unstiched-fabric" ||
-      stitchingType === "unstitched-fabric" ||
-      stitchingType === "semi-stitched"
-    ) {
+    else if (isUnstitched) {
 
       const qty =
         Number(data?.rts_quantity || 0) > 0
@@ -876,8 +835,14 @@ export const ProductDetail = () => {
 
       setAvailableQty(qty);
 
+      // IMPORTANT
+      // no size needed
+      setSelectedSize("");
+
       const sellingPrice = parseFloat(
-        data?.selling_price || 0
+        data?.product_CartActualPrice ||
+        data?.selling_price ||
+        0
       );
 
       setSelectedPrice(sellingPrice);
@@ -888,34 +853,66 @@ export const ProductDetail = () => {
         parseFloat(data?.mrp_price || 0)
       );
 
-      // IMPORTANT
-      setSelectedStitchOption("unstitched-fabric");
-
-      // IMPORTANT
-      setSelectedSize("");
+      setFinalPrice(sellingPrice * cartQty);
     }
 
-    // =========================
-    // READY TO WEAR
-    // =========================
-    else if (
-      data.stitching_option === "Ready To Wear" ||
-      data.stitching_option === "Ready to Wear"
-    ) {
+    // IMPORTANT
+    return;
+  }
 
-      // IMPORTANT
-      // NO AUTO SIZE SELECT
+  // =========================
+  // PRODUCT NOT IN CART
+  // =========================
 
-      setSelectedSize("");
+  setSelectedQuantity(1);
 
-      setAvailableQty(0);
+  // =========================
+  // READY TO WEAR
+  // =========================
+  if (isReadyToWear) {
 
-      setSelectedPrice(0);
+    // IMPORTANT
+    // NO AUTO SELECT SIZE
 
-      setSizeAccordingPrice(0);
+    setSelectedSize("");
 
-      setSizeAccordingMRPPrice(0);
-    }
+    setAvailableQty(0);
+
+    setSelectedPrice(0);
+
+    setSizeAccordingPrice(0);
+
+    setSizeAccordingMRPPrice(0);
+  }
+
+  // =========================
+  // UNSTITCHED / SEMI STITCHED
+  // =========================
+  else if (isUnstitched) {
+
+    const qty =
+      Number(data?.rts_quantity || 0) > 0
+        ? Number(data?.rts_quantity || 0)
+        : Number(data?.mto_quantity || 0);
+
+    setAvailableQty(qty);
+
+    setSelectedSize("");
+
+    const sellingPrice = parseFloat(
+      data?.selling_price || 0
+    );
+
+    setSelectedPrice(sellingPrice);
+
+    setSizeAccordingPrice(sellingPrice);
+
+    setSizeAccordingMRPPrice(
+      parseFloat(data?.mrp_price || 0)
+    );
+
+    // default stitch option
+    setSelectedStitchOption("unstitched-fabric");
   }
 
 }, [productDetails, updateQtyAndPriceBySize]);

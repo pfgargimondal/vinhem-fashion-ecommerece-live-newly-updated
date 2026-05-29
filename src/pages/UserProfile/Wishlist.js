@@ -135,7 +135,7 @@ export const Wishlist = () => {
                                                                     {formatPrice(wishlistProduct.selling_price)}
                                                                 </h5>
 
-                                                                <span class="gdfg55 d-flex align-items-center ms-2">
+                                                                <span class="gdfg55dvdv d-flex align-items-center ms-2">
                                                                     {/* <i class="bi bi-currency-rupee"></i>  */}
                                                                     {formatPrice(wishlistProduct.mrp_price)}
                                                                 </span>

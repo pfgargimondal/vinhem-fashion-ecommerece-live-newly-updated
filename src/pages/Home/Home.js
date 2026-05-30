@@ -68,13 +68,39 @@ export const Home = () => {
     },
     pagination: { clickable: true },
     breakpoints: {
-      0: { slidesPerView: 1.2 },
-      320: { slidesPerView: 1.2 },
-      393: { slidesPerView: 1.2 },
-      576: { slidesPerView: 2.2 },
-      768: { slidesPerView: 3.2 },
-      992: { slidesPerView: 4.2 },
-      1200: { slidesPerView: 4 }
+      0: { 
+        slidesPerView: 1.2,
+        centeredSlides: true,
+        spaceBetween: 15
+      },
+      320: { 
+        slidesPerView: 1.2,
+        centeredSlides: true,
+        spaceBetween: 15
+      },
+      393: { 
+        slidesPerView: 1.2,
+        centeredSlides: true,
+        spaceBetween: 15
+      },
+      576: { 
+        slidesPerView: 2.2,
+        centeredSlides: true,
+        spaceBetween: 15
+      },
+      768: { 
+        slidesPerView: 3.2,
+        centeredSlides: true,
+        spaceBetween: 15
+      },
+      992: { 
+        slidesPerView: 4.2,
+        centeredSlides: false 
+      },
+      1200: { 
+        slidesPerView: 4,
+        centeredSlides: false 
+      }
     },
   };
 

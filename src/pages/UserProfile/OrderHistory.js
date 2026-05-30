@@ -25,6 +25,7 @@ export const OrderHistory = () => {
     const [search, setSearch] = useState("");
     const [open, setOpen] = useState(false);
     const [resUsernavToggle, setResUsernavToggle] = useState(false);
+    const [returnConfirmModal, setReturnConfirmModal] = useState(false);
 
     useEffect(() => {
         const body = document.querySelector("body");
@@ -369,10 +370,10 @@ export const OrderHistory = () => {
                                                                             currentDate - deliveredDate;
                                                                         const diffDays =
                                                                             diffTime / (1000 * 60 * 60 * 24);
-                                                                        const canReturn = diffDays <= 5;
+                                                                        const canReturn = diffDays <= 2;
                                                                         return canReturn ? (
 
-                                                                            <button
+                                                                            <button onClick={() => setReturnConfirmModal(prev => !prev)}
                                                                                 className={`btn ${styles.return_ordr} border-0 px-0`}
                                                                             >
                                                                                 <i className="bi me-1 bi-arrow-counterclockwise"></i>
@@ -418,10 +419,12 @@ export const OrderHistory = () => {
                                                     <td className="text-center">
                                                         {orderHistoryVal.order_status === "Placed" ? (
                                                             <button className={styles.dfgfd5544}>{orderHistoryVal.order_status}</button>
-                                                        ) : orderHistoryVal.order_status === "Pending" ? (
-                                                            <button className={styles.dfgfd5544c}>{orderHistoryVal.order_status}</button>
+                                                        ) : (orderHistoryVal.order_status === "Pending" && orderHistoryVal.action === "accepted") ? (
+                                                            <button className={styles.dfgfd5544c}>In Process</button>
                                                         ) : orderHistoryVal.order_status === "Shipped" ? (
                                                             <button className={styles.dfgfd5544b}>{orderHistoryVal.order_status}</button>
+                                                        ) : orderHistoryVal.order_status === "Dispatched" ? (
+                                                            <button className={styles.dfgfd5544b}>IN-TRANSIT</button>
                                                         ) : orderHistoryVal.order_status === "Delivered" ? (
                                                             <div className="d-flex align-items-center justify-content-center gap-2">
                                                                 <button className={styles.dfgfd5544}>
@@ -481,6 +484,216 @@ export const OrderHistory = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div onClick={() => setReturnConfirmModal(false)} className={returnConfirmModal ? `${styles.retrn_cnfrm_mdal_backdrop}` : `${styles.retrn_cnfrm_mdal_backdrop_hide}`}></div>
+
+            <div className={returnConfirmModal ? `${styles.retrn_cnfrm_mdal} bg-white` : `${styles.retrn_cnfrm_mdal} ${styles.retrn_cnfrm_mdal_hide} bg-white`}>
+                <div className={`${styles.oasdopwelrwerwer} text-end px-4 py-3`}>
+                    <i onClick={() => setReturnConfirmModal(false)} className="fa-solid fa-xmark mb-1"></i>
+                </div>
+
+                <div className="delkwlrwer p-5 pt-0">
+                    <h3 className="mb-4 px-4 text-white py-3">Tell Us Why You're Returning This Item..!</h3>
+
+                    <form className={styles.rp_form_wrapper}>
+                        <div className="cdwehjirnweijrowejrowejr">
+                            <div className="checkbox-wrapper-33">
+                                <label htmlFor="safgsg-1" className="checkbox">
+                                    <input
+                                        id="safgsg-1"
+                                        className="checkbox__trigger visuallyhidden"
+                                        type="radio"
+                                        defaultValue="pre-draped sarees"
+                                        name="duihwerwer"
+                                    />
+                                    <span className="checkbox__symbol">
+                                        <svg
+                                            aria-hidden="true"
+                                            className="icon-checkbox"
+                                            width="28px"
+                                            height="28px"
+                                            viewBox="0 0 28 28"
+                                        >
+                                            <path d="M4 14l8 7L24 7" />
+                                        </svg>
+                                    </span>
+                                    <p className="checkbox__textwrapper">Defective / Does not work properly.</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="cdwehjirnweijrowejrowejr">
+                            <div className="checkbox-wrapper-33">
+                                <label htmlFor="safgsg-2" className="checkbox">
+                                    <input
+                                        id="safgsg-2"
+                                        className="checkbox__trigger visuallyhidden"
+                                        type="radio"
+                                        defaultValue="pre-draped sarees"
+                                        name="duihwerwer"
+                                    />
+                                    <span className="checkbox__symbol">
+                                        <svg
+                                            aria-hidden="true"
+                                            className="icon-checkbox"
+                                            width="28px"
+                                            height="28px"
+                                            viewBox="0 0 28 28"
+                                        >
+                                            <path d="M4 14l8 7L24 7" />
+                                        </svg>
+                                    </span>
+                                    <p className="checkbox__textwrapper">Unflattering fit / Size Issue.</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="cdwehjirnweijrowejrowejr">
+                            <div className="checkbox-wrapper-33">
+                                <label htmlFor="safgsg-3" className="checkbox">
+                                    <input
+                                        id="safgsg-3"
+                                        className="checkbox__trigger visuallyhidden"
+                                        type="radio"
+                                        defaultValue="pre-draped sarees"
+                                        name="duihwerwer"
+                                    />
+                                    <span className="checkbox__symbol">
+                                        <svg
+                                            aria-hidden="true"
+                                            className="icon-checkbox"
+                                            width="28px"
+                                            height="28px"
+                                            viewBox="0 0 28 28"
+                                        >
+                                            <path d="M4 14l8 7L24 7" />
+                                        </svg>
+                                    </span>
+                                    <p className="checkbox__textwrapper">Damaged product (crushed, torn, scratched).</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="cdwehjirnweijrowejrowejr">
+                            <div className="checkbox-wrapper-33">
+                                <label htmlFor="safgsg-4" className="checkbox">
+                                    <input
+                                        id="safgsg-4"
+                                        className="checkbox__trigger visuallyhidden"
+                                        type="radio"
+                                        defaultValue="pre-draped sarees"
+                                        name="duihwerwer"
+                                    />
+                                    <span className="checkbox__symbol">
+                                        <svg
+                                            aria-hidden="true"
+                                            className="icon-checkbox"
+                                            width="28px"
+                                            height="28px"
+                                            viewBox="0 0 28 28"
+                                        >
+                                            <path d="M4 14l8 7L24 7" />
+                                        </svg>
+                                    </span>
+                                    <p className="checkbox__textwrapper">Wrong item was sent.</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="cdwehjirnweijrowejrowejr">
+                            <div className="checkbox-wrapper-33">
+                                <label htmlFor="safgsg-5" className="checkbox">
+                                    <input
+                                        id="safgsg-5"
+                                        className="checkbox__trigger visuallyhidden"
+                                        type="radio"
+                                        defaultValue="pre-draped sarees"
+                                        name="duihwerwer"
+                                    />
+                                    <span className="checkbox__symbol">
+                                        <svg
+                                            aria-hidden="true"
+                                            className="icon-checkbox"
+                                            width="28px"
+                                            height="28px"
+                                            viewBox="0 0 28 28"
+                                        >
+                                            <path d="M4 14l8 7L24 7" />
+                                        </svg>
+                                    </span>
+                                    <p className="checkbox__textwrapper">Missing accessories or parts.</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="cdwehjirnweijrowejrowejr">
+                            <div className="checkbox-wrapper-33">
+                                <label htmlFor="safgsg-6" className="checkbox">
+                                    <input
+                                        id="safgsg-6"
+                                        className="checkbox__trigger visuallyhidden"
+                                        type="radio"
+                                        defaultValue="pre-draped sarees"
+                                        name="duihwerwer"
+                                    />
+                                    <span className="checkbox__symbol">
+                                        <svg
+                                            aria-hidden="true"
+                                            className="icon-checkbox"
+                                            width="28px"
+                                            height="28px"
+                                            viewBox="0 0 28 28"
+                                        >
+                                            <path d="M4 14l8 7L24 7" />
+                                        </svg>
+                                    </span>
+                                    <p className="checkbox__textwrapper">Doesn't meet expectations / Poor quality.</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="cdwehjirnweijrowejrowejr mb-0">
+                            <div className="checkbox-wrapper-33">
+                                <label htmlFor="safgsg-7" className="checkbox">
+                                    <input
+                                        id="safgsg-7"
+                                        className="checkbox__trigger visuallyhidden"
+                                        type="radio"
+                                        defaultValue="pre-draped sarees"
+                                        name="duihwerwer"
+                                    />
+                                    <span className="checkbox__symbol">
+                                        <svg
+                                            aria-hidden="true"
+                                            className="icon-checkbox"
+                                            width="28px"
+                                            height="28px"
+                                            viewBox="0 0 28 28"
+                                        >
+                                            <path d="M4 14l8 7L24 7" />
+                                        </svg>
+                                    </span>
+                                    <p className="checkbox__textwrapper">Replacement Required.</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className={`${styles.duiewrweoplrwer} mt-4`}>
+                            <label className="form-label">Return Reason<span style={{ color: "red" }}>*</span></label>
+
+                            <textarea name="" id="" className="form-control" placeholder="Text Me..."></textarea>
+                        </div>
+
+                        <div className="iodneoiwjrwer">
+                            <input type="file" id="file" className="d-none" />
+
+                            <label htmlFor="file" className={`${styles.cfisjfrlkwerw} d-flex align-items-center p-3`}><i class="bi me-1 bi-plus-lg"></i> Attach a File</label>
+                        </div>
+
+                        <div className={`${styles.doeiwjrkweopr} text-center mt-3`}><button className="btn btn-main px-3">Submit</button></div>
+                    </form>
                 </div>
             </div>
         </div>

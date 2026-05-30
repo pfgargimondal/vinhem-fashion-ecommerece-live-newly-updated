@@ -372,9 +372,10 @@ form input:global(.form-control){
 
 @media only screen and (max-width: 425px){
   :global(.fdbdfgdfgdf) h5,
-  :global(.gdfg55dvdv) {
+  :global(.gdfg55dvdv),
+  :global(.gdfg55) {
     font-size: 1rem !important;
-  }
+  }  
 
   :global(.fghfgg114) {
     font-size: 0.9rem !important;

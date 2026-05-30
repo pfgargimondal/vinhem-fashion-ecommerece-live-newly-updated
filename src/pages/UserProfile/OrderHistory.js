@@ -369,7 +369,7 @@ export const OrderHistory = () => {
                                                                             currentDate - deliveredDate;
                                                                         const diffDays =
                                                                             diffTime / (1000 * 60 * 60 * 24);
-                                                                        const canReturn = diffDays <= 2;
+                                                                        const canReturn = diffDays <= 5;
                                                                         return canReturn ? (
 
                                                                             <button
@@ -402,7 +402,7 @@ export const OrderHistory = () => {
                                                                     <button className={`btn ${styles.dwnld_invce} text-success border-0 px-0`} onClick={() => handleDownload(orderHistoryVal)}>
                                                                         <i class="bi me-1 bi-file-earmark-arrow-down"></i> Download Invoice</button>
                                                                 )}
-                                                            
+                                                                
                                                         </div>
                                                         {/* <div style={{ display: "none" }}>
                                                             <Invoice />

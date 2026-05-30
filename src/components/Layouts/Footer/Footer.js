@@ -526,7 +526,7 @@ export const Footer = ({ shouldHideFullHeaderFooterRoutes }) => {
         </div>
 
         <div className="difwehwerwer">
-          {emailToggle ? (<img src={optimizeImage(`${BASE_URL}/public/FTP-&-Excels/Main-Frame/All-Banners/Pop-Ups/dw.jpg`)}  alt="" />) : (<img src={optimizeImage(`${BASE_URL}/public/FTP-&-Excels/Main-Frame/All-Banners/Pop-Ups/dw.jpg`)} alt="" />)}
+          {emailToggle ? (<img src={optimizeImage(`${BASE_URL}/public/FTP-&-Excels/Main-Frame/All-Banners/Pop-Ups/Login.jpg`)}  alt="" />) : (<img src={optimizeImage(`${BASE_URL}/public/FTP-&-Excels/Main-Frame/All-Banners/Pop-Ups/Login.jpg`)} alt="" />)}
 
           <div className="diwekmrwerwe px-4 pb-2 pt-4">
             <h5 className="text-center mb-1">Log in or Sign up</h5>

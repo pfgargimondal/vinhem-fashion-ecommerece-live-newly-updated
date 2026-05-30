@@ -104,7 +104,7 @@ export const TrackOrder = () => {
         <div className="container-fluid">
           <div className="aboutusbannr">
             <img src={TrackingOrderDetails?.image_url && TrackingOrderDetails?.data?.banner_image
-                ? optimizeImage(`${TrackingOrderDetails.image_url}/${TrackingOrderDetails.data.banner_image}`)
+                ? optimizeImage(`https://fastwork.space/public/FTP-&-Excels/Main-Frame/All-Banners/CMS-Pages/track-orders.jpg`)
                 : "none"} className="w-100" style={{borderRadius: "27px", marginTop: "1rem", overflow: "hidden"}} alt="" />
             <div className="sdfgdfgdfg">
                 <div className="dfgnhdfjhgdf">

@@ -362,14 +362,13 @@ export const OrderHistory = () => {
                                                                 </button>
                                                                 ) : orderHistoryVal.order_status === "Delivered" ? (
                                                                     (() => {
-                                                                        const deliveredDate = new Date(
-                                                                            orderHistoryVal.delivery_date
-                                                                        );
+                                                                       const deliveredDate = new Date(orderHistoryVal.delivery_date);
                                                                         const currentDate = new Date();
-                                                                        const diffTime =
-                                                                            currentDate - deliveredDate;
-                                                                        const diffDays =
-                                                                            diffTime / (1000 * 60 * 60 * 24);
+
+                                                                        const diffDays = Math.floor(
+                                                                            (currentDate.getTime() - deliveredDate.getTime()) /
+                                                                            (1000 * 60 * 60 * 24)
+                                                                        );
                                                                         const canReturn = diffDays <= 2;
                                                                         return canReturn ? (
 

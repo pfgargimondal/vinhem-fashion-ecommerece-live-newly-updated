@@ -427,13 +427,13 @@ form input:global(.form-control){
   bottom: 0;
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(1rem);
-  z-index: 999999;
+  z-index: 9999999;
   visibility: visible;
   opacity: 1;
 }
 
 .retrn_cnfrm_mdal_backdrop_hide{
-  z-index: -999999;
+  z-index: -9999999;
   visibility: hidden;
   opacity: 0;
 }
@@ -446,7 +446,7 @@ form input:global(.form-control){
   visibility: visible;
   opacity: 1;
   transition: 0.1s ease-in-out;
-  z-index: 9999999;
+  z-index: 99999999;
   border-radius: 0.375rem;
   box-shadow: rgba(132, 13, 86, 0.35) 0px 5px 15px;
 }
@@ -560,6 +560,10 @@ form input:global(.form-control){
 
   .fbghdfg{
     box-shadow: none;
+  }
+
+  .retrn_cnfrm_mdal{
+    width: 95%;
   }
 }
 

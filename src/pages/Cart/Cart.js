@@ -1337,7 +1337,28 @@ export const Cart = () => {
                                     </p>
                                   )} 
                                   {cartItemsVal.size !== null && (
-                                    <p className="mb-1">Size : {cartItemsVal.size} | Qty : {cartItemsVal.quantity}</p>
+                                    <p className="mb-1">Size : {cartItemsVal.size} | Qty : 
+                                    
+                                    <div className="dgdsgee d-inline-flex ms-2">
+                                      <select
+                                        name="product_quantity"
+                                        id="product_quantity"
+                                        disabled=""
+                                        className="form-select weqwthyuytredfgw cbgdrfsfewerrr select-form-drpdwn"
+                                      >
+                                        <option value="">1</option>
+
+                                        <option value="">2</option>
+
+                                        <option value="">3</option>
+
+                                        <option value="">4</option>
+
+                                        <option value="">5</option>
+                                      </select>
+                                    </div>
+                                    {/* {cartItemsVal.quantity} */}
+                                    </p>
                                   )}
                                   {(
                                     cartItemsVal.turban_selected === "1" ||
